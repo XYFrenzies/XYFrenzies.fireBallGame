@@ -14,4 +14,14 @@ function gameLogic() {
     player.isGrounded = true;
     player.jumpLock = false;
   }
+
+  //Slowly stop player movement
+  if (player.VelX > 0)
+  {
+    player.VelX--;
+  }
+  if (player.VelX < 0)
+  {
+    player.VelX++;
+  }
 }

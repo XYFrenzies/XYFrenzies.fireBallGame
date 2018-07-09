@@ -6,13 +6,17 @@ function movement()
     player.jumpLock = true;
   }
   if (player.crouching) {
-    player.y++;
+    //Do stuff
   }
   if (player.movingRight) {
-    player.x++;
+    if (player.VelX < 6) {
+      player.VelX += 2;
+    }
   }
   if (player.movingLeft) {
-    player.x--;
+    if (player.VelX > -6) {
+      player.VelX -= 2;
+    }
   }
   //Player touching ground check
   if(player.isGrounded) {
