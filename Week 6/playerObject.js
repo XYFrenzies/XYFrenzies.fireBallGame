@@ -2,7 +2,6 @@ function Player() {
   this.listener = new window.keypress.Listener();
   this.x = 0;
   this.y = 100;
-  console.log(this.x + "|" + this.y);
   this.image = document.createElement("img");
   this.image.src = "Images/Character.png";
   this.VelX = 0;
