@@ -5,10 +5,7 @@ function movement()
 
   if (player.jumping && player.isPlayerGrounded) {
 
-    
-
-
-    //player.y--;
+    player.y--
   }
   if (player.crouching) {
     player.y++;
@@ -18,10 +15,5 @@ function movement()
   }
   if (player.movingLeft) {
     player.x--;
-  }
-
-  for(i = 0; i < enemies.length; i++)
-  {
-    enemies[i].move();
   }
 }
