@@ -1,30 +1,16 @@
 var canvas = document.getElementById("gameCanvas");
 var context = canvas.getContext("2d");
 
-
+//Image imports
 var BGImage = document.createElement("img");
 BGImage.src = "Images/Background.png";
 
 
-
-function Draw()
-{
-    context.drawImage(BGImage, 0, 0, 1650, 870);
-}
-
-
-
-
-
-
-
-
-
-
-
+//Main game loop
 function Gameloop()
 {
     Draw();
 }
 
+//Init game
 Gameloop();
