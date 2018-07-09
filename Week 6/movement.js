@@ -1,7 +1,8 @@
 function movement()
 {
   if (player.jumping) {
-    player.VelY -= 5;
+    player.VelY -= 20;
+    player.jumping = false;
   }
   if (player.crouching) {
     player.y++;
