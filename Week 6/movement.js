@@ -2,7 +2,7 @@ function movement()
 {
   if (player.jumping && player.jumpLock == false) {
     player.isGrounded = false;
-    player.VelY -= 20;
+    player.VelY = -20;
     player.jumpLock = true;
   }
   if (player.crouching) {
@@ -23,8 +23,8 @@ function movement()
     player.VelY = 0;
   }
   //Apply vector movement
-  player.x += player.VelX;
-  player.y += player.VelY;
+  player.x += player.VelX * dt * 20;
+  player.y += player.VelY * dt * 20;
 for(i = 0; i < enemies.length; i++)
  {
    enemies[i].move();
