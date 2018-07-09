@@ -8,5 +8,24 @@ function Enemy() {
   this.movingLeft = false;
   this.jumping = false;
   this.crouching = false;
-  this.ai = function(){};
+  this.ai = function(){
+    if(this.x < 0)
+    {
+      this.movingLeft = false;
+      this.movingRight = true;
+    }
+    if(this.x > c.width)
+    {
+      this.movingLeft = true;
+      this.movingRight = false;
+    }
+  };
+  this.move = function(){
+    if(this.movingLeft){
+      this.x--;
+    }
+    if(this.movingRight) {
+      this.x++;
+    }
+  };
 }
