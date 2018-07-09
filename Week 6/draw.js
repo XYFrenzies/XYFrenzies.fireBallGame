@@ -11,4 +11,9 @@ function Draw()
     ctx.drawImage(BGImage, 0, 0, 1650, 870);
     //Draw player
     ctx.drawImage(player.image, player.x, player.y);
+    //Draw enemies
+    for(i = 0; i < enemies.length; i++)
+    {
+      ctx.drawImage(enemies[i].image, enemies[i].x, enemies[i].y, 70, 70);
+    }
 }
