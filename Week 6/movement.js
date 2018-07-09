@@ -3,7 +3,7 @@ function movement()
 
 
 
-  if (player.jumping && player.isPlayerGrounded) {
+  if (player.jumping) {
 
     player.y--
   }
