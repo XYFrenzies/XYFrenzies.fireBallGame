@@ -4,6 +4,8 @@ function Player() {
   this.y = 778;
   this.image = document.createElement("img");
   this.image.src = "Images/Character.png";
+  this.isPlayerGrounded;
+  this.gravity = 0;
   this.movingRight = false;
   this.movingLeft = false;
   this.jumping = false;
