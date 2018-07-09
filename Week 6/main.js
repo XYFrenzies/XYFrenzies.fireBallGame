@@ -15,6 +15,7 @@ enemies.push(new Enemy());
 function Gameloop()
 {
     Draw();
+    gameLogic();
     movement();
     window.requestAnimationFrame(Gameloop);
 }

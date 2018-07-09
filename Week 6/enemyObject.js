@@ -4,7 +4,7 @@ function Enemy() {
   this.y = 778;
   this.image = document.createElement("img");
   this.image.src = "Images/enemy.png";
-  this.movingRight = false;
+  this.movingRight = true;
   this.movingLeft = false;
   this.jumping = false;
   this.crouching = false;
