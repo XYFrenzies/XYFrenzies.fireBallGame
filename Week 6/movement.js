@@ -5,21 +5,27 @@ function movement()
     player.VelY = -20;
     player.jumpLock = true;
   }
-  if (player.crouching) {
+  if (player.crouching)
+  {
     //Do stuff
   }
-  if (player.movingRight) {
-    if (player.VelX < 6) {
+  if (player.movingRight)
+  {
+    if (player.VelX < 6)
+    {
       player.VelX += 2;
     }
   }
-  if (player.movingLeft) {
-    if (player.VelX > -6) {
+  if (player.movingLeft)
+  {
+    if (player.VelX > -6)
+    {
       player.VelX -= 2;
     }
   }
   //Player touching ground check
-  if(player.isGrounded) {
+  if(player.isGrounded)
+  {
     player.VelY = 0;
     player.y = groundHeight;
   }

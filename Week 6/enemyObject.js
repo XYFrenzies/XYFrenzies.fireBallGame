@@ -1,4 +1,5 @@
-function Enemy() {
+function Enemy()
+{
   this.listener = new window.keypress.Listener();
   this.x = 500;
   this.y = 778;
@@ -20,11 +21,14 @@ function Enemy() {
       this.movingRight = false;
     }
   };
-  this.move = function(){
-    if(this.movingLeft){
+  this.move = function()
+  {
+    if(this.movingLeft)
+    {
       this.x--;
     }
-    if(this.movingRight) {
+    if(this.movingRight)
+    {
       this.x++;
     }
   };

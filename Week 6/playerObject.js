@@ -1,4 +1,5 @@
-function Player() {
+function Player()
+{
   this.listener = new window.keypress.Listener();
   this.x = 0;
   this.y = 100;
@@ -16,10 +17,12 @@ function Player() {
     {
         "keys"          : "s",
         "is_exclusive"  : false,
-        "on_keydown"    : function() {
+        "on_keydown"    : function()
+        {
             this.crouching = true;
         },
-        "on_keyup"      : function(e) {
+        "on_keyup"      : function(e)
+        {
             this.crouching = false;
         },
         "this"          : this
@@ -27,10 +30,12 @@ function Player() {
     {
         "keys"          : "w",
         "is_exclusive"  : false,
-        "on_keydown"    : function() {
+        "on_keydown"    : function()
+        {
             this.jumping = true;
         },
-        "on_keyup"      : function(e) {
+        "on_keyup"      : function(e)
+        {
             this.jumping = false;
             this.isPlayerFalling = true;
         },
@@ -39,10 +44,12 @@ function Player() {
     {
         "keys"          : "d",
         "is_exclusive"  : false,
-        "on_keydown"    : function() {
+        "on_keydown"    : function()
+        {
             this.movingRight = true;
         },
-        "on_keyup"      : function(e) {
+        "on_keyup"      : function(e)
+        {
             this.movingRight = false;
         },
         "this"          : this
@@ -50,10 +57,12 @@ function Player() {
     {
         "keys"          : "a",
         "is_exclusive"  : false,
-        "on_keydown"    : function() {
+        "on_keydown"    : function()
+        {
             this.movingLeft = true;
         },
-        "on_keyup"      : function(e) {
+        "on_keyup"      : function(e)
+        {
             this.movingLeft = false;
         },
         "this"          : this
