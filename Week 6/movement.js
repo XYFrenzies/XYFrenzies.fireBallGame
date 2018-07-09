@@ -18,4 +18,9 @@ var gravity = 0;
   if (player.movingLeft) {
     player.x--;
   }
+
+  for(i = 0; i < enemies.length; i++)
+  {
+    enemies[i].move();
+  }
 }
