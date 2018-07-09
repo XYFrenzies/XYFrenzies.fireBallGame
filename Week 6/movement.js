@@ -2,9 +2,12 @@ function movement()
 {
 
 var isPlayerGrounded;
-
+var gravity = 0;
   if (player.jumping) {
-    player.y--;
+
+
+
+    //player.y--;
   }
   if (player.crouching) {
     player.y++;
