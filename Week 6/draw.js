@@ -5,7 +5,7 @@ BGImage.src = "Images/Background.png";
 
 function Draw()
 {
-    context.fillStyle = "blue";
-    context.fillRect(0, 0, canvas.width, canvas.height);
-    context.drawImage(BGImage, 0, 0);
+    ctx.fillStyle = "blue";
+    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.drawImage(BGImage, 0, 0);
 }
