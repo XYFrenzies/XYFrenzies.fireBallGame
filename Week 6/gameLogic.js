@@ -7,6 +7,7 @@ function gameLogic() {
   groundHeight = 700;
   //Apply gravity
   if(player.y < groundHeight) {
+    player.isGrounded = false;
     player.VelY++;
   }
   //Is player touchign ground
