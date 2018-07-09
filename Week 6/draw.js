@@ -18,4 +18,7 @@ function Draw()
     ctx.fillStyle = "gold";
     ctx.font = "30px Arial";
     ctx.fillText("Score: " + score,10,50);
+    ctx.fillStyle = "red";
+    ctx.font = "30px Arial";
+    ctx.fillText("Health: " + health,c.width - 200,50);
 }

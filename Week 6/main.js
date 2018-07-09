@@ -7,6 +7,7 @@ var ctx = c.getContext("2d");
 //Initialisation of global objects
 var enemies = [];
 var score = 0;
+var health = 100;
 //Player object
 var player = new Player();
 //Enemy object
