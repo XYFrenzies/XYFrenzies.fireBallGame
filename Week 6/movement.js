@@ -27,6 +27,6 @@ function movement()
   player.y += player.VelY * dt * 20;
 for(i = 0; i < enemies.length; i++)
  {
-   enemies[i].move();
+   enemies[i].move() * dt * 20;
  }
 }
