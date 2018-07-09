@@ -21,10 +21,12 @@ function movement()
   //Player touching ground check
   if(player.isGrounded) {
     player.VelY = 0;
+    player.y = groundHeight;
   }
   //Apply vector movement
-  player.x += player.VelX * dt * 20;
-  player.y += player.VelY * dt * 20;
+  player.x += player.VelX * dt / 11;
+  player.y += player.VelY * dt / 11;
+  console.log(player.isGrounded);
 for(i = 0; i < enemies.length; i++)
  {
    enemies[i].move() * dt * 20;

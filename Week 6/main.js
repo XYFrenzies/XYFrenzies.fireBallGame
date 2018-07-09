@@ -18,7 +18,10 @@ var lastUpdate = Date.now();
 //Main game loop
 function Gameloop()
 {
-    dt = 1/ (Date.now() - lastUpdate);
+    dt = Date.now() - lastUpdate;
+    if(dt === 0){
+      dt = 1/60;
+    }
     Draw();
     gameLogic();
     movement();
