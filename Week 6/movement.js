@@ -5,6 +5,7 @@ function movement()
 
   if (player.jumping) {
 
+    
 
 
     //player.y--;
