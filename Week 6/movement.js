@@ -1,8 +1,9 @@
 function movement()
 {
   if (player.jumping) {
-
-    player.y--
+    //To determine if the player is grounded or not
+    player.isPlayerGrounded == false;
+    player.y--;
   }
   if (player.crouching) {
     player.y++;

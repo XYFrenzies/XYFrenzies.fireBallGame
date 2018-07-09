@@ -4,7 +4,10 @@ function Player() {
   this.y = 778;
   this.image = document.createElement("img");
   this.image.src = "Images/Character.png";
-  this.isPlayerGrounded;
+  this.VelX = 0;
+  this.VelY = 0;
+  this.isPlayerFalling = false;
+  this.isPlayerGrounded = true;
   this.gravity = 0;
   this.movingRight = false;
   this.movingLeft = false;
@@ -30,6 +33,7 @@ function Player() {
         },
         "on_keyup"      : function(e) {
             this.jumping = false;
+            this.isPlayerFalling = true;
         },
         "this"          : this
     },
