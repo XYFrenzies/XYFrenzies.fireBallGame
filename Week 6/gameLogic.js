@@ -13,12 +13,16 @@ function gameLogic() {
     player.VelY += 10;
 
   }
-  if()
+  if(player.VelY = 30)
   {
-    player.isPlayerFalling == True;
-    player.VelX
+    player.isPlayerFalling == true;
+    player.VelY -= 10;
 
   }
 
-  if()
+  if(player.VelY = 0)
+  {
+    player.isPlayerFalling = false;
+    player.isPlayerGrounded = true
+  }
 }
