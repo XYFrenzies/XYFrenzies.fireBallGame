@@ -3,7 +3,6 @@ function movement()
 
 
 
-  if (player.jumping) {
   if (player.jumping && player.isPlayerGrounded) {
 
     
