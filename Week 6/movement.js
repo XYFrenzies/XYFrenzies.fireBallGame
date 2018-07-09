@@ -1,7 +1,9 @@
 function movement()
 {
-  if (player.jumping) {
-    player.VelY -= 5;
+  if (player.jumping && player.jumpLock == false) {
+    player.isGrounded = false;
+    player.VelY -= 20;
+    player.jumpLock = true;
   }
   if (player.crouching) {
     player.y++;
@@ -12,7 +14,11 @@ function movement()
   if (player.movingLeft) {
     player.x--;
   }
-  //Vector movement
+  //Player touching ground check
+  if(player.isGrounded) {
+    player.VelY = 0;
+  }
+  //Apply vector movement
   player.x += player.VelX;
   player.y += player.VelY;
 for(i = 0; i < enemies.length; i++)

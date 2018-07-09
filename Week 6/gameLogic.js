@@ -4,24 +4,14 @@ function gameLogic() {
   {
     enemies[i].ai();
   }
-
-
-//This is going to be for the jumping mechanics
-  if((player.jumping > player.gravity) && player.isPlayerGrounded = false)
-  {
-
-    player.VelY += 10;
-
-
+  groundHeight = 700;
+  //Apply gravity
+  if(player.y < groundHeight) {
+    player.VelY++;
   }
-  if(player.VelY = 30)
-  {
-    player.VelY -= 10;
-
-  }
-
-  if(player.VelY = 0)
-  {
-    player.isPlayerGrounded = true;
+  //Is player touchign ground
+  else if (player.y >= groundHeight) {
+    player.isGrounded = true;
+    player.jumpLock = false;
   }
 }

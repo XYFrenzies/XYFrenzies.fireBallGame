@@ -1,18 +1,17 @@
 function Player() {
   this.listener = new window.keypress.Listener();
   this.x = 0;
-  this.y = 778;
+  this.y = 100;
   this.image = document.createElement("img");
   this.image.src = "Images/Character.png";
   this.VelX = 0;
   this.VelY = 0;
-  this.isPlayerFalling = false;
-  this.isPlayerGrounded = true;
-  this.gravity = 0;
+  this.isGrounded = false;
   this.movingRight = false;
   this.movingLeft = false;
   this.jumping = false;
   this.crouching = false;
+  this.jumpLock = false;
   this.combos = this.listener.register_many([
     {
         "keys"          : "s",
@@ -33,6 +32,7 @@ function Player() {
         },
         "on_keyup"      : function(e) {
             this.jumping = false;
+            this.isPlayerFalling = true;
         },
         "this"          : this
     },
