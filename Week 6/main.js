@@ -1,5 +1,5 @@
 var c = document.getElementById("gamecanvas");
-var ctx = c.getcontext("2d");
+var ctx = c.getctx("2d");
 
 
 
