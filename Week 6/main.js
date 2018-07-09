@@ -1,4 +1,4 @@
-var c = document.getElementById("gamec");
+var c = document.getElementById("gamecanvas");
 var ctx = c.getctx("2d");
 
 
