@@ -6,6 +6,7 @@ BGImage.src = "Images/Background.png";
 function Draw()
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     context.fillStyle = "blue";
     context.fillRect(0, 0, canvas.width, canvas.height);
     context.drawImage(BGImage, 0, 0, 1650, 870);
@@ -14,4 +15,9 @@ function Draw()
     ctx.fillRect(0, 0, c.width, c.height);
     ctx.drawImage(BGImage, 0, 0);
 >>>>>>> 9a2cfdcd58c1e7c56be25a78852eeabe09251336
+=======
+    ctx.fillStyle = "blue";
+    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.drawImage(BGImage, 0, 0);
+>>>>>>> 7c6de0535179510fbbab10545eeac1420146452e
 }
