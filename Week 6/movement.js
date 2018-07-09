@@ -1,5 +1,8 @@
 function movement()
 {
+
+var isPlayerGrounded;
+
   if (player.jumping) {
     player.y--;
   }

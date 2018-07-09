@@ -1,6 +1,6 @@
 //Image imports
 var BGImage = document.createElement("img");
-BGImage.src = "Images/Background.jpeg";
+BGImage.src = "Images/Background.png";
 
 
 function Draw()
