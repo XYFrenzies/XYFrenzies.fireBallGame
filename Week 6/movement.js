@@ -23,16 +23,17 @@ function movement()
       player.VelX -= 2;
     }
   }
+
+  //Apply vector movement
+  player.x += player.VelX * dt / 11;
+  player.y += player.VelY * dt / 11;
   //Player touching ground check
-  if(player.isGrounded)
+  if(player.isGrounded || player.y >= groundHeight)
   {
     player.VelY = 0;
     player.y = groundHeight;
   }
-  //Apply vector movement
-  player.x += player.VelX * dt / 11;
-  player.y += player.VelY * dt / 11;
-  console.log(player.isGrounded);
+  //console.log(player.isGrounded);
 for(i = 0; i < enemies.length; i++)
  {
    enemies[i].move() * dt * 20;

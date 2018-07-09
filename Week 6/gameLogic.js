@@ -12,7 +12,7 @@ function gameLogic()
     player.VelY++;
   }
   //Is player touchign ground
-  else if (player.y >= groundHeight + dt) {
+  else if (player.y >= groundHeight) {
     player.isGrounded = true;
     player.jumpLock = false;
   }
