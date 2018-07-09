@@ -11,4 +11,5 @@ function gameLogic() {
   else if (player.y >= groundHeight) {
     player.VelY = 0;
   }
+
 }
