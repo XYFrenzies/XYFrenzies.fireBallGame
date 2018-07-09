@@ -4,14 +4,21 @@ function gameLogic() {
   {
     enemies[i].ai();
   }
+
+
 //This is going to be for the jumping mechanics
-  if(player.jumping > gravity)
+  if((player.jumping > player.gravity) && player.isPlayerFalling = true)
   {
-    VelX += 10;
+
+    player.VelY += 10;
 
   }
-  if(VelX == 30)
+  if()
   {
     player.isPlayerFalling == True;
+    player.VelX
+
   }
+
+  if()
 }

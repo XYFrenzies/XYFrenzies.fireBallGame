@@ -4,8 +4,8 @@ function Player() {
   this.y = 778;
   this.image = document.createElement("img");
   this.image.src = "Images/Character.png";
-  this.VelX = 0;
-  this.VelY = 0;
+  this.VelX = this.x;
+  this.VelY = this.y;
   this.isPlayerFalling = false;
   this.isPlayerGrounded = true;
   this.gravity = 0;
