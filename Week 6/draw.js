@@ -29,52 +29,66 @@ function Draw()
       {
         if(level1.layers[0].data[i] == 1)
         {
+          var xOffset = player.x - c.width / 2;
+          var yOffset = player.y - c.height / 2;
           ctx.fillStyle = "red";
           var x = (i % gridWidth) * tileWidth;
           var y = Math.floor(i / gridHeight) * tileHeight;
-          ctx.fillRect(x, y, tileWidth, tileHeight);
+          ctx.fillRect(x - xOffset, y - yOffset, tileWidth, tileHeight);
         }
         if(level1.layers[0].data[i] == 2)
         {
+          var xOffset = player.x - c.width / 2;
+          var yOffset = player.y - c.height / 2;
           ctx.fillStyle = "blue";
           var x = (i % gridWidth) * tileWidth;
           var y = Math.floor(i / gridHeight) * tileHeight;
-          ctx.fillRect(x, y, tileWidth, tileHeight);
+          ctx.fillRect(x - xOffset, y - yOffset, tileWidth, tileHeight);
         }
         if(level1.layers[0].data[i] == 3)
         {
+          var xOffset = player.x - c.width / 2;
+          var yOffset = player.y - c.height / 2;
           ctx.fillStyle = "green";
           var x = (i % gridWidth) * tileWidth;
           var y = Math.floor(i / gridHeight) * tileHeight;
-          ctx.fillRect(x, y, tileWidth, tileHeight);
+          ctx.fillRect(x - xOffset, y - yOffset, tileWidth, tileHeight);
         }
         if(level1.layers[0].data[i] == 4)
         {
+          var xOffset = player.x - c.width / 2;
+          var yOffset = player.y - c.height / 2;
           ctx.fillStyle = "orange";
           var x = (i % gridWidth) * tileWidth;
           var y = Math.floor(i / gridHeight) * tileHeight;
-          ctx.fillRect(x, y, tileWidth, tileHeight);
+          ctx.fillRect(x - xOffset, y - yOffset, tileWidth, tileHeight);
         }
         if(level1.layers[0].data[i] == 5)
         {
+          var xOffset = player.x - c.width / 2;
+          var yOffset = player.y - c.height / 2;
           ctx.fillStyle = "yellow";
           var x = (i % gridWidth) * tileWidth;
           var y = Math.floor(i / gridHeight) * tileHeight;
-          ctx.fillRect(x, y, tileWidth, tileHeight);
+          ctx.fillRect(x - xOffset, y - yOffset, tileWidth, tileHeight);
         }
         if(level1.layers[0].data[i] == 6)
         {
+          var xOffset = player.x - c.width / 2;
+          var yOffset = player.y - c.height / 2;
           ctx.fillStyle = "purple";
           var x = (i % gridWidth) * tileWidth;
           var y = Math.floor(i / gridHeight) * tileHeight;
-          ctx.fillRect(x, y, tileWidth, tileHeight);
+          ctx.fillRect(x - xOffset, y - yOffset, tileWidth, tileHeight);
         }
         if(level1.layers[0].data[i] == 7)
         {
+          var xOffset = player.x - c.width / 2;
+          var yOffset = player.y - c.height / 2;
           ctx.fillStyle = "white";
           var x = (i % gridWidth) * tileWidth;
           var y = Math.floor(i / gridHeight) * tileHeight;
-          ctx.fillRect(x, y, tileWidth, tileHeight);
+          ctx.fillRect(x - xOffset, y - yOffset, tileWidth, tileHeight);
         }
       }
     }
