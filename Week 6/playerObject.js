@@ -1,8 +1,8 @@
 function Player()
 {
   this.listener = new window.keypress.Listener();
-  this.x = c.width / 2;
-  this.y = c.height / 2;
+  this.x = 0;
+  this.y = 100;
   this.image = document.createElement("img");
   this.image.src = "Images/Character.png";
   this.VelX = 0;
@@ -12,6 +12,7 @@ function Player()
   this.movingLeft = false;
   this.jumping = false;
   this.crouching = false;
+  this.animationMax = 3;
   this.jumpLock = false;
   this.width = 35;
   this.height = 92;
@@ -49,6 +50,7 @@ function Player()
         "on_keydown"    : function()
         {
             this.movingRight = true;
+
         },
         "on_keyup"      : function(e)
         {
@@ -78,9 +80,6 @@ function Player()
   this.sprite.buildAnimation(5, 2, 54, 73, 0.2, [6, 6, 7, 7, 8, 8, 9, 9, 10, 10]); //Moving Left
   this.sprite.buildAnimation(5, 2, 54, 73, 0.2, [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]); //Moving Right
 
-  // for(var i = 0; i < animationMax; i++){
-  //     this.sprite.setAnimationOffset(i,-29, -33);
-  // }
 
 
 

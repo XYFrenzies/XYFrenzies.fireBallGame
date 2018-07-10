@@ -1,5 +1,5 @@
 //Collission =)
-for(var i = 0; i < level1.layers.length; i++){ // for every layer
+/*for(var i = 0; i < level1.layers.length; i++){ // for every layer
           var index= 0; //the index in the map data
           collisionCells[i] = new Array();
           for(var y = 0; y < level1.height; y++){ // for every y tile
@@ -19,7 +19,7 @@ for(var i = 0; i < level1.layers.length; i++){ // for every layer
                   index++;
               }
           }
-      }
+      }*/
 
 function gameLogic()
 {

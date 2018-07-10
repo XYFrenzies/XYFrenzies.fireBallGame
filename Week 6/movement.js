@@ -11,6 +11,10 @@ function movement()
   }
   if (player.movingRight)
   {
+    if(player.isGrounded = true)
+    {
+      sprite.setAnimation(2);
+    }
     if (player.VelX < 6)
     {
       player.VelX += 2;
@@ -18,10 +22,15 @@ function movement()
   }
   if (player.movingLeft)
   {
+    if(player.isGrounded = true)
+    {
+      sprite.setAnimation(1);
+    }
     if (player.VelX > -6)
     {
       player.VelX -= 2;
     }
+
   }
 
   //Apply vector movement
