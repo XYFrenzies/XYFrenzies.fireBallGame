@@ -212,7 +212,7 @@ if (this.y > floorHeight)
 }
 if(this.x < -496)
 {
-  this.VelX = 0;
+  this.velX = 0;
   this.x = -496;
   this.accelX = 0;
 }
