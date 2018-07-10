@@ -83,7 +83,10 @@ function DrawMap(){
 function Update(){
 
     player.Update();
-
+    for(i = 0; i < orbs.length; i++)
+    {
+      orbs[i].Update();
+    }
 }
 
 function Draw(){
