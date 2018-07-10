@@ -3,7 +3,7 @@ var collisionCells = new Array();
 
 
 //Collission =)
-/*for(var i = 0; i < level1.layers.length; i++){ // for every layer
+for(var i = 0; i < level1.layers.length; i++){ // for every layer
           var index= 0; //the index in the map data
           collisionCells[i] = new Array();
           for(var y = 0; y < level1.height; y++){ // for every y tile
@@ -23,7 +23,7 @@ var collisionCells = new Array();
                   index++;
               }
           }
-<<<<<<< HEAD
+
       }
 //Thingies
 // function coordXToTile(x) {
@@ -36,9 +36,6 @@ function coordToTile(Coord){
     //takes in x or y and gives back which row or column of the map contains that x/y
     return Math.floor(Coord/mapTileSize);
 }
-=======
-      }*/
->>>>>>> fed8cfe4cc40e4b66bded095e4da850fa58f94f5
 
 function tileToCoord(tile){
     return tile * mapTileSize;
