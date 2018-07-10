@@ -10,7 +10,7 @@ var player = new Player();
 var tileset = document.createElement("img");
 tileset.src = "Images/Tileset.png";
 
-var collisionCells = new Array(); 
+var collisionCells = new Array();
 
 
 
@@ -28,13 +28,13 @@ function CreateCollisionData(){
                         collisionCells[i][y][x] = true;
                     }
                     else{
-                        collisionCells[i][y][x] = false; 
+                        collisionCells[i][y][x] = false;
                     }
                     index++;
                 }
             }
         }
-    } 
+    }
 }
 
 function coordToTile(Coord){
@@ -67,7 +67,9 @@ function DrawMap(){
                         var tileIndex = level1.layers[i].data[index] - 1;
                         var sx =  (tileIndex % tileSetX) * (tileSize);
                         var sy =  (Math.floor(tileIndex / tileSetY)) * (tileSize);
-                        context.drawImage(tileset, sx, sy, tileSize, tileSize, x*mapTileSize, (y-1)*mapTileSize, tileSize, tileSize);
+                        var offsetX = player.x;
+                        var offsetY = player.y;
+                        context.drawImage(tileset, sx, sy, tileSize, tileSize, x*mapTileSize  - offsetX, (y-1)*mapTileSize  - offsetY, tileSize, tileSize);
                     }
                     index++
                 }
@@ -77,7 +79,7 @@ function DrawMap(){
 }
 
 function Update(){
-    
+
     player.Update();
 
 }
@@ -85,7 +87,7 @@ function Update(){
 function Draw(){
 
     //clear the screen
-    context.fillStyle = "#f1f1f1" ; 
+    context.fillStyle = "#f1f1f1" ;
     context.fillRect(0, 0, canvas.width, canvas.height);
     DrawMap();
     //draw the player

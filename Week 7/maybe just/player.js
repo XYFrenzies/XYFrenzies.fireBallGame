@@ -7,17 +7,17 @@ var Player = function(){
     {
         this.x = level1SpawnX;
         this.y = level1SpawnY;
-    } 
+    }
     this.width = 54;
     this.height = 93;
-    
-    
+
+
 
     this.falling = true;
     this.jumping = false;
     this.jumpFroce = 10000;
     this.gliding = false;
-   
+
     this.acceleration = 100;
 
     this.velX = 0;
@@ -32,7 +32,7 @@ var Player = function(){
     this.sprite.buildAnimation( 5, 1, 54, 71 , 0.2, [18,18,18,18,18,18,18,18,18,18,18,19,20,21,21,21,21,21,21,21,21,21,22,23,24,25] );
 
     this.sprite.buildAnimation(  5, 1, 54, 71  , 0.05, [0,1,2,3,4,5,6,7,8,8,7,6,5,4,3,2,1,0] );
-     
+
     this.sprite.buildAnimation(  5, 1, 54, 71, 0.2, [26,27]);
 
     this.sprite.buildAnimation(  5, 1, 54, 71 , 0.2, [18,18,18,18,18,18,18,18,18,18,18,19,20,21,21,21,21,21,21,21,21,21,22,23,24,25] );
@@ -46,7 +46,7 @@ var Player = function(){
         this.sprite.setAnimationOffset(i,-29, -33);
     }
 
-    
+
 
 }
 
@@ -59,13 +59,13 @@ Player.prototype.Update = function(){
     var dt = GetDeltaTime();
 
     this.sprite.update(dt);
-    
+
     gravity = 9.8 * 20;
     timer -= dt;
 
-    
+
     this.gliding = false;
-    
+
 
 
     var left = false;
@@ -141,22 +141,22 @@ Player.prototype.Update = function(){
         this.jumping = true;
         if(left == true && this.sprite.currentAnimation != animationJumpLeft)
             this.sprite.setAnimation(animationJumpLeft)
-        if (right == true && this.sprite.currentAnimation != animationJumpRight)  
+        if (right == true && this.sprite.currentAnimation != animationJumpRight)
             this.sprite.setAnimation(animationJumpRight)
-        
 
-        
-        
+
+
+
     }
 
-   
+
 
     this.x += this.velX * dt;
     this.y += this.velY * dt;
     this.velX += accelX * dt;
     this.velY += accelY * dt;
 
-    
+
     //max speeds
     if(this.velX > this.maxSpeed)
         this.velX = this.maxSpeed;
@@ -177,13 +177,13 @@ Player.prototype.Update = function(){
     var cellDown = cellAtTile(1, tx, ty + 1);
     var cellDiag = cellAtTile(1, tx + 1 , ty + 1);
 
-  
+
 
     if(!cellDown){
         cellDown = cellAtTile(1, tx, ty);
     }
 
-    
+
     if(this.velY < 0){
         if((cell && !cellDown) || (cellRight && !cellDiag && nx ))
         {
@@ -202,7 +202,7 @@ Player.prototype.Update = function(){
             ny = 0;
         }
     }
-    
+
     if(this.velX < 0){
         if((cell && cellRight) || (cellDiag && !cellDown && ny)){
             this.velX = 0;
@@ -214,7 +214,7 @@ Player.prototype.Update = function(){
             this.x = tileToCoord(tx);
         }
     }
-    
+
     this.falling = !(cellDown || cellDiag);
 
     if(!cellDown){
@@ -244,5 +244,5 @@ Player.prototype.Update = function(){
 
 
 Player.prototype.Draw = function(){
-    this.sprite.draw(context, this.x, this.y);
+    this.sprite.draw(context, canvas.width / 2, canvas.height / 2);
 }
