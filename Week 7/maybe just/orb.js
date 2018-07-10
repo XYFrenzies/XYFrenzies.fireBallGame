@@ -4,3 +4,13 @@ function ORB(inX, inY, inDir){
   this.dir = inDir;
   this.sprite = new Sprite("images/player orb.png");
 }
+
+ORB.prototype.Update()
+{
+  this.x += this.dir;
+}
+
+ORB.prototype.Draw()
+{
+  //Draw code
+}
