@@ -17,6 +17,9 @@ var player = new Player();
 //Enemy object
 enemies.push(new Enemy());
 
+var tilesetLevel1 = document.createElement("img");
+    tilesetLevel1.src = "Images/Tileset.png";
+
 var lastUpdate = Date.now();
 //Main game loop
 function Gameloop()
