@@ -10,11 +10,7 @@ var Player = function(){
     }
     this.width = 54;
     this.height = 93;
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 8dc7f7f1f9dc0e5f94116db093af8be233c9df19
 
     this.falling = true;
     this.jumping = false;
@@ -254,9 +250,8 @@ Player.prototype.Update = function(){
 
 
 Player.prototype.Draw = function(){
-<<<<<<< HEAD
+
     this.sprite.draw(context, this.x, this.y);
-=======
-    this.sprite.draw(context, canvas.width / 2, canvas.height / 2);
->>>>>>> 8dc7f7f1f9dc0e5f94116db093af8be233c9df19
+
+
 }
