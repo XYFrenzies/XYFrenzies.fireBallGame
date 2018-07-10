@@ -21,4 +21,18 @@ function Draw()
     ctx.fillStyle = "red";
     ctx.font = "30px Arial";
     ctx.fillText("Health: " + health,c.width - 200, 50);
+
+    //Draw background tiles
+    for(i = 0; i < level1.layers[0].data.length; i++)
+    {
+      if(level1.layers[0].data[i] != 0)
+      {
+        if(level1.layers[0].data[i] == 1)
+        {
+          var x = (i % gridWidth) * tileWidth;
+          var y = (Math.floor(i / gridHeight) * tileHeight;
+          ctx.fillRect(x, y, tileWidth, tileHeight);
+        }
+      }
+    }
 }
