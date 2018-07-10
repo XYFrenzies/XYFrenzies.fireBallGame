@@ -10,6 +10,11 @@ var Player = function(){
     }
     this.width = 54;
     this.height = 93;
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 8dc7f7f1f9dc0e5f94116db093af8be233c9df19
 
     this.falling = true;
     this.jumping = false;
@@ -31,7 +36,9 @@ var Player = function(){
 
     this.sprite.buildAnimation(  6, 1, 54, 71  , 0.05, [0,1,2,3,4,5,6,7,8,8,7,6,5,4,3,2,1,0] );
 
-    this.sprite.buildAnimation(  6, 1, 54, 71, 0.2, [0, 0, 1, 1, 2, 2, 3, 3, 4, 4]);
+    this.sprite.buildAnimation(  5, 1, 54, 71  , 0.05, [0,1,2,3,4,5,6,7,8,8,7,6,5,4,3,2,1,0] );
+
+    this.sprite.buildAnimation(  5, 1, 54, 71, 0.2, [26,27]);
 
     this.sprite.buildAnimation(  6, 1, 54, 71 , 0.2, [5] );
 
@@ -247,5 +254,9 @@ Player.prototype.Update = function(){
 
 
 Player.prototype.Draw = function(){
+<<<<<<< HEAD
     this.sprite.draw(context, this.x, this.y);
+=======
+    this.sprite.draw(context, canvas.width / 2, canvas.height / 2);
+>>>>>>> 8dc7f7f1f9dc0e5f94116db093af8be233c9df19
 }

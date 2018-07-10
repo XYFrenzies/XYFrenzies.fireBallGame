@@ -10,8 +10,7 @@ var player = new Player();
 var tileset = document.createElement("img");
 tileset.src = "Images/Tileset.png";
 
-var player1 = document.createElement("img");
-player1 = "Images/Character.png";
+
 
 var collisionCells = new Array();
 
