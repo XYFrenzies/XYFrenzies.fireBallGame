@@ -12,8 +12,9 @@ function Player()
   this.movingLeft = false;
   this.jumping = false;
   this.crouching = false;
-  this.animationMax = 6;
   this.jumpLock = false;
+  this.width = 35;
+  this.height = 92;
   this.combos = this.listener.register_many([
     {
         "keys"          : "s",
@@ -77,6 +78,9 @@ function Player()
   this.sprite.buildAnimation(5, 2, 54, 73, 0.2, [6, 6, 7, 7, 8, 8, 9, 9, 10, 10]); //Moving Left
   this.sprite.buildAnimation(5, 2, 54, 73, 0.2, [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]); //Moving Right
 
+  // for(var i = 0; i < animationMax; i++){
+  //     this.sprite.setAnimationOffset(i,-29, -33);
+  // }
 
 
 

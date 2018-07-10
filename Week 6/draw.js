@@ -8,7 +8,7 @@ function Draw()
     //Draw background
     ctx.drawImage(BGImage, 0, 0, 1650, 870);
     //Draw player
-    ctx.drawImage(player.image, player.x, player.y);
+    ctx.drawImage(player.image, player.x, player.y, player.width, player.height);
     //Draw enemies
     for(i = 0; i < enemies.length; i++)
     {
