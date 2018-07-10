@@ -39,7 +39,6 @@ function Player()
         "on_keyup"      : function(e)
         {
             this.jumping = false;
-            this.isPlayerFalling = true;
         },
         "this"          : this
     },
@@ -81,8 +80,75 @@ function Player()
   // for(var i = 0; i < animationMax; i++){
   //     this.sprite.setAnimationOffset(i,-29, -33);
   // }
+}
 
+Player.prototype.Update = function() {
+    var tx = coordToTile(this.x);
+    var ty = coordToTile(this.y);
+    var nx = this.x % gridWidth;
+    var ny = this.y % gridHeight;
 
+    var cell = cellAtTile(tx, ty);
+    var cellRight = cellAtTile(tx + 1, ty);
+    var cellDown = cellAtTile(tx, ty + 1);
+    var cellDiag = cellAtTile(tx + 1 , ty + 1);
 
+    if(!cellDown){
+        cellDown = cellAtTile(1, tx, ty);
+    }
+    if(this.velY < 0){
+        if((cell && !cellDown) || (cellRight && !cellDiag && nx ))
+        {
+            this.y = tileToCoord(ty + 1);
+            this.velY = 0;
+            cell = cellDown;
+            cellRight = cellDiag;
+            ny = 0;
+        }
+    }else if(this.velY > 0){
+        if((cellDown && !cell) || cellDiag && !cellRight && nx){
+            this.y = tileToCoord(ty);
+            this.velY = 0;
+            this.isGrounded = true;
+            ny = 0;
+        }
+    }
+
+    if(this.velX < 0){
+        if((cell && cellRight) || (cellDiag && !cellDown && ny)){
+            this.velX = 0;
+            this.x = tileToCoord(tx + 1);
+        }
+    } else if(this.velX > 0){
+        if((cellRight && !cell) || (cellDiag && !cellDown && ny)){
+            this.velX = 0;
+            this.x = tileToCoord(tx);
+        }
+    }
+
+    this.isGrounded = (cellDown || cellDiag);
+
+    if(!cellDown){
+        if(cellDown = cellAtTile(4, tx, ty + 1)){
+            if(Level == Level1)
+            {
+                this.x = level1SpawnX;
+                this.y = level1SpawnY;
+                deaths++
+            }
+            if(Level == Level2)
+            {
+                this.x = level2SpawnX;
+                this.y = level2SpawnY;
+                deaths++
+            }
+            if(Level == Level3)
+            {
+                this.x = level3SpawnX;
+                this.y = level3SpawnX;
+                deaths++
+            }
+        }
+    }
 
 }

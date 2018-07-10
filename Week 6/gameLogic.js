@@ -1,3 +1,7 @@
+//Collision data
+var collisionCells = new Array();
+
+
 //Collission =)
 for(var i = 0; i < level1.layers.length; i++){ // for every layer
           var index= 0; //the index in the map data
@@ -20,7 +24,33 @@ for(var i = 0; i < level1.layers.length; i++){ // for every layer
               }
           }
       }
+//Thingies
+// function coordXToTile(x) {
+//   return x % gridWidth;
+// }
+// function coordYToTile(y) {
+//   return math.floor(y / gridWidth);
+// }
+function coordToTile(Coord){
+    //takes in x or y and gives back which row or column of the map contains that x/y
+    return Math.floor(Coord/mapTileSize);
+}
 
+function tileToCoord(tile){
+    return tile * mapTileSize;
+}
+function cellAtTile(tx, ty)
+{
+  if(tx <= 0 || tx >= gridWidth)
+  {
+    return 1;
+  }
+  if(ty <= 0 || ty >= gridHeight)
+  {
+    return 0;
+  }
+  return collisionCells[0][ty][tx];
+}
 function gameLogic()
 {
   //Run the enemy ai
