@@ -1,8 +1,9 @@
 var Player = function(){
-    this.image = document.createElement("img");
+
 
     this.x;
     this.y;
+    //Sets default position
     if(Level == Level1)
     {
         this.x = level1SpawnX;
@@ -36,15 +37,26 @@ var Player = function(){
 
     this.sprite.buildAnimation(  6, 1, 54, 72 , 0.2, [5] ); //IDLE RIGHT
 
+<<<<<<< HEAD
     this.sprite.buildAnimation(  6, 1, 54, 72 , 0.05, [10, 10, 9, 9, 8, 8, 7, 7, 6, 6]); //JUMP RIGHT
+=======
+    this.sprite.buildAnimation(  6, 1, 54, 70 , 0.05, [ 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]); //JUMP RIGHT
+
+>>>>>>> c934499ecf488e0414d9c7164041e75131f364b1
 
     this.sprite.buildAnimation(  6, 1, 54, 72 , 0.05, [ 10, 10, 9, 9, 8, 8, 7, 7, 6, 6]); //WALK RIGHT
+
+
+    this.sprite.buildAnimation(  6, 1, 54, 71 , 0.05, [ 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]); //WALK RIGHT
 
 
 
     for(var i = 0; i < animationMax; i++){
         this.sprite.setAnimationOffset(i,-29, -33);
     }
+
+
+
 }
 
 
@@ -108,43 +120,55 @@ Player.prototype.Update = function(){
         }
     }
     */
-    if(keyboard.isKeyDown(keyboard.KEY_SPACE)){
+    if(keyboard.isKeyDown(keyboard.KEY_UP))
+    {
         jump = true;
         this.gliding = true;
     }
-    if(this.gliding == true && this.velY >= 0){
+    if(this.gliding == true && this.velY >= 0)
+    {
         gravity = 9.8 *5;
     }
-    if(this.falling == true ){
-        if(left == true && this.sprite.currentAnimation != animationJumpLeft){
+    if(this.falling == true )
+    {
+        if(left == true && this.sprite.currentAnimation != animationJumpLeft)
+        {
             this.sprite.setAnimation(animationJumpLeft);
         }
-        if(right == true && this.sprite.currentAnimation != animationJumpRight){
+        if(right == true && this.sprite.currentAnimation != animationJumpRight)
+        {
             this.sprite.setAnimation(animationJumpRight);
-            }
         }
+    }
     var wasLeft = this.velX < 0;
     var wasRight = this.velX > 0;
     var accelX = 0;
     var accelY = gravity;
     if(left)
         accelX -= this.acceleration;
-    else if(wasLeft){
+    else if(wasLeft)
+    {
         accelX += this.friction;
     }
 
     if(right)
         accelX += this.acceleration;
-    else if(wasRight){
+    else if(wasRight)
+    {
         accelX -= this.friction;
     }
-    if(jump && !this.jumping && !this.falling){
+    if(jump && !this.jumping && !this.falling)
+    {
         accelY -= this.jumpFroce;
         this.jumping = true;
         if(left == true && this.sprite.currentAnimation != animationJumpLeft)
+        {
             this.sprite.setAnimation(animationJumpLeft)
+        }
         if (right == true && this.sprite.currentAnimation != animationJumpRight)
+        {
             this.sprite.setAnimation(animationJumpRight)
+        }
 }
 
 
@@ -178,7 +202,7 @@ Player.prototype.Update = function(){
 
 
 floorHeight = 1400;
-if (this.y >= floorHeight)
+if (this.y > floorHeight)
 {
   this.velY = 0;
   this.falling = 0;

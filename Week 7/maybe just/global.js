@@ -1,30 +1,30 @@
-var Level = 0;
-var Level1 = 0;
+const Level = 0;
+const Level1 = 0;
 
 
 var gravity = 9.8 * 20 ;
 
-var animationLeft = 0;
-var animationRight = 1;
+const animationLeft = 0;
+const animationRight = 1;
 
-var animationIdleLeft = 0;
-var animationJumpLeft = 1;
-var animationWalkLeft = 2;
-var animationIdleRight = 3;
-var animationJumpRight = 4;
-var animationWalkRight = 5;
-var animationMax = 6;
+const animationIdleLeft = 0;
+const animationJumpLeft = 1;
+const animationWalkLeft = 2;
+const animationIdleRight = 3;
+const animationJumpRight = 4;
+const animationWalkRight = 5;
+const animationMax = 6;
 
-var fireRate = 0.25;
+const fireRate = 0.25;
 var timer = fireRate;
 
-var tileSize = 64;
-var mapTileSize = 58;
-var tileSetX = 58;
-var tileSetY = 64;
+const tileSize = 64;
+const mapTileSize = 58;
+const tileSetX = 58;
+const tileSetY = 64;
 
-var level1SpawnX = 300;
-var level1SpawnY = 1000;
+const level1SpawnX = 300;
+const level1SpawnY = 1000;
 
 
 var deaths = 0;
