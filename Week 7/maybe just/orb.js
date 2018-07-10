@@ -17,6 +17,6 @@ ORB.prototype.Update()
 
 ORB.prototype.Draw()
 {
-    this.sprite.draw(context, this.player.x, this.player.y);
+    this.sprite.draw(context, this.x, this.y);
   //Draw code
 }
