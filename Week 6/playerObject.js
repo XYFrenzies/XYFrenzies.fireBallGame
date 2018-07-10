@@ -1,8 +1,8 @@
 function Player()
 {
   this.listener = new window.keypress.Listener();
-  this.x = 0;
-  this.y = 100;
+  this.x = c.width / 2;
+  this.y = c.height / 2;
   this.image = document.createElement("img");
   this.image.src = "Images/Character.png";
   this.VelX = 0;
@@ -12,7 +12,6 @@ function Player()
   this.movingLeft = false;
   this.jumping = false;
   this.crouching = false;
-  this.animationMax = 3;
   this.jumpLock = false;
   this.width = 35;
   this.height = 92;
@@ -40,7 +39,6 @@ function Player()
         "on_keyup"      : function(e)
         {
             this.jumping = false;
-            this.isPlayerFalling = true;
         },
         "this"          : this
     },
@@ -50,7 +48,6 @@ function Player()
         "on_keydown"    : function()
         {
             this.movingRight = true;
-
         },
         "on_keyup"      : function(e)
         {
@@ -77,10 +74,14 @@ function Player()
 //This is the animation of the player.
   this.sprite = new Sprite("Sprites/Sprite Sheet.png");
 
-  this.sprite.buildAnimation(5, 2, 54, 72, 0.2, [5, 5, 6, 6, 7, 7, 8, 8, 9, 9]); //Moving Left
-  this.sprite.buildAnimation(5, 2, 54, 72, 0.2, [0, 1, 2, 3, 4]); //Moving Right
+  this.sprite.buildAnimation(5, 2, 54, 73, 0.2, [6, 6, 7, 7, 8, 8, 9, 9, 10, 10]); //Moving Left
+  this.sprite.buildAnimation(5, 2, 54, 73, 0.2, [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]); //Moving Right
 
-<<<<<<< HEAD
+  // for(var i = 0; i < animationMax; i++){
+  //     this.sprite.setAnimationOffset(i,-29, -33);
+  // }
+}
+
 // Player.prototype.Update = function() {
 //     var tx = coordToTile(this.x);
 //     var ty = coordToTile(this.y);
@@ -153,14 +154,3 @@ function Player()
 //     // }
 //
 // }
-=======
-
-
-
-
-}
-
-Player.Draw = function(){
-    this.sprite.draw(c, this.x, this.y);
-}
->>>>>>> 93e643fa3834a0c8ef66227ba154ff516b77473d
