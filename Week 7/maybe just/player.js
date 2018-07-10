@@ -28,17 +28,17 @@ var Player = function(){
     this.sprite = new Sprite("images/Sprite Sheet.png");
     // number of frames, , width, height, time between frames, what frames
 
-    this.sprite.buildAnimation( 6, 1, 54, 71 , 0.2, [11] ); //IDLE LEFT
+    this.sprite.buildAnimation( 6, 1, 54, 72 , 0.2, [11] ); //IDLE LEFT
 
-    this.sprite.buildAnimation(  6, 1, 54, 70, 0.05, [0, 0, 1, 1, 2, 2, 3, 3, 4, 4] ); //JUMP LEFT
+    this.sprite.buildAnimation(  6, 1, 54, 72, 0.05, [0, 0, 1, 1, 2, 2, 3, 3, 4, 4] ); //JUMP LEFT
 
-    this.sprite.buildAnimation(  6, 1, 54, 70, 0.05, [0, 0, 1, 1, 2, 2, 3, 3, 4, 4] ); //WALK LEFT
+    this.sprite.buildAnimation(  6, 1, 54, 72, 0.05, [0, 0, 1, 1, 2, 2, 3, 3, 4, 4] ); //WALK LEFT
 
-    this.sprite.buildAnimation(  6, 1, 54, 71 , 0.2, [5] ); //IDLE RIGHT
+    this.sprite.buildAnimation(  6, 1, 54, 72 , 0.2, [5] ); //IDLE RIGHT
 
-    this.sprite.buildAnimation(  6, 1, 54, 70 , 0.05, [10, 10, 9, 9, 8, 8, 7, 7, 6, 6]); //JUMP RIGHT
+    this.sprite.buildAnimation(  6, 1, 54, 72 , 0.05, [10, 10, 9, 9, 8, 8, 7, 7, 6, 6]); //JUMP RIGHT
 
-    this.sprite.buildAnimation(  6, 1, 54, 71 , 0.05, [ 10, 10, 9, 9, 8, 8, 7, 7, 6, 6]); //WALK RIGHT
+    this.sprite.buildAnimation(  6, 1, 54, 72 , 0.05, [ 10, 10, 9, 9, 8, 8, 7, 7, 6, 6]); //WALK RIGHT
 
 
 
