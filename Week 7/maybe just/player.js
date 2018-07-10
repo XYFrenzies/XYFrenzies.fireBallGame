@@ -17,13 +17,13 @@ var Player = function(){
     this.jumpFroce = 10000;
     this.gliding = false;
 
-    this.acceleration = 100;
+    this.acceleration = 1000;
 
     this.velX = 0;
     this.velY = 0;
-    this.friction = 250;
+    this.friction = 200;
 
-    this.maxSpeed = 200;
+    this.maxSpeed = 1000;
 
     this.sprite = new Sprite("images/Sprite Sheet.png");
     // number of frames, , width, height, time between frames, what frames
@@ -147,11 +147,8 @@ Player.prototype.Update = function(){
             this.sprite.setAnimation(animationJumpLeft)
         if (right == true && this.sprite.currentAnimation != animationJumpRight)
             this.sprite.setAnimation(animationJumpRight)
+}
 
-
-
-
-    }
 
 
 
@@ -182,42 +179,47 @@ Player.prototype.Update = function(){
     var cellDiag = cellAtTile(0, tx + 1 , ty + 1);
 
 
-
-    if(!cellDown){
-        cellDown = cellAtTile(0, tx, ty);
-    }
-
-
-    if(this.velY < 0){
-        if((cell && !cellDown) || (cellRight && !cellDiag && nx ))
-        {
-            this.y = tileToCoord(ty + 1);
-            this.velY = 0;
-            cell = cellDown;
-            cellRight = cellDiag;
-            ny = 0;
-        }
-    }else if(this.velY > 0){
-        if((cellDown && !cell) || cellDiag && !cellRight && nx){
-            this.y = tileToCoord(ty);
-            this.velY = 0;
-            this.falling = false;
-            this.jumping = false;
-            ny = 0;
-        }
-    }
-
-    if(this.velX < 0){
-        if((cell && cellRight) || (cellDiag && !cellDown && ny)){
-            this.velX = 0;
-            this.x = tileToCoord(tx + 1);
-        }
-    } else if(this.velX > 0){
-        if((cellRight && !cell) || (cellDiag && !cellDown && ny)){
-            this.velX = 0;
-            this.x = tileToCoord(tx);
-        }
-    }
+floorHeight = 1455;
+if (this.y >= floorHeight)
+{
+  this.velY = 0;
+  this.falling = 0;
+  this.jumping = 0;
+  if(this.y > floorHeight)
+  {
+    this.y = floorHeight;
+  }
+}
+    // if(this.velY < 0){
+    //     if((cell && !cellDown) || (cellRight && !cellDiag && nx ))
+    //     {
+    //         this.y = tileToCoord(ty + 1);
+    //         this.velY = 0;
+    //         cell = cellDown;
+    //         cellRight = cellDiag;
+    //         ny = 0;
+    //     }
+    // }else if(this.velY > 0){
+    //     if((cellDown && !cell) || cellDiag && !cellRight && nx){
+    //         this.y = tileToCoord(ty);
+    //         this.velY = 0;
+    //         this.falling = false;
+    //         this.jumping = false;
+    //         ny = 0;
+    //     }
+    // }
+    //
+    // if(this.velX < 0){
+    //     if((cell && cellRight) || (cellDiag && !cellDown && ny)){
+    //         this.velX = 0;
+    //         this.x = tileToCoord(tx + 1);
+    //     }
+    // } else if(this.velX > 0){
+    //     if((cellRight && !cell) || (cellDiag && !cellDown && ny)){
+    //         this.velX = 0;
+    //         this.x = tileToCoord(tx);
+    //     }
+    // }
 
     this.falling = !(cellDown || cellDiag);
 
