@@ -29,6 +29,49 @@ function Draw()
       {
         if(level1.layers[0].data[i] == 1)
         {
+          ctx.fillStyle = "red";
+          var x = (i % gridWidth) * tileWidth;
+          var y = Math.floor(i / gridHeight) * tileHeight;
+          ctx.fillRect(x, y, tileWidth, tileHeight);
+        }
+        if(level1.layers[0].data[i] == 2)
+        {
+          ctx.fillStyle = "blue";
+          var x = (i % gridWidth) * tileWidth;
+          var y = Math.floor(i / gridHeight) * tileHeight;
+          ctx.fillRect(x, y, tileWidth, tileHeight);
+        }
+        if(level1.layers[0].data[i] == 3)
+        {
+          ctx.fillStyle = "green";
+          var x = (i % gridWidth) * tileWidth;
+          var y = Math.floor(i / gridHeight) * tileHeight;
+          ctx.fillRect(x, y, tileWidth, tileHeight);
+        }
+        if(level1.layers[0].data[i] == 4)
+        {
+          ctx.fillStyle = "orange";
+          var x = (i % gridWidth) * tileWidth;
+          var y = Math.floor(i / gridHeight) * tileHeight;
+          ctx.fillRect(x, y, tileWidth, tileHeight);
+        }
+        if(level1.layers[0].data[i] == 5)
+        {
+          ctx.fillStyle = "yellow";
+          var x = (i % gridWidth) * tileWidth;
+          var y = Math.floor(i / gridHeight) * tileHeight;
+          ctx.fillRect(x, y, tileWidth, tileHeight);
+        }
+        if(level1.layers[0].data[i] == 6)
+        {
+          ctx.fillStyle = "purple";
+          var x = (i % gridWidth) * tileWidth;
+          var y = Math.floor(i / gridHeight) * tileHeight;
+          ctx.fillRect(x, y, tileWidth, tileHeight);
+        }
+        if(level1.layers[0].data[i] == 7)
+        {
+          ctx.fillStyle = "white";
           var x = (i % gridWidth) * tileWidth;
           var y = Math.floor(i / gridHeight) * tileHeight;
           ctx.fillRect(x, y, tileWidth, tileHeight);
