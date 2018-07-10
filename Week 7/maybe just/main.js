@@ -69,7 +69,9 @@ function DrawMap(){
                         var tileIndex = level1.layers[i].data[index] - 1;
                         var sx =  (tileIndex % tileSetX) * (tileSize);
                         var sy =  (Math.floor(tileIndex / tileSetY)) * (tileSize);
-                        context.drawImage(tileset, sx, sy, tileSize, tileSize, x*mapTileSize, (y-1)*mapTileSize, tileSize, tileSize);
+                        var offsetX = player.x;
+                        var offsetY = player.y;
+                        context.drawImage(tileset, sx, sy, tileSize, tileSize, x*mapTileSize - offsetX, (y-1)*mapTileSize - offsetY, tileSize, tileSize);
                     }
                     index++
                 }

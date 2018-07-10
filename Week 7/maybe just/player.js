@@ -249,7 +249,7 @@ Player.prototype.Update = function(){
 
 Player.prototype.Draw = function(){
 
-    this.sprite.draw(context, this.x, this.y);
+    this.sprite.draw(context, canvas.width / 2, canvas.height / 2);
 
 
 }
