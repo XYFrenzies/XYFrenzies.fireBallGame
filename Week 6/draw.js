@@ -30,7 +30,7 @@ function Draw()
         if(level1.layers[0].data[i] == 1)
         {
           var x = (i % gridWidth) * tileWidth;
-          var y = (Math.floor(i / gridHeight) * tileHeight;
+          var y = Math.floor(i / gridHeight) * tileHeight;
           ctx.fillRect(x, y, tileWidth, tileHeight);
         }
       }
