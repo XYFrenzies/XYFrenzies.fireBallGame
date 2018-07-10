@@ -1,8 +1,9 @@
 var Player = function(){
-    this.image = document.createElement("img");
+
 
     this.x;
     this.y;
+    //Sets default position
     if(Level == Level1)
     {
         this.x = level1SpawnX;
@@ -115,43 +116,55 @@ Player.prototype.Update = function(){
         }
     }
     */
-    if(keyboard.isKeyDown(keyboard.KEY_SPACE)){
+    if(keyboard.isKeyDown(keyboard.KEY_UP))
+    {
         jump = true;
         this.gliding = true;
     }
-    if(this.gliding == true && this.velY >= 0){
+    if(this.gliding == true && this.velY >= 0)
+    {
         gravity = 9.8 *5;
     }
-    if(this.falling == true ){
-        if(left == true && this.sprite.currentAnimation != animationJumpLeft){
+    if(this.falling == true )
+    {
+        if(left == true && this.sprite.currentAnimation != animationJumpLeft)
+        {
             this.sprite.setAnimation(animationJumpLeft);
         }
-        if(right == true && this.sprite.currentAnimation != animationJumpRight){
+        if(right == true && this.sprite.currentAnimation != animationJumpRight)
+        {
             this.sprite.setAnimation(animationJumpRight);
-            }
         }
+    }
     var wasLeft = this.velX < 0;
     var wasRight = this.velX > 0;
     var accelX = 0;
     var accelY = gravity;
     if(left)
         accelX -= this.acceleration;
-    else if(wasLeft){
+    else if(wasLeft)
+    {
         accelX += this.friction;
     }
 
     if(right)
         accelX += this.acceleration;
-    else if(wasRight){
+    else if(wasRight)
+    {
         accelX -= this.friction;
     }
-    if(jump && !this.jumping && !this.falling){
+    if(jump && !this.jumping && !this.falling)
+    {
         accelY -= this.jumpFroce;
         this.jumping = true;
         if(left == true && this.sprite.currentAnimation != animationJumpLeft)
+        {
             this.sprite.setAnimation(animationJumpLeft)
+        }
         if (right == true && this.sprite.currentAnimation != animationJumpRight)
+        {
             this.sprite.setAnimation(animationJumpRight)
+        }
 }
 
 
