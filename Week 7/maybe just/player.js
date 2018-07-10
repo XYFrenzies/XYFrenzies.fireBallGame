@@ -211,6 +211,18 @@ if (this.y > floorHeight)
     this.y = floorHeight;
   }
 }
+if(this.x < -496)
+{
+  this.velX = 0;
+  this.x = -496;
+  this.accelX = 0;
+}
+if(this.x > 5683)
+{
+  this.velX = 0;
+  this.x = 5683;
+  this.accelX = 0;
+}
     // if(this.velY < 0){
     //     if((cell && !cellDown) || (cellRight && !cellDiag && nx ))
     //     {
