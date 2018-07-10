@@ -94,7 +94,10 @@ function Draw(){
     DrawMap();
     //draw the player
     player.Draw();
-
+    for(i = 0; i < orbs.length; i++)
+    {
+      orbs[i].Draw();
+    }
 
 }
 
