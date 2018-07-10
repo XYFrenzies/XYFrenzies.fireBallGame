@@ -75,17 +75,21 @@ Player.prototype.Update = function(){
     var jump = false;
 
     				// check for left key press
-    if(keyboard.isKeyDown(keyboard.KEY_LEFT)) {
+    if(keyboard.isKeyDown(keyboard.KEY_LEFT))
+    {
         left = true;
         this.direction = animationLeft;
-        if(this.sprite.currentAnimation != animationWalkLeft && this.falling == false){
+        if(this.sprite.currentAnimation != animationWalkLeft && this.falling == false)
+        {
             this.sprite.setAnimation(animationWalkLeft);
         }
     }              // check for right key press
-    else if(keyboard.isKeyDown(keyboard.KEY_RIGHT)) {
+    else if(keyboard.isKeyDown(keyboard.KEY_RIGHT))
+    {
         right = true;
         this.direction = animationRight;
-        if(this.sprite.currentAnimation != animationWalkRight && this.falling ==false){
+        if(this.sprite.currentAnimation != animationWalkRight && this.falling ==false)
+        {
             this.sprite.setAnimation(animationWalkRight);
         }
     }else {
