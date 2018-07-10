@@ -11,9 +11,9 @@ function movement()
   }
   if (player.movingRight)
   {
-    if(player.isGrounded = true)
+    if(player.isGrounded == true)
     {
-      sprite.setAnimation(2);
+      player.sprite.setAnimation(2);
     }
     if (player.VelX < 6)
     {
@@ -22,9 +22,9 @@ function movement()
   }
   if (player.movingLeft)
   {
-    if(player.isGrounded = true)
+    if(player.isGrounded == true)
     {
-      sprite.setAnimation(1);
+      player.sprite.setAnimation(1);
     }
     if (player.VelX > -6)
     {
