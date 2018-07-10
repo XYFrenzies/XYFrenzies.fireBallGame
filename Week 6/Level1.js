@@ -36,7 +36,7 @@ var level1 = { "height":100,
          "firstgid":1,
          "source":"Tileset.json"
         }],
- "tilewidth":64,
+ "tileWidth":64,
  "type":"map",
  "version":1.2,
  "width":100

@@ -1,6 +1,6 @@
 function movement()
 {
-  if (player.jumping && player.jumpLock == false) {
+  if (player.jumping) {
     player.isGrounded = false;
     player.VelY = -20;
     player.jumpLock = true;

@@ -5,8 +5,8 @@ var ctx = c.getContext("2d");
 
 const tileWidth = 64;
 const tileHeight = 58;
-const gridWidth = 1000;
-const gridHeight = 1000;
+const gridWidth = 150;
+const gridHeight = 75;
 //Initialisation of global objects
 var enemies = [];
 var score = 0;
