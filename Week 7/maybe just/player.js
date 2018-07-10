@@ -18,13 +18,13 @@ var Player = function(){
     this.jumpFroce = 10000;
     this.gliding = false;
 
-    this.acceleration = 1000;
+    this.acceleration = 800;
 
     this.velX = 0;
     this.velY = 0;
-    this.friction = 0.005;
+    this.friction = 5;
 
-    this.maxSpeed = 1000;
+    this.maxSpeed = 800;
 
     this.sprite = new Sprite("images/Sprite Sheet.png");
     // number of frames, , width, height, time between frames, what frames
