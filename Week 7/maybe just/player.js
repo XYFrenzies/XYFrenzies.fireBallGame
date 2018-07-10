@@ -17,13 +17,13 @@ var Player = function(){
     this.jumpFroce = 10000;
     this.gliding = false;
 
-    this.acceleration = 100;
+    this.acceleration = 1000;
 
     this.velX = 0;
     this.velY = 0;
-    this.friction = 250;
+    this.friction = 200;
 
-    this.maxSpeed = 200;
+    this.maxSpeed = 1000;
 
     this.sprite = new Sprite("images/Sprite Sheet.png");
     // number of frames, , width, height, time between frames, what frames
@@ -147,11 +147,8 @@ Player.prototype.Update = function(){
             this.sprite.setAnimation(animationJumpLeft)
         if (right == true && this.sprite.currentAnimation != animationJumpRight)
             this.sprite.setAnimation(animationJumpRight)
+}
 
-
-
-
-    }
 
 
 
