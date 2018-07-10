@@ -1,3 +1,26 @@
+//Collission =)
+for(var i = 0; i < level1.layers.length; i++){ // for every layer
+          var index= 0; //the index in the map data
+          collisionCells[i] = new Array();
+          for(var y = 0; y < level1.height; y++){ // for every y tile
+              collisionCells[i][y] = new Array();
+              for(var x = 0; x < level1.width; x++){ // for every x tile
+                  if(level1.layers[i].data[index] !=0 ){// if there is a tile in that position
+
+                      //a tile is 4x as large as map cell
+                      collisionCells[i][y][x] = true;
+                      collisionCells[i][y - 1][x] = true;
+                      collisionCells[i][y - 1][x + 1] = true;
+                      collisionCells[i][y][x + 1] = true;
+                  }
+                  else{
+                      collisionCells[i][y][x] = false;
+                  }
+                  index++;
+              }
+          }
+      }
+
 function gameLogic()
 {
   //Run the enemy ai

@@ -16,6 +16,9 @@ var dt = 1;
 var player = new Player();
 //Enemy object
 enemies.push(new Enemy());
+//Collision data
+var collisionCells = new Array();
+
 
 var tilesetLevel1 = document.createElement("img");
     tilesetLevel1.src = "Images/Tileset.png";
