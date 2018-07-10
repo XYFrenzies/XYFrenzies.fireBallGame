@@ -38,7 +38,7 @@ var Player = function(){
 
     this.sprite.buildAnimation(  6, 1, 54, 71 , 0.05, [9,10,11,12,13,14,15,16,17,17,16,15,14,13,12,11,10,9] ); //JUMP RIGHT
 
-    this.sprite.buildAnimation(  6, 1, 54, 71 , 0.2, [ 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]); //WALK RIGHT
+    this.sprite.buildAnimation(  6, 1, 54, 71 , 0.1, [ 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]); //WALK RIGHT
 
 
     for(var i = 0; i < animationMax; i++){
@@ -179,7 +179,7 @@ Player.prototype.Update = function(){
     var cellDiag = cellAtTile(0, tx + 1 , ty + 1);
 
 
-floorHeight = 1455;
+floorHeight = 1400;
 if (this.y >= floorHeight)
 {
   this.velY = 0;
@@ -221,30 +221,30 @@ if (this.y >= floorHeight)
     //     }
     // }
 
-    this.falling = !(cellDown || cellDiag);
-
-    if(!cellDown){
-        if(cellDown = cellAtTile(0, tx, ty + 1)){
-            if(Level == Level1)
-            {
-                this.x = level1SpawnX;
-                this.y = level1SpawnY;
-                deaths++
-            }
-            if(Level == Level2)
-            {
-                this.x = level2SpawnX;
-                this.y = level2SpawnY;
-                deaths++
-            }
-            if(Level == Level3)
-            {
-                this.x = level3SpawnX;
-                this.y = level3SpawnX;
-                deaths++
-            }
-        }
-    }
+    // this.falling = !(cellDown || cellDiag);
+    //
+    // if(!cellDown){
+    //     if(cellDown = cellAtTile(0, tx, ty + 1)){
+    //         if(Level == Level1)
+    //         {
+    //             this.x = level1SpawnX;
+    //             this.y = level1SpawnY;
+    //             deaths++
+    //         }
+    //         if(Level == Level2)
+    //         {
+    //             this.x = level2SpawnX;
+    //             this.y = level2SpawnY;
+    //             deaths++
+    //         }
+    //         if(Level == Level3)
+    //         {
+    //             this.x = level3SpawnX;
+    //             this.y = level3SpawnX;
+    //             deaths++
+    //         }
+    //     }
+    // }
 
 }
 
