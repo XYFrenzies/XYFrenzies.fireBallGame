@@ -108,6 +108,7 @@ Player.prototype.Update = function(){
         }
     }
     */
+    //This will be for when the player presses the space bar, they fire a fire ball.
     if(keyboard.isKeyDown(keyboard.KEY_SPACE)){
         jump = true;
         this.gliding = true;
