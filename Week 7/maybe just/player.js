@@ -1,8 +1,6 @@
 var Player = function(){
     this.image = document.createElement("img");
 
-    this.x;
-    this.y;
     if(Level == Level1)
     {
         this.x = level1SpawnX;
@@ -38,7 +36,7 @@ var Player = function(){
 
     this.sprite.buildAnimation(  6, 1, 54, 71 , 0.05, [9,10,11,12,13,14,15,16,17,17,16,15,14,13,12,11,10,9] ); //JUMP RIGHT
 
-    this.sprite.buildAnimation(  6, 1, 54, 71 , 0.2, [ 6, 6, 7, 7, 8, 8, 9, 9]); //WALK RIGHT
+    this.sprite.buildAnimation(  6, 1, 54, 71 , 0.2, [6, 6, 7, 7, 8, 8, 9, 9]); //WALK RIGHT
 
 
     for(var i = 0; i < animationMax; i++){
@@ -249,7 +247,7 @@ Player.prototype.Update = function(){
 
 Player.prototype.Draw = function(){
 
-    this.sprite.draw(context, this.x, this.y);
+    this.sprite.draw(context, canvas.width / 2, canvas.height / 2);
 
 
 }
