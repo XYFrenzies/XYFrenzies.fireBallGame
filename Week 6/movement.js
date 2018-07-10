@@ -13,7 +13,7 @@ function movement()
   {
     if(player.isGrounded == true)
     {
-      player.sprite.setAnimation(2);
+      player.sprite.setAnimation(1);
     }
     if (player.VelX < 6)
     {
@@ -24,7 +24,7 @@ function movement()
   {
     if(player.isGrounded == true)
     {
-      player.sprite.setAnimation(1);
+      player.sprite.setAnimation(0);
     }
     if (player.VelX > -6)
     {
