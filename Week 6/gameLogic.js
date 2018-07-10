@@ -60,7 +60,7 @@ function gameLogic()
   for(i = 0; i < level1.layers[0].data.length; i++)
   {
 
-    if(level1.layers[0].data[i] != 0) {
+    if(level1.layers[0].data[i] != 0 && level1.layers[0].data[i] <= 6) {
     if(player.x < tileXToQuard(i) + tileWidth &&
     player.x + player.width > tileXToQuard(i) &&
     player.y < tileYToQuard(i) + tileHeight &&
