@@ -40,9 +40,6 @@ var Player = function(){
 
     this.sprite.buildAnimation(  6, 1, 54, 72 , 0.05, [10, 10, 9, 9, 8, 8, 7, 7, 6, 6]); //JUMP RIGHT
 
-    this.sprite.buildAnimation(  6, 1, 54, 70 , 0.05, [ 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]); //JUMP RIGHT
-
-
 
     this.sprite.buildAnimation(  6, 1, 54, 72 , 0.05, [ 10, 10, 9, 9, 8, 8, 7, 7, 6, 6]); //WALK RIGHT
 
