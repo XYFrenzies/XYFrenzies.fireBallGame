@@ -26,7 +26,7 @@ var Player = function(){
     this.maxSpeed = 1000;
 
     this.sprite = new Sprite("images/Sprite Sheet.png");
-    // number of frames, , width, height, time between frames, what frames
+    // number of frames across "x", number of frames down "y" , width, height, time between frames, what frames
 
     this.sprite.buildAnimation( 6, 1, 54, 71 , 0.2, [11] ); //IDLE LEFT
 
