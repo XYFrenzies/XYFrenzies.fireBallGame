@@ -38,10 +38,14 @@ var Player = function(){
 
     this.sprite.buildAnimation(  6, 1, 54, 70 , 0.05, [ 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]); //JUMP RIGHT
 
+<<<<<<< HEAD
 
     this.sprite.buildAnimation(  6, 1, 54, 71 , 0.05, [ 10, 10, 9, 9, 8, 8, 7, 7, 6, 6]); //WALK RIGHT
 
 
+=======
+    this.sprite.buildAnimation(  6, 1, 54, 71 , 0.05, [ 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]); //WALK RIGHT
+>>>>>>> e9d05d95df22e29f89428cfac3aa2035eaeb9e3c
 
 
     for(var i = 0; i < animationMax; i++){
