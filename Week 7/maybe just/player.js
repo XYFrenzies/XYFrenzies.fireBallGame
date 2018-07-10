@@ -185,7 +185,7 @@ Player.prototype.Update = function(){
 
 
 floorHeight = 1400;
-if (this.y >= floorHeight)
+if (this.y > floorHeight)
 {
   this.velY = 0;
   this.falling = 0;
