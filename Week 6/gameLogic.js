@@ -33,10 +33,12 @@
 //   return math.floor(y / gridWidth);
 // }
 function tileXToQuard(i) {
+  //var xOffset = player.x - c.width / 2;
   var x = (i % gridWidth) * tileWidth;
   return x;
 }
 function tileYToQuard(i) {
+  //var yOffset = player.y - c.height / 2;
   var y = Math.floor(i / gridHeight) * tileHeight;
   return y;
 }
@@ -54,19 +56,27 @@ function tileYToQuard(i) {
 // }
 function gameLogic()
 {
+  var tmp = false; //I wonder what this does?
   for(i = 0; i < level1.layers[0].data.length; i++)
   {
+
     if(level1.layers[0].data[i] != 0) {
     if(player.x < tileXToQuard(i) + tileWidth &&
     player.x + player.width > tileXToQuard(i) &&
     player.y < tileYToQuard(i) + tileHeight &&
     player.height + player.y > tileYToQuard(i))
     {
-      player.VelX = 0;
-      player.VelY = 0;
+      tmp = true;
     }
-}
   }
+}
+if(tmp)
+{
+  player.isGrounded = true;
+}
+else {
+  player.isGrounded = false;
+}
   //Run the enemy ai
   for(i = 0; i < enemies.length; i++)
   {
