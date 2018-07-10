@@ -35,12 +35,18 @@ function movement()
 
   //Apply vector movement
   player.x += player.VelX * dt / 11;
-  player.y += player.VelY * dt / 11;
+
   //Player touching ground check
-  if(player.isGrounded || player.y >= groundHeight)
+  // if(player.isGrounded || player.y >= groundHeight)
+  // {
+  //   player.VelY = 0;
+  //   player.y = groundHeight;
+  // }
+  if(player.isGrounded)
   {
     player.VelY = 0;
-    player.y = groundHeight;
+  } else {
+    player.y += player.VelY * dt / 11;
   }
   //console.log(player.isGrounded);
 for(i = 0; i < enemies.length; i++)
