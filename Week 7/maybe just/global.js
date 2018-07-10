@@ -24,7 +24,7 @@ var tileSetX = 58;
 var tileSetY = 64;
 
 var level1SpawnX = 300;
-var level1SpawnY = 300;
+var level1SpawnY = 1000;
 
 
 var deaths = 0;
