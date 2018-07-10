@@ -9,11 +9,15 @@ function Draw()
     ctx.drawImage(BGImage, 0, 0, 1650, 870);
     //Draw player
     ctx.drawImage(player.image, c.width / 2 - player.width / 2, c.height / 2 + player.height / 2, player.width, player.height);
+
+    //player.sprite.Draw();
     //Draw enemies
     for(i = 0; i < enemies.length; i++)
     {
       ctx.drawImage(enemies[i].image, enemies[i].x, enemies[i].y, 70, 70);
     }
+
+
 
     ctx.fillStyle = "gold";
     ctx.font = "30px Arial";
@@ -92,4 +96,8 @@ function Draw()
         }
       }
     }
+
+
+
+
 }
