@@ -1,8 +1,6 @@
 var Player = function(){
     this.image = document.createElement("img");
 
-    this.x;
-    this.y;
     if(Level == Level1)
     {
         this.x = level1SpawnX;
@@ -178,15 +176,15 @@ Player.prototype.Update = function(){
     var nx = this.x % mapTileSize;
     var ny = this.y % mapTileSize;
 
-    var cell = cellAtTile(1, tx, ty);
-    var cellRight = cellAtTile(1, tx + 1, ty);
-    var cellDown = cellAtTile(1, tx, ty + 1);
-    var cellDiag = cellAtTile(1, tx + 1 , ty + 1);
+    var cell = cellAtTile(0, tx, ty);
+    var cellRight = cellAtTile(0, tx + 1, ty);
+    var cellDown = cellAtTile(0, tx, ty + 1);
+    var cellDiag = cellAtTile(0, tx + 1 , ty + 1);
 
 
 
     if(!cellDown){
-        cellDown = cellAtTile(1, tx, ty);
+        cellDown = cellAtTile(0, tx, ty);
     }
 
 
@@ -224,7 +222,7 @@ Player.prototype.Update = function(){
     this.falling = !(cellDown || cellDiag);
 
     if(!cellDown){
-        if(cellDown = cellAtTile(4, tx, ty + 1)){
+        if(cellDown = cellAtTile(0, tx, ty + 1)){
             if(Level == Level1)
             {
                 this.x = level1SpawnX;
