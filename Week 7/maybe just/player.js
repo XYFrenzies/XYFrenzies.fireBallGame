@@ -22,26 +22,25 @@ var Player = function(){
 
     this.velX = 0;
     this.velY = 0;
-    this.friction = 200;
+    this.friction = 0.005;
 
     this.maxSpeed = 1000;
 
     this.sprite = new Sprite("images/Sprite Sheet.png");
     // number of frames, , width, height, time between frames, what frames
 
-    this.sprite.buildAnimation( 6, 1, 54, 72 , 0.2, [11] ); //IDLE LEFT
+    this.sprite.buildAnimation( 6, 1, 54, 73 , 0.2, [11] ); //IDLE LEFT
 
-    this.sprite.buildAnimation(  6, 1, 54, 72, 0.05, [0, 0, 1, 1, 2, 2, 3, 3, 4, 4] ); //JUMP LEFT
+    this.sprite.buildAnimation(  6, 1, 54, 73, 0.05, [0, 0, 1, 1, 2, 2, 3, 3, 4, 4] ); //JUMP LEFT
 
-    this.sprite.buildAnimation(  6, 1, 54, 72, 0.05, [0, 0, 1, 1, 2, 2, 3, 3, 4, 4] ); //WALK LEFT
+    this.sprite.buildAnimation(  6, 1, 54, 73, 0.05, [0, 0, 1, 1, 2, 2, 3, 3, 4, 4] ); //WALK LEFT
 
-    this.sprite.buildAnimation(  6, 1, 54, 72 , 0.2, [5] ); //IDLE RIGHT
-
-
-    this.sprite.buildAnimation(  6, 1, 54, 72 , 0.05, [10, 10, 9, 9, 8, 8, 7, 7, 6, 6]); //JUMP RIGHT
+    this.sprite.buildAnimation(  6, 1, 54, 73 , 0.2, [5] ); //IDLE RIGHT
 
 
-    this.sprite.buildAnimation(  6, 1, 54, 72 , 0.05, [ 10, 10, 9, 9, 8, 8, 7, 7, 6, 6]); //WALK RIGHT
+    this.sprite.buildAnimation(  6, 1, 54, 73 , 0.05, [10, 10, 9, 9, 8, 8, 7, 7, 6, 6]); //JUMP RIGHT
+
+    this.sprite.buildAnimation(  6, 1, 54, 73 , 0.05, [ 10, 10, 9, 9, 8, 8, 7, 7, 6, 6]); //WALK RIGHT
 
 
 
@@ -143,7 +142,9 @@ Player.prototype.Update = function(){
     var accelX = 0;
     var accelY = gravity;
     if(left)
+    {
         accelX -= this.acceleration;
+    }
     else if(wasLeft)
     {
         accelX += this.friction;
