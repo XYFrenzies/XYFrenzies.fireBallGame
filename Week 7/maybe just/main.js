@@ -10,7 +10,10 @@ var player = new Player();
 var tileset = document.createElement("img");
 tileset.src = "Images/Tileset.png";
 
-var collisionCells = new Array(); 
+var player1 = document.createElement("img");
+player1 = "Images/Character.png";
+
+var collisionCells = new Array();
 
 
 
@@ -28,13 +31,13 @@ function CreateCollisionData(){
                         collisionCells[i][y][x] = true;
                     }
                     else{
-                        collisionCells[i][y][x] = false; 
+                        collisionCells[i][y][x] = false;
                     }
                     index++;
                 }
             }
         }
-    } 
+    }
 }
 
 function coordToTile(Coord){
@@ -77,7 +80,7 @@ function DrawMap(){
 }
 
 function Update(){
-    
+
     player.Update();
 
 }
@@ -85,7 +88,7 @@ function Update(){
 function Draw(){
 
     //clear the screen
-    context.fillStyle = "#f1f1f1" ; 
+    context.fillStyle = "#f1f1f1" ;
     context.fillRect(0, 0, canvas.width, canvas.height);
     DrawMap();
     //draw the player
