@@ -38,11 +38,7 @@ var Player = function(){
 
     this.sprite.buildAnimation(  6, 1, 54, 70 , 0.05, [ 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]); //JUMP RIGHT
 
-<<<<<<< HEAD
-    this.sprite.buildAnimation(  6, 1, 54, 71 , 0.1, [ 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]); //WALK RIGHT
-=======
-    this.sprite.buildAnimation(  6, 1, 54, 70 , 0.05, [ 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]); //WALK RIGHT
->>>>>>> a5e5759526c19bf02b4aee2eafbf75d9888ff5e1
+    this.sprite.buildAnimation(  6, 1, 54, 71 , 0.05, [ 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]); //WALK RIGHT
 
 
     for(var i = 0; i < animationMax; i++){
