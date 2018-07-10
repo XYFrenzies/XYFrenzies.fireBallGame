@@ -9,13 +9,13 @@ function ORB(inX, inY, inDir){
 
 }
 
-ORB.prototype.Update()
+ORB.prototype.Update = function()
 {
   this.x += this.dir;
 
 }
 
-ORB.prototype.Draw()
+ORB.prototype.Draw = function()
 {
     this.sprite.draw(context, this.x, this.y);
   //Draw code
