@@ -229,10 +229,10 @@ if(keyboard.isKeyDown(keyboard.KEY_SPACE))
 {
   if(this.velX > 0)
   {
-      orbs.push(new ORB(this.x, this.y, this.velX + 100));
+      orbs.push(new ORB(this.x, this.y, this.velX));
   } else if (this.velY < 0)
   {
-      orbs.push(new ORB(this.x, this.y, this.velX - 100));
+      orbs.push(new ORB(this.x, this.y, this.velX));
   } else
   {
     if(Math.random() > 0.5)

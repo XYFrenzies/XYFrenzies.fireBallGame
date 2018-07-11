@@ -115,7 +115,7 @@ function Draw(){
 
 function GameLoop(){
     Update();
-    Draw()
+    Draw();
     requestAnimationFrame(GameLoop);
 }
 
