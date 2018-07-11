@@ -3,7 +3,7 @@ var Enemy = function()
 
 
     this.x = player.x;
-    this.y = player.y;
+    this.y = player.y + -200;
 
     this.width = 188/4;
     this.height = 241/4;
