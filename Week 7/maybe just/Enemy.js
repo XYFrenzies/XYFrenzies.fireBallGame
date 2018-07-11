@@ -8,9 +8,11 @@ var Enemy = function()
     this.width = 188/4;
     this.height = 241/4;
 
-    this.sprite = new Sprite("images/Enemy sprite sheet.png");
+    this.sprite = new Sprite("Images/Enemy sprite sheet.png");
 
-    this.sprite.buildAnimation (4,1,131,90,0.5, [0,1,2,3,4,5,6,7]);
+
+    this.sprite.buildAnimation (8,2,131,93,0.5, [0,1,2,3,4,5,6,7]);
+
 
     this.isFalling = true;
 }
@@ -18,8 +20,9 @@ var Enemy = function()
 Enemy.prototype.Update = function()
 {
     var dt = GetDeltaTime();
-
+    
     this.sprite.update(dt);
+
     if(this.isFalling == true)
     {
         this.y += 2;
