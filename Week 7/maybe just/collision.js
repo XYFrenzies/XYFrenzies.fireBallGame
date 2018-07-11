@@ -9,9 +9,16 @@ function collides()
     {
       //Trigger
     }
-    for(i = 0; i < orbs.length; i++)
+    for(l = 0; l < orbs.length; l++)
     {
-
+      var r3 = 5;
+      var r4 = 5;
+      if(Math.sqrt( (orbs[l].x - (enemies[i].x + 25)) * (orbs[l].x - (enemies[i].x + 25)) + (orbs[l].y - (enemies[i].y + 25)) * (orbs[l].y - (enemies[i].y + 25)) ) < (r3 + r4))
+      {
+        delete enemies[i];
+        enemies.sort();
+        enemies.length -= 1;
+      }
     }
   }
 }
