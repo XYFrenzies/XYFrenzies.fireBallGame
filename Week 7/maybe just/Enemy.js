@@ -26,7 +26,6 @@ var Enemy = function()
 
 Enemy.prototype.Attack = function()
 {
-    if(this.sprite.currentAnimation != 2)
     if(this.sprite.currentAnimation == 0)
     {
         this.sprite.setAnimation(2);
@@ -61,7 +60,7 @@ Enemy.prototype.Update = function()
 
     if(this.isFalling == false)
     {
-        if(this.x > player.x)
+        if(this.x - 70 >= player.x)
         {
             this.x -= 2;
             if(this.sprite.currentAnimation != 0)
@@ -69,7 +68,7 @@ Enemy.prototype.Update = function()
                 this.sprite.setAnimation(0);
             }
         }
-        if(this.x < player.x)
+        if(this.x + 25 < player.x)
         {
             this.x += 2;
             if(this.sprite.currentAnimation != 1)
