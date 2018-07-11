@@ -1,13 +1,13 @@
 var Keyboard = function()
 {
 	var self = this;
-	
+
 	window.addEventListener('keydown', function(evt) { self.onKeyDown(evt); }, false);
 	window.addEventListener('keyup', function(evt) { self.onKeyUp(evt); }, false);
-	
+
 	this.keyListeners = new Array();
 	this.keys = new Array();
-	
+
 	// Key constants. Go here for a list of key codes:
 	// https://developer.mozilla.org/en-US/docs/DOM/KeyboardEvent
 	this.KEY_SPACE = 32;
@@ -55,7 +55,7 @@ var Keyboard = function()
 	this.KEY_ENTER = 13;
 	this.KEY_ALT = 18;
 	this.KEY_TAB = 9;
-	
+
 };
 
 Keyboard.prototype.onKeyDown = function(evt) {
@@ -68,6 +68,9 @@ Keyboard.prototype.onKeyUp = function(evt) {
 
 Keyboard.prototype.isKeyDown = function(keyCode) {
 	return this.keys[keyCode];
+}
+Keyboard.prototype.isKeyUp = function(keyCode) {
+	return !this.keys[keyCode];
 }
 
 window.keyboard = new Keyboard();

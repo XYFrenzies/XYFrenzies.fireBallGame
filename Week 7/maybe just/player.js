@@ -24,6 +24,7 @@ var Player = function(){
     this.velY = 0;
     this.friction = 2000;
 
+    this.fireLock = false;
 
     this.maxSpeed = 800;
 
@@ -225,8 +226,9 @@ if(this.x > 5683)
   this.x = 5683;
   this.accelX = 0;
 }
-if(keyboard.isKeyDown(keyboard.KEY_SPACE))
+if(keyboard.isKeyDown(keyboard.KEY_SPACE)  && this.fireLock == false)
 {
+  this.fireLock = true;
   if(this.velX > 0)
   {
       orbs.push(new ORB(this.x, this.y, this.velX + 1000));
@@ -245,7 +247,10 @@ if(keyboard.isKeyDown(keyboard.KEY_SPACE))
     }
   }
 }
-
+if(keyboard.isKeyUp(keyboard.KEY_SPACE)  && this.fireLock == true)
+{
+  this.fireLock = false;
+}
 }
 
 
