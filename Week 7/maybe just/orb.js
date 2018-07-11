@@ -23,7 +23,7 @@ ORB.prototype.Draw = function()
 
     //context.drawImage(this.image, this.x - player.x, this.y - player.y);
 
-    this.sprite.draw(context, this.x - player.x + 300, this.y - player.y + 300);
+    this.sprite.draw(context, this.x - player.x + 600, this.y - player.y + 340);
 
     //context.fillStyle("black");
     //context.fillStyle = "black";
