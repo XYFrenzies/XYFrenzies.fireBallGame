@@ -4,7 +4,29 @@ var context = canvas.getContext("2d");
 var player = new Player();
 
 
+var sndMain = new Howl(
+  {
+    urls: ['Sounds/1 Hour of Magical & Fantasy & Epic Music Full HD 1080p 150 Pictures Slideshow'],
+    loop:true,
+    buffer:true,
+    volume:0.4
+  })
 
+var sndGame = new Howl(
+  {
+    urls: ['Sounds/'],
+    loop:false,
+    buffer:true,
+    volume:0.4
+  })
+
+var sndEndGame = new Howl(
+  {
+    urls: ['Sounds/'],
+    loop:false,
+    buffer:true,
+    volume:0.4
+  })
 
 var tileset = document.createElement("img");
 tileset.src = "Images/Tileset.png";
