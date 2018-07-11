@@ -1,5 +1,7 @@
 const Level = 0;
 const Level1 = 0;
+const MainMenu = 1;
+
 var dt = GetDeltaTime();
 
 var gravity = 9.8 * 20 ;
