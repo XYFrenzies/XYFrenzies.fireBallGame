@@ -22,7 +22,7 @@ var Player = function(){
 
     this.velX = 0;
     this.velY = 0;
-    this.friction = 5;
+    this.friction = 2000;
 
 
     this.maxSpeed = 800;

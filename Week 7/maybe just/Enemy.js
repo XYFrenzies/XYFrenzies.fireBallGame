@@ -10,7 +10,7 @@ var Enemy = function()
 
     this.sprite = new Sprite("images/Summoner.png");
 
-    this.sprite.buildAnimation (1,1,188,241,999999, [1]);
+    this.sprite.buildAnimation (1,1,188,241,999999, [0]);
 
 }
 
