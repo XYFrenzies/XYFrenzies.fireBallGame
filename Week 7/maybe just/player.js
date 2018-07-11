@@ -220,7 +220,7 @@ if(this.x < -552)
   this.x = -552;
   this.accelX = 0;
 }
-if(this.x > 5603)
+if(this.x > 5623)
 {
   this.velX = 0;
   this.x = 5623;
