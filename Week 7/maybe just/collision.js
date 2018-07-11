@@ -19,19 +19,19 @@ function collides()
     {
       var r3 = 5;
       var r4 = 5;
-      if(enemies.length <= 0)
+      if(i < enemies.length)
       {
-        break;
-      }
       if(Math.sqrt( (orbs[l].x - (enemies[i].x + 25)) * (orbs[l].x - (enemies[i].x + 25)) + (orbs[l].y - (enemies[i].y + 25)) * (orbs[l].y - (enemies[i].y + 25)) ) < (r3 + r4))
       {
         delete enemies[i];
+        //enemies[i] = null;
         deleted++;
         enemies.sort();
         score += 100;
-        enemies.length -= deleted;
-        i--;
+        enemies.length--;
+        //i--;
       }
+    }
     }
     }
   }
