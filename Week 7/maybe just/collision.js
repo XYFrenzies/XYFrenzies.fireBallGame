@@ -18,13 +18,10 @@ function collides()
         delete enemies[i];
         deleted++;
         enemies.sort();
-<<<<<<< HEAD
-        enemies.length -= 1;
         score += 100;
-=======
         enemies.length -= deleted;
         i--;
->>>>>>> 33c8766d5a6916d928080b285e33aba2c2673ebe
+
       }
     }
 
