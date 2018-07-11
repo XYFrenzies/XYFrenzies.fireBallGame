@@ -27,7 +27,7 @@ var Wizard = function()
 
     this.width = 188/4;
     this.height = 241/4;
-
+    this.cooldown = 8;
     this.sprite = new Sprite("Images/Enemy sprite sheet.png");
 
 
@@ -60,42 +60,44 @@ Wizard.prototype.Attack = function()
             this.sprite.setAnimation(3);
         }
     }
+    
 }
 
 Wizard.prototype.Update = function()
 {
-
-
-
-    if(this.isFalling == true)
-    {
-        this.y += 2;
-    }
-    floorHeight = 1375;
+    // if(this.isFalling == true)
+    // {
+    //     this.y += 2;
+    // }
+    // floorHeight = 1375;
     // if (this.y > floorHeight)
     // {
     //     this.isFalling = false;
     // }
 
-    if(this.isFalling == false)
+    if(this.cooldown <= 0)
     {
-        if(this.x - 70 >= player.x)
+      this.Attack();
+      this.cooldown = 8;
+    }
+
+    if(this.x - 70 >= player.x)
+    {
+        this.x -= 2;
+        if(this.sprite.currentAnimation != 0)
         {
-            this.x -= 2;
-            if(this.sprite.currentAnimation != 0)
-            {
-                this.sprite.setAnimation(0);
-            }
-        }
-        if(this.x + 50 < player.x)
-        {
-            this.x += 2;
-            if(this.sprite.currentAnimation != 1)
-            {
-                this.sprite.setAnimation(1);
-            }
+            this.sprite.setAnimation(0);
         }
     }
+    if(this.x + 50 < player.x)
+    {
+        this.x += 2;
+        if(this.sprite.currentAnimation != 1)
+        {
+            this.sprite.setAnimation(1);
+        }
+    }
+    this.cooldown - dt;
     this.sprite.update(dt);
 }
 
