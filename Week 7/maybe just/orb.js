@@ -7,8 +7,6 @@ function ORB(inX, inY, inDir){
   this.image.src = ("Images/player orb.png");
 
   //this.sprite.buildAnimation(2, 1, 45, 45, 0.2, [0, 0, 1, 1]);
-
-
 }
 
 ORB.prototype.Update = function()
@@ -20,8 +18,9 @@ ORB.prototype.Update = function()
 ORB.prototype.Draw = function()
 {
     //this.sprite.draw(context, this.x, this.y);
-    //context.drawImage(this.image, this.x, this.y);
+    context.drawImage(this.image, this.x - player.x, this.y - player.y);
     //context.fillStyle("black");
-    context.fillRect(this.x, this.y, 150, 150);
+    //context.fillStyle = "black";
+    //context.fillRect(this.x - player.x, this.x - player.y, 150, 150);
   //Draw code
 }

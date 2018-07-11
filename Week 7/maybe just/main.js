@@ -105,10 +105,10 @@ function Draw(){
     enemy.Draw();
 
 
-    for(i = 0; i < orbs.length; i++)
-    {
-      orbs[i].Draw();
-    }
+    //for(i = 0; i < orbs.length; i++)
+    //{
+      //orbs[i].Draw();
+    //}
 
 
 }

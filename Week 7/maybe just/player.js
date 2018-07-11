@@ -252,6 +252,8 @@ if(keyboard.isKeyDown(keyboard.KEY_SPACE))
 Player.prototype.Draw = function(){
 
     this.sprite.draw(context, canvas.width / 2, canvas.height / 2);
-
+    for(var i = 0; i < orbs.length; i++){
+      orbs[i].Draw();
+    }
 
 }
