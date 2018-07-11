@@ -4,17 +4,6 @@ var Player = function(){
     this.x = level1SpawnX;
     this.y = level1SpawnY;
 
-<<<<<<< HEAD
-    this.x;
-    this.y;
-    //Sets default position
-    if(Level == Level1)
-    {
-        this.x = level1SpawnX;
-        this.y = level1SpawnY;
-    }
-=======
->>>>>>> 13e47dfc3138fe05089bc26b2b1679b97bcfcc80
     this.width = 54;
     this.height = 93;
 
@@ -260,9 +249,10 @@ if(keyboard.isKeyUp(keyboard.KEY_SPACE)  && this.fireLock == true)
 }
 
 
-Player.prototype.Draw = function(){
+Player.prototype.Draw = function()
+{
 
-<<<<<<< HEAD
+
     this.sprite.draw(context, canvas.width / 2 + this.width, canvas.height / 2);
     for(var i = 0; i < orbs.length; i++)
     {
@@ -270,11 +260,6 @@ Player.prototype.Draw = function(){
       {
         orbs[i].Draw();
       }
-=======
-    this.sprite.draw(context, canvas.width / 2, canvas.height / 2);
-    for(var i = 0; i < orbs.length; i++){
-      orbs[i].Draw();
->>>>>>> 13e47dfc3138fe05089bc26b2b1679b97bcfcc80
     }
 
 }
