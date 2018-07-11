@@ -15,7 +15,7 @@ var Player = function(){
 
     this.falling = true;
     this.jumping = false;
-    this.jumpFroce = 10000;
+    this.jumpFroce = 15000;
     this.gliding = false;
 
     this.acceleration = 800;

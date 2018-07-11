@@ -2,7 +2,6 @@ var canvas = document.getElementById("gameCanvas");
 var context = canvas.getContext("2d");
 
 var player = new Player();
-var enemy = new Enemy();
 
 
 
@@ -81,13 +80,19 @@ function DrawMap(){
         }
     }
 }
-
+var timable = 9;
 function Update(){
-
+  timable += dt;
     player.Update();
-
-    enemy.Update();
-
+    if(timable > 10)
+    {
+      timable = 0;
+      enemies.push(new Enemy());
+    }
+    for(i = 0; i < enemies.length; i++)
+    {
+      enemies[i].Update();
+    }
     for(i = 0; i < orbs.length; i++)
     {
       orbs[i].Update();
@@ -96,7 +101,7 @@ function Update(){
 }
 
 function Draw(){
-   
+
     //clear the screen
     context.fillStyle = "#f1f1f1" ;
     context.fillRect(0, 0, canvas.width, canvas.height);
@@ -105,7 +110,10 @@ function Draw(){
     //draw the player
     player.Draw();
 
-    enemy.Draw();
+    for(i = 0; i < enemies.length; i++)
+    {
+      enemies[i].Draw();
+    }
 
 
     //for(i = 0; i < orbs.length; i++)
