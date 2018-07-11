@@ -1,5 +1,6 @@
 var Level = 1;
 const Level1 = 0;
+const GameOver = 2;
 const MainMenu = 1;
 
 var dt = GetDeltaTime();

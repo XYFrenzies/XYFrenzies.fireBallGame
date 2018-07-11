@@ -139,17 +139,35 @@ function Draw(){
 
 }
 
-function GameLoop(){
+function GameLoop()
+{
     Update();
     Draw();
-  requestAnimationFrame(GameLoop);
+    if(lives <= 0)
+    {
+      Level = GameOver;
+      gameOver();
+    } else {
+        requestAnimationFrame(GameLoop);
+    }
+
 }
-function startMenu(){
+function startMenu()
+{
   UpdateMenu();
   DrawMenu();
   if(Level == MainMenu)
   {
   requestAnimationFrame(startMenu);
+  }
+}
+function gameOver()
+{
+  if(Level == GameOver)
+  {
+    UpdateGameOver();
+    DrawGameOver();
+  requestAnimationFrame(gameOver);
   }
 }
 startMenu();
