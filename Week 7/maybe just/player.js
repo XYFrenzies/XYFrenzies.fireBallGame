@@ -209,16 +209,16 @@ if (this.y > floorHeight)
     this.y = floorHeight;
   }
 }
-if(this.x < -496)
+if(this.x < -552)
 {
   this.velX = 0;
-  this.x = -496;
+  this.x = -552;
   this.accelX = 0;
 }
-if(this.x > 5683)
+if(this.x > 5623)
 {
   this.velX = 0;
-  this.x = 5683;
+  this.x = 5623;
   this.accelX = 0;
 }
 if(keyboard.isKeyDown(keyboard.KEY_SPACE)  && this.fireLock == false)
