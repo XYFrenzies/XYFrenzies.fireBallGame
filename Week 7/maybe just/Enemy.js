@@ -26,7 +26,7 @@ Enemy.prototype.Update = function()
 Enemy.prototype.Draw = function()
 {
 
-    this.sprite.draw(context, 600, 1000);
+    this.sprite.draw(context, 300, 1400);
 
 
 }

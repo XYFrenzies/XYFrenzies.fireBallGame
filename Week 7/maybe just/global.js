@@ -13,7 +13,7 @@ const animationWalkLeft = 2;
 const animationIdleRight = 3;
 const animationJumpRight = 4;
 const animationWalkRight = 5;
-const animationMax = 6;
+const animationMax = 10;
 
 const fireRate = 0.25;
 var timer = fireRate;
