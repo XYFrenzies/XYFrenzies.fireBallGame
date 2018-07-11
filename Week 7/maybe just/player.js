@@ -1,16 +1,11 @@
 var Player = function(){
 
+    //Default position  
+    this.x = Level1SpawnX;
+    this.y = Level1SpawnY;
 
-    this.x;
-    this.y;
-    //Sets default position
-    if(Level == Level1)
-    {
-        this.x = level1SpawnX;
-        this.y = level1SpawnY;
-    }
-    this.width = 54 ;
-    this.height = 93 ;
+    this.width = 54;
+    this.height = 93;
 
 
     this.falling = true;
@@ -256,7 +251,7 @@ if(keyboard.isKeyUp(keyboard.KEY_SPACE)  && this.fireLock == true)
 
 Player.prototype.Draw = function(){
 
-    this.sprite.draw(context, canvas.width / 2 + this.width, canvas.height / 2);
+    this.sprite.draw(context, canvas.width / 2, canvas.height / 2);
     for(var i = 0; i < orbs.length; i++){
       orbs[i].Draw();
     }

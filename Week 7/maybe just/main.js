@@ -140,19 +140,16 @@ function Draw(){
 }
 
 function GameLoop(){
-  if(Level == Level1)
-  {
     Update();
     Draw();
-
-  }
-  if(Level == MainMenu)
-  {
-    DrawMenu();
-    UpdateMenu();
-  }
   requestAnimationFrame(GameLoop);
 }
-
-CreateCollisionData();
-GameLoop();
+function startMenu(){
+  UpdateMenu();
+  DrawMenu();
+  if(Level == MainMenu)
+  {
+  requestAnimationFrame(startMenu);
+  }
+}
+startMenu();
