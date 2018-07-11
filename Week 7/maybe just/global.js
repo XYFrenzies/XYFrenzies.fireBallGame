@@ -1,4 +1,4 @@
-const Level = 0;
+var Level = 1;
 const Level1 = 0;
 const MainMenu = 1;
 

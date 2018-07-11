@@ -1,6 +1,10 @@
 var Player = function(){
 
+    //Default position
+    this.x = level1SpawnX;
+    this.y = level1SpawnY;
 
+<<<<<<< HEAD
     this.x;
     this.y;
     //Sets default position
@@ -9,6 +13,8 @@ var Player = function(){
         this.x = level1SpawnX;
         this.y = level1SpawnY;
     }
+=======
+>>>>>>> 13e47dfc3138fe05089bc26b2b1679b97bcfcc80
     this.width = 54;
     this.height = 93;
 
@@ -214,16 +220,16 @@ if (this.y > floorHeight)
     this.y = floorHeight;
   }
 }
-if(this.x < -552)
+if(this.x < -496)
 {
   this.velX = 0;
-  this.x = -552;
+  this.x = -496;
   this.accelX = 0;
 }
-if(this.x > 5623)
+if(this.x > 5683)
 {
   this.velX = 0;
-  this.x = 5623;
+  this.x = 5683;
   this.accelX = 0;
 }
 if(keyboard.isKeyDown(keyboard.KEY_SPACE)  && this.fireLock == false)
@@ -256,6 +262,7 @@ if(keyboard.isKeyUp(keyboard.KEY_SPACE)  && this.fireLock == true)
 
 Player.prototype.Draw = function(){
 
+<<<<<<< HEAD
     this.sprite.draw(context, canvas.width / 2 + this.width, canvas.height / 2);
     for(var i = 0; i < orbs.length; i++)
     {
@@ -263,6 +270,11 @@ Player.prototype.Draw = function(){
       {
         orbs[i].Draw();
       }
+=======
+    this.sprite.draw(context, canvas.width / 2, canvas.height / 2);
+    for(var i = 0; i < orbs.length; i++){
+      orbs[i].Draw();
+>>>>>>> 13e47dfc3138fe05089bc26b2b1679b97bcfcc80
     }
 
 }
