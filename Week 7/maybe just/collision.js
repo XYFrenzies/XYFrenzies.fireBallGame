@@ -18,6 +18,7 @@ function collides()
         delete enemies[i];
         enemies.sort();
         enemies.length -= 1;
+        score += 100;
       }
     }
   }

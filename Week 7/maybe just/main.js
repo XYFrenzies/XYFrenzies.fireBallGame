@@ -112,7 +112,7 @@ function Draw(){
 
     context.font = "30px Arial";
     context.fillStyle = "#ff0000";
-    context.fillText("Time: ", 10, 50);
+    context.fillText("Score: "+ score, 10, 50);
 
     context.fillStyle = "#ff0000"
     context.fillText("Lives: ", 1000, 50)
