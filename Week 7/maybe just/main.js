@@ -97,6 +97,7 @@ function Update(){
     {
       orbs[i].Update();
     }
+    collides();
 
 }
 
