@@ -1,4 +1,4 @@
-var Enemy = function()
+var Wizard = function()
 {
 
 
@@ -23,7 +23,7 @@ var Enemy = function()
     {
         this.x = 3000;
     }
-    this.y = player.y -25;
+    this.y = player.y -50;
 
     this.width = 188/4;
     this.height = 241/4;
@@ -39,13 +39,11 @@ var Enemy = function()
 
     this.sprite.buildAnimation(8,2,131,93,0.1, [15,15,15,14,13,12])
 
-    this.isFalling = true;
 
-    this.randomSpawn; //????????? What does this do?
 
 }
 
-Enemy.prototype.Attack = function()
+Wizard.prototype.Attack = function()
 {
     if(this.sprite.currentAnimation == 0)
     {
@@ -64,7 +62,7 @@ Enemy.prototype.Attack = function()
     }
 }
 
-Enemy.prototype.Update = function()
+Wizard.prototype.Update = function()
 {
 
 
@@ -74,10 +72,10 @@ Enemy.prototype.Update = function()
         this.y += 2;
     }
     floorHeight = 1375;
-    if (this.y > floorHeight)
-    {
-        this.isFalling = false;
-    }
+    // if (this.y > floorHeight)
+    // {
+    //     this.isFalling = false;
+    // }
 
     if(this.isFalling == false)
     {
@@ -101,7 +99,7 @@ Enemy.prototype.Update = function()
     this.sprite.update(dt);
 }
 
-Enemy.prototype.Draw = function()
+Wizard.prototype.Draw = function()
 {
 
     this.sprite.draw(context,this.x - player.x + 600, this.y - player.y + 340);
