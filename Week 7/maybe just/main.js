@@ -14,6 +14,8 @@ tileset.src = "Images/Tileset.png";
 
 var collisionCells = new Array();
 
+var BackgroundImage = document.createElement("img");
+BackgroundImage.src = ("Images/Background.png");
 
 
 function CreateCollisionData(){
@@ -94,10 +96,11 @@ function Update(){
 }
 
 function Draw(){
-
+   
     //clear the screen
     context.fillStyle = "#f1f1f1" ;
     context.fillRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(BackgroundImage, 0,0,canvas.width, canvas.height);
     DrawMap();
     //draw the player
     player.Draw();
