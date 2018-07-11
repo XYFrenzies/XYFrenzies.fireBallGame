@@ -13,7 +13,7 @@ function collides()
     {
       if(superTime > 0)
       {
-        
+
       } else
       {
           lives -= 1;
@@ -39,8 +39,6 @@ function collides()
             delete orbs[l];
             //enemies.length--;
             //i--;
-            orbs.sort();
-            enemies.sort();
             score += 100;
           }
         }
