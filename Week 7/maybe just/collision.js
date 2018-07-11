@@ -23,16 +23,22 @@ function collides()
       var r4 = 5;
       if(enemies[i] != undefined)
       {
-      if(Math.sqrt( (orbs[l].x - (enemies[i].x + 25)) * (orbs[l].x - (enemies[i].x + 25)) + (orbs[l].y - (enemies[i].y + 25)) * (orbs[l].y - (enemies[i].y + 25)) ) < (r3 + r4))
-      {
-        delete enemies[i];
-        //enemies.length--;
-        //i--;
-        enemies.sort();
-        score += 100;
+        if(orbs[i] != undefined)
+        {
+          if(Math.sqrt( (orbs[l].x - (enemies[i].x + 25)) * (orbs[l].x - (enemies[i].x + 25)) + (orbs[l].y - (enemies[i].y + 25)) * (orbs[l].y - (enemies[i].y + 25)) ) < (r3 + r4))
+          {
+            delete enemies[i];
+            delete orbs[l];
+            //enemies.length--;
+            //i--;
+            orbs.sort();
+            enemies.sort();
+            score += 100;
+          }
+        }
+
 
       }
-    }
     }
     }
     }
