@@ -99,7 +99,10 @@ function Update(){
     }
     for(i = 0; i < orbs.length; i++)
     {
-      orbs[i].Update();
+      if(orbs[i] != undefined)
+      {
+        orbs[i].Update();
+      }
     }
     collides();
 
