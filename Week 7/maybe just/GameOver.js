@@ -2,7 +2,7 @@ function DrawGameOver()
 {
 
   var MainMenuBG = document.createElement("img");
-  MainMenuBG.src = "Images/WOZTheFinalWizard.png";
+  MainMenuBG.src = "Images/GameOver.png";
 
   context.drawImage(MainMenuBG, 0,0,canvas.width, canvas.height);
 
@@ -10,7 +10,7 @@ function DrawGameOver()
 
 function UpdateGameOver()
 {
-  if(keyboard.isKeyDown(keyboard.KEY_SPACE))
+  if(keyboard.isKeyDown(keyboard.KEY_ENTER))
   {
     location.reload();
   }
