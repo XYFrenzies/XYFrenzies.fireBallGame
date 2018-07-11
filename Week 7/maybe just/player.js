@@ -249,11 +249,18 @@ if(keyboard.isKeyUp(keyboard.KEY_SPACE)  && this.fireLock == true)
 }
 
 
-Player.prototype.Draw = function(){
+Player.prototype.Draw = function()
+{
 
-    this.sprite.draw(context, canvas.width / 2 + this.width, canvas.height / 2 );
-    for(var i = 0; i < orbs.length; i++){
-      orbs[i].Draw();
+
+
+    this.sprite.draw(context, canvas.width / 2 + this.width, canvas.height / 2);
+    for(var i = 0; i < orbs.length; i++)
+    {
+      if(orbs[i] != undefined)
+      {
+        orbs[i].Draw();
+      }
     }
 
 }
