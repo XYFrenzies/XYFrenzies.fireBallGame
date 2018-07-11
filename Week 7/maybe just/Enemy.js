@@ -19,7 +19,7 @@ Enemy.prototype.Update = function()
     var dt = GetDeltaTime();
 
     this.sprite.update(dt);
-    this.sprite.setAnimation(0);
+    
     
 }
 
