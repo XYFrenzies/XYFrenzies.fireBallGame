@@ -8,6 +8,7 @@ function collides()
     if(Math.sqrt( (player.x - enemies[i].x) * (player.x - enemies[i].x) + (player.y - enemies[i].y) * (player.y - enemies[i].y) ) < (r1 + r2))
     {
       //Trigger
+      enemies[i].Attack();
     }
     for(l = 0; l < orbs.length; l++)
     {
