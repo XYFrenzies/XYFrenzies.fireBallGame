@@ -132,10 +132,14 @@ function Draw(){
       enemies[i].Draw();
       }
     }
+
+
     //for(i = 0; i < orbs.length; i++)
     //{
       //orbs[i].Draw();
     //}
+
+
 }
 
 function GameLoop()
