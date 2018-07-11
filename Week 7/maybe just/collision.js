@@ -4,8 +4,8 @@ function collides()
   {
   for(i = 0; i < enemies.length; i++)
   {
-    var r1 = 18;
-    var r2 = 18;
+    var r1 = 40;
+    var r2 = 40;
     var deleted = 0;
     if(Math.sqrt( (player.x - enemies[i].x) * (player.x - enemies[i].x) + (player.y - enemies[i].y) * (player.y - enemies[i].y) ) < (r1 + r2))
     {

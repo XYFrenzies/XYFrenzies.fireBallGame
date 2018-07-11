@@ -68,7 +68,7 @@ Enemy.prototype.Update = function()
                 this.sprite.setAnimation(0);
             }
         }
-        if(this.x + 25 < player.x)
+        if(this.x + 50 < player.x)
         {
             this.x += 2;
             if(this.sprite.currentAnimation != 1)

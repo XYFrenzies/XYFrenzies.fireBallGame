@@ -26,7 +26,7 @@ const tileSetX = 58;
 const tileSetY = 64;
 
 const level1SpawnX = 300;
-const level1SpawnY = 1000;
+const level1SpawnY = 1400;
 
 var orbs = [];
 var enemies = [];
