@@ -1,9 +1,9 @@
 var Enemy = function()
 {
 
-    
+
     this.x = player.x;
-    this.y = player.y;
+    this.y = player.y + -200;
 
     this.width = 188/4;
     this.height = 241/4;
@@ -15,7 +15,7 @@ var Enemy = function()
     this.isFalling = true;
 }
 
-Enemy.prototype.Update = function() 
+Enemy.prototype.Update = function()
 {
     var dt = GetDeltaTime();
 
@@ -28,7 +28,7 @@ Enemy.prototype.Update = function()
     if (this.y > floorHeight)
     {
         this.isFalling = false;
-    }  
+    }
 
     if(this.isFalling == false)
     {
@@ -47,6 +47,6 @@ Enemy.prototype.Draw = function()
 {
 
     this.sprite.draw(context,this.x - player.x + 600, this.y - player.y + 340);
-    
+
 
 }
