@@ -4,7 +4,7 @@ var Enemy = function()
 
     this.x = Math.random() * 6179 - 496;
     //right
-    if( this.x <= player.x + 500 && this.x >= player.x ) 
+    if( this.x <= player.x + 500 && this.x >= player.x )
     {
         this.x -= 800;
     }
@@ -12,8 +12,8 @@ var Enemy = function()
     if(this.x  >= player.x - 500 && this.x <=player.x ) //Fix
     {
         this.x += 800;
-        
-     
+
+
     }
     if( this.x > 5683)
     {
@@ -41,7 +41,7 @@ var Enemy = function()
 
     this.isFalling = true;
 
-    this.randomSpawn;
+    this.randomSpawn; //????????? What does this do?
 
 }
 
@@ -103,7 +103,7 @@ Enemy.prototype.Update = function()
 
 Enemy.prototype.Draw = function()
 {
-    
+
     this.sprite.draw(context,this.x - player.x + 600, this.y - player.y + 340);
 
 

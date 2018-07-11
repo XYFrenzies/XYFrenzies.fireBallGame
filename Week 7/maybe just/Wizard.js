@@ -23,7 +23,7 @@ var Wizard = function()
     {
         this.x = 3000;
     }
-    this.y = player.y -25;
+    this.y = player.y -50;
 
     this.width = 188/4;
     this.height = 241/4;
@@ -39,13 +39,11 @@ var Wizard = function()
 
     this.sprite.buildAnimation(8,2,131,93,0.1, [15,15,15,14,13,12])
 
-    this.isFalling = true;
 
-    this.randomSpawn;
 
 }
 
-Enemy.prototype.Attack = function()
+Wizard.prototype.Attack = function()
 {
     if(this.sprite.currentAnimation == 0)
     {
