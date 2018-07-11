@@ -86,7 +86,7 @@ function Update(){
   timable += dt;
   superTime -= dt;
     player.Update();
-    if(timable > .1)
+    if(timable > spawnRate)
     {
       timable = 0;
       enemies.push(new Enemy());
