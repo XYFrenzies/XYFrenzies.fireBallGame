@@ -232,7 +232,7 @@ if(keyboard.isKeyDown(keyboard.KEY_SPACE)  && this.fireLock == false)
   if(this.velX > 0)
   {
       orbs.push(new ORB(this.x, this.y, this.velX + 1000));
-  } else if (this.velY < 0)
+  } else if (this.velX < 0)
   {
       orbs.push(new ORB(this.x, this.y, this.velX - 1000));
   } else
