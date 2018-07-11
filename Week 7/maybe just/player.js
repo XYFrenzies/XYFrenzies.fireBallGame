@@ -24,7 +24,9 @@ var Player = function(){
     this.velY = 0;
     this.friction = 5;
 
+
     this.maxSpeed = 800;
+
 
     this.sprite = new Sprite("images/Sprite Sheet.png");
     // number of frames, , width, height, time between frames, what frames

@@ -2,7 +2,7 @@ var canvas = document.getElementById("gameCanvas");
 var context = canvas.getContext("2d");
 
 var player = new Player();
-
+var enemy = new Enemy();
 
 
 
@@ -83,10 +83,14 @@ function DrawMap(){
 function Update(){
 
     player.Update();
+
+    enemy.Update();
+
     for(i = 0; i < orbs.length; i++)
     {
       orbs[i].Update();
     }
+
 }
 
 function Draw(){
@@ -97,10 +101,15 @@ function Draw(){
     DrawMap();
     //draw the player
     player.Draw();
+
+    enemy.Draw();
+
+
     for(i = 0; i < orbs.length; i++)
     {
       orbs[i].Draw();
     }
+
 
 }
 
