@@ -235,13 +235,13 @@ if(keyboard.isKeyDown(keyboard.KEY_SPACE))
       orbs.push(new ORB(this.x, this.y, this.velX - 1000));
   } else
   {
-    if(Math.random() > 0.5)
+    if(this.sprite.currentAnimation == animationIdleRight)
     {
-      orbs.push(new ORB(this.x, this.y, 1000));
+      orbs.push(new ORB(this.x, this.y, 500));
     }
     else
     {
-      orbs.push(new ORB(this.x, this.y, -1000));
+      orbs.push(new ORB(this.x, this.y, -500));
     }
   }
 }
