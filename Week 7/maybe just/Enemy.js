@@ -2,7 +2,7 @@ var Enemy = function()
 {
 
 
-    this.x = Math.random() * 6179;
+    this.x = Math.random() * 6179 - 496;
     this.y = player.y -25;
 
     this.width = 188/4;

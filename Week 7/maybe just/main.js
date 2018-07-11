@@ -85,7 +85,7 @@ var timable = 9;
 function Update(){
   timable += dt;
     player.Update();
-    if(timable > 3)
+    if(timable > .5)
     {
       timable = 0;
       enemies.push(new Enemy());
