@@ -7,6 +7,8 @@ function collides()
     var r1 = 40;
     var r2 = 40;
     var deleted = 0;
+    if(enemies[i] != undefined)
+    {
     if(Math.sqrt( (player.x - enemies[i].x) * (player.x - enemies[i].x) + (player.y - enemies[i].y) * (player.y - enemies[i].y) ) < (r1 + r2))
     {
       lives -= 1;
@@ -19,19 +21,19 @@ function collides()
     {
       var r3 = 5;
       var r4 = 5;
-      if(enemies.length <= 0)
+      if(enemies[i] != undefined)
       {
-        break;
-      }
       if(Math.sqrt( (orbs[l].x - (enemies[i].x + 25)) * (orbs[l].x - (enemies[i].x + 25)) + (orbs[l].y - (enemies[i].y + 25)) * (orbs[l].y - (enemies[i].y + 25)) ) < (r3 + r4))
       {
         delete enemies[i];
-        deleted++;
+        //enemies.length--;
+        //i--;
         enemies.sort();
         score += 100;
-        enemies.length -= deleted;
-        i--;
+
       }
+    }
+    }
     }
     }
   }
