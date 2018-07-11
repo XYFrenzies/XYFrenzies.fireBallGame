@@ -12,7 +12,16 @@ var Enemy = function()
     if(this.x  >= player.x - 500 && this.x <=player.x ) //Fix
     {
         this.x += 800;
+        
      
+    }
+    if( this.x > 5683)
+    {
+        this.x = 3000;
+    }
+    if( this.x > -496)
+    {
+        this.x = 3000;
     }
     this.y = player.y -25;
 
