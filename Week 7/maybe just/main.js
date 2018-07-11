@@ -4,8 +4,7 @@ var context = canvas.getContext("2d");
 var player = new Player();
 
 
-var score = 0;
-var lives = 3;
+
 
 var tileset = document.createElement("img");
 tileset.src = "Images/Tileset.png";

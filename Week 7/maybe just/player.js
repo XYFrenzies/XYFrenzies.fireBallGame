@@ -56,7 +56,7 @@ var Player = function(){
 
 
 Player.prototype.Update = function(){
-    dt = GetDeltaTime();
+    
 
     this.sprite.update(dt);
 
