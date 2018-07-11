@@ -85,7 +85,7 @@ var timable = 9;
 function Update(){
   timable += dt;
     player.Update();
-    if(timable > 10)
+    if(timable > .5)
     {
       timable = 0;
       enemies.push(new Enemy());
@@ -99,7 +99,10 @@ function Update(){
     }
     for(i = 0; i < orbs.length; i++)
     {
-      orbs[i].Update();
+      if(orbs[i] != undefined)
+      {
+        orbs[i].Update();
+      }
     }
     collides();
 

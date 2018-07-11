@@ -2,8 +2,8 @@ var Enemy = function()
 {
 
 
-    this.x = player.x;
-    this.y = player.y + -200;
+    this.x = Math.random() * 6179 - 496;
+    this.y = player.y -25;
 
     this.width = 188/4;
     this.height = 241/4;
@@ -21,6 +21,7 @@ var Enemy = function()
 
     this.isFalling = true;
 
+    this.randomSpawn;
 
 }
 
@@ -82,7 +83,7 @@ Enemy.prototype.Update = function()
 
 Enemy.prototype.Draw = function()
 {
-
+    
     this.sprite.draw(context,this.x - player.x + 600, this.y - player.y + 340);
 
 

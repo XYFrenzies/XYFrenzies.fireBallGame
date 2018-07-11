@@ -4,8 +4,8 @@ var Player = function(){
     this.x = level1SpawnX;
     this.y = level1SpawnY;
 
-    this.width = 54;
-    this.height = 93;
+    this.width = 54 ;
+    this.height = 93 ;
 
 
     this.falling = true;
@@ -209,16 +209,16 @@ if (this.y > floorHeight)
     this.y = floorHeight;
   }
 }
-if(this.x < -496)
+if(this.x < -496 - this.width)
 {
   this.velX = 0;
-  this.x = -496;
+  this.x = -496 - this.width;
   this.accelX = 0;
 }
-if(this.x > 5683)
+if(this.x > 5683 - this.width)
 {
   this.velX = 0;
-  this.x = 5683;
+  this.x = 5683 - this.width;
   this.accelX = 0;
 }
 if(keyboard.isKeyDown(keyboard.KEY_SPACE)  && this.fireLock == false)
@@ -249,11 +249,18 @@ if(keyboard.isKeyUp(keyboard.KEY_SPACE)  && this.fireLock == true)
 }
 
 
-Player.prototype.Draw = function(){
+Player.prototype.Draw = function()
+{
 
-    this.sprite.draw(context, canvas.width / 2, canvas.height / 2);
-    for(var i = 0; i < orbs.length; i++){
-      orbs[i].Draw();
+
+
+    this.sprite.draw(context, canvas.width / 2 + this.width, canvas.height / 2);
+    for(var i = 0; i < orbs.length; i++)
+    {
+      if(orbs[i] != undefined)
+      {
+        orbs[i].Draw();
+      }
     }
 
 }
