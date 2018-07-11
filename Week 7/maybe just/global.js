@@ -2,7 +2,7 @@ var Level = 1;
 const Level1 = 0;
 const GameOver = 2;
 const MainMenu = 1;
-
+const InstructMenu = 3;
 var dt = GetDeltaTime();
 
 var gravity = 9.8 * 20 ;

@@ -156,6 +156,15 @@ function GameLoop()
     }
 
 }
+function instructions()
+{
+  if(Level == InstructMenu)
+  {
+    UpdateInstruct();
+    DrawInstruct();
+    requestAnimationFrame(instructions);
+  }
+}
 function startMenu()
 {
   UpdateMenu();

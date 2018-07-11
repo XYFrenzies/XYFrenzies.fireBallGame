@@ -1,4 +1,4 @@
-function DrawMenu()
+function DrawInstruct()
 {
 
   var MainMenuBG = document.createElement("img");
@@ -8,11 +8,12 @@ function DrawMenu()
 
 }
 
-function UpdateMenu()
+function UpdateInstruct()
 {
-  if(keyboard.isKeyDown(keyboard.KEY_SPACE))
+  if(keyboard.isKeyDown(keyboard.KEY_ENTER))
   {
-    Level = InstructMenu;
-    instructions();
+    Level = Level1;
+    CreateCollisionData();
+    GameLoop();
   }
 }
