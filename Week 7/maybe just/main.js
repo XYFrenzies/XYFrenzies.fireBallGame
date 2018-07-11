@@ -92,7 +92,10 @@ function Update(){
     }
     for(i = 0; i < enemies.length; i++)
     {
+      if(enemies[i] != undefined)
+      {
       enemies[i].Update();
+    }
     }
     for(i = 0; i < orbs.length; i++)
     {
@@ -121,7 +124,10 @@ function Draw(){
 
     for(i = 0; i < enemies.length; i++)
     {
+      if(enemies[i] != undefined)
+      {
       enemies[i].Draw();
+      }
     }
 
 
