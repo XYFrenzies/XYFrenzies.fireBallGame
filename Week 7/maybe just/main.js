@@ -84,6 +84,7 @@ function DrawMap(){
 var timable = 9;
 function Update(){
   timable += dt;
+  superTime -= dt;
     player.Update();
     if(timable > .5)
     {

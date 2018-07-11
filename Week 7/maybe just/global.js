@@ -32,3 +32,5 @@ const level1SpawnY = 1400;
 var orbs = [];
 var enemies = [];
 var deaths = 0;
+
+var superTime = 0;

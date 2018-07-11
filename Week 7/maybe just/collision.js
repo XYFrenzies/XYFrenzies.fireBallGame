@@ -11,7 +11,15 @@ function collides()
     {
     if(Math.sqrt( (player.x - enemies[i].x) * (player.x - enemies[i].x) + (player.y - enemies[i].y) * (player.y - enemies[i].y) ) < (r1 + r2))
     {
-      lives -= 1;
+      if(superTime > 0)
+      {
+        
+      } else
+      {
+          lives -= 1;
+          superTime = 1;
+      }
+
       //Trigger
       enemies[i].Attack();
     }
