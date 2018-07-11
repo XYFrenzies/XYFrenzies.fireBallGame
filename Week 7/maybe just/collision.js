@@ -7,7 +7,11 @@ function collides()
 
     if(Math.sqrt( (player.x - enemies[i].x) * (player.x - enemies[i].x) + (player.y - enemies[i].y) * (player.y - enemies[i].y) ) < (r1 + r2))
     {
-      alert("You dead m8");
+      //Trigger
+    }
+    for(i = 0; i < orbs.length; i++)
+    {
+
     }
   }
 }
