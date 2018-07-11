@@ -12,6 +12,7 @@ var Keyboard = function()
 	// https://developer.mozilla.org/en-US/docs/DOM/KeyboardEvent
 	this.KEY_SPACE = 32;
 	this.KEY_LEFT = 37;
+	this.KEY_ESCAPE = 27;
 	this.KEY_UP = 38;
 	this.KEY_RIGHT = 39;
 	this.KEY_DOWN = 40;
