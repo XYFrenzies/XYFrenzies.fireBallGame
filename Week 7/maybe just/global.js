@@ -26,5 +26,6 @@ const tileSetY = 64;
 const level1SpawnX = 300;
 const level1SpawnY = 1000;
 
+var orbs = [];
 
 var deaths = 0;

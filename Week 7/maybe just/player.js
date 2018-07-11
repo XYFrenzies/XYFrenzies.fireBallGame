@@ -18,30 +18,31 @@ var Player = function(){
     this.jumpFroce = 10000;
     this.gliding = false;
 
-    this.acceleration = 1000;
+    this.acceleration = 800;
 
     this.velX = 0;
     this.velY = 0;
-    this.friction = 200;
+    this.friction = 5;
 
-    this.maxSpeed = 500;
+
+    this.maxSpeed = 800;
+
 
     this.sprite = new Sprite("images/Sprite Sheet.png");
     // number of frames, , width, height, time between frames, what frames
 
-    this.sprite.buildAnimation( 6, 1, 54, 72 , 0.2, [11] ); //IDLE LEFT
+    this.sprite.buildAnimation( 6, 1, 54, 73 , 0.2, [11] ); //IDLE LEFT
 
-    this.sprite.buildAnimation(  6, 1, 54, 72, 0.05, [0, 0, 1, 1, 2, 2, 3, 3, 4, 4] ); //JUMP LEFT
+    this.sprite.buildAnimation(  6, 1, 54, 73, 0.05, [0, 0, 1, 1, 2, 2, 3, 3, 4, 4] ); //JUMP LEFT
 
-    this.sprite.buildAnimation(  6, 1, 54, 72, 0.05, [0, 0, 1, 1, 2, 2, 3, 3, 4, 4] ); //WALK LEFT
+    this.sprite.buildAnimation(  6, 1, 54, 73, 0.05, [0, 0, 1, 1, 2, 2, 3, 3, 4, 4] ); //WALK LEFT
 
-    this.sprite.buildAnimation(  6, 1, 54, 72 , 0.2, [5] ); //IDLE RIGHT
-
-
-    this.sprite.buildAnimation(  6, 1, 54, 72 , 0.05, [10, 10, 9, 9, 8, 8, 7, 7, 6, 6]); //JUMP RIGHT
+    this.sprite.buildAnimation(  6, 1, 54, 73 , 0.2, [5] ); //IDLE RIGHT
 
 
-    this.sprite.buildAnimation(  6, 1, 54, 72 , 0.05, [ 10, 10, 9, 9, 8, 8, 7, 7, 6, 6]); //WALK RIGHT
+    this.sprite.buildAnimation(  6, 1, 54, 73 , 0.05, [10, 10, 9, 9, 8, 8, 7, 7, 6, 6]); //JUMP RIGHT
+
+    this.sprite.buildAnimation(  6, 1, 54, 73 , 0.05, [ 10, 10, 9, 9, 8, 8, 7, 7, 6, 6]); //WALK RIGHT
 
 
 
@@ -143,7 +144,9 @@ Player.prototype.Update = function(){
     var accelX = 0;
     var accelY = gravity;
     if(left)
+    {
         accelX -= this.acceleration;
+    }
     else if(wasLeft)
     {
         accelX += this.friction;
@@ -222,61 +225,26 @@ if(this.x > 5683)
   this.x = 5683;
   this.accelX = 0;
 }
-    // if(this.velY < 0){
-    //     if((cell && !cellDown) || (cellRight && !cellDiag && nx ))
-    //     {
-    //         this.y = tileToCoord(ty + 1);
-    //         this.velY = 0;
-    //         cell = cellDown;
-    //         cellRight = cellDiag;
-    //         ny = 0;
-    //     }
-    // }else if(this.velY > 0){
-    //     if((cellDown && !cell) || cellDiag && !cellRight && nx){
-    //         this.y = tileToCoord(ty);
-    //         this.velY = 0;
-    //         this.falling = false;
-    //         this.jumping = false;
-    //         ny = 0;
-    //     }
-    // }
-    //
-    // if(this.velX < 0){
-    //     if((cell && cellRight) || (cellDiag && !cellDown && ny)){
-    //         this.velX = 0;
-    //         this.x = tileToCoord(tx + 1);
-    //     }
-    // } else if(this.velX > 0){
-    //     if((cellRight && !cell) || (cellDiag && !cellDown && ny)){
-    //         this.velX = 0;
-    //         this.x = tileToCoord(tx);
-    //     }
-    // }
-
-    // this.falling = !(cellDown || cellDiag);
-    //
-    // if(!cellDown){
-    //     if(cellDown = cellAtTile(0, tx, ty + 1)){
-    //         if(Level == Level1)
-    //         {
-    //             this.x = level1SpawnX;
-    //             this.y = level1SpawnY;
-    //             deaths++
-    //         }
-    //         if(Level == Level2)
-    //         {
-    //             this.x = level2SpawnX;
-    //             this.y = level2SpawnY;
-    //             deaths++
-    //         }
-    //         if(Level == Level3)
-    //         {
-    //             this.x = level3SpawnX;
-    //             this.y = level3SpawnX;
-    //             deaths++
-    //         }
-    //     }
-    // }
+if(keyboard.isKeyDown(keyboard.KEY_SPACE))
+{
+  if(this.velX > 0)
+  {
+      orbs.push(new ORB(this.x, this.y, this.velX + 100));
+  } else if (this.velY < 0)
+  {
+      orbs.push(new ORB(this.x, this.y, this.velX - 100));
+  } else
+  {
+    if(Math.random() > 0.5)
+    {
+      orbs.push(new ORB(this.x, this.y, 100));
+    }
+    else
+    {
+      orbs.push(new ORB(this.x, this.y, -100));
+    }
+  }
+}
 
 }
 
