@@ -10,7 +10,7 @@ function DrawGameOver()
 
 function UpdateGameOver()
 {
-  if(keyboard.isKeyDown(keyboard.KEY_SPACE))
+  if(keyboard.isKeyDown(keyboard.KEY_ENTER))
   {
     location.reload();
   }
