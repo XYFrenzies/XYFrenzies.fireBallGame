@@ -4,7 +4,7 @@ function collides()
   {
     var r1 = 18;
     var r2 = 18;
-
+    var deleted = 0;
     if(Math.sqrt( (player.x - enemies[i].x) * (player.x - enemies[i].x) + (player.y - enemies[i].y) * (player.y - enemies[i].y) ) < (r1 + r2))
     {
       //Trigger
@@ -16,9 +16,12 @@ function collides()
       if(Math.sqrt( (orbs[l].x - (enemies[i].x + 25)) * (orbs[l].x - (enemies[i].x + 25)) + (orbs[l].y - (enemies[i].y + 25)) * (orbs[l].y - (enemies[i].y + 25)) ) < (r3 + r4))
       {
         delete enemies[i];
+        deleted++;
         enemies.sort();
-        enemies.length -= 1;
+        enemies.length -= deleted;
+        i--;
       }
     }
+
   }
 }
