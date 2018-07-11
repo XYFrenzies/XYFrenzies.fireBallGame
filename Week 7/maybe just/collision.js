@@ -23,7 +23,7 @@ function collides()
       var r4 = 5;
       if(enemies[i] != undefined)
       {
-        if(orbs[i] != undefined)
+        if(orbs[l] != undefined)
         {
           if(Math.sqrt( (orbs[l].x - (enemies[i].x + 25)) * (orbs[l].x - (enemies[i].x + 25)) + (orbs[l].y - (enemies[i].y + 25)) * (orbs[l].y - (enemies[i].y + 25)) ) < (r3 + r4))
           {
