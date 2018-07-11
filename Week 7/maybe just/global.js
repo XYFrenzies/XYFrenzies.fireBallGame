@@ -1,6 +1,6 @@
 const Level = 0;
 const Level1 = 0;
-
+var dt = GetDeltaTime();
 
 var gravity = 9.8 * 20 ;
 

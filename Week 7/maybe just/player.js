@@ -60,7 +60,7 @@ var Player = function(){
 
 
 Player.prototype.Update = function(){
-    var dt = GetDeltaTime();
+    dt = GetDeltaTime();
 
     this.sprite.update(dt);
 
@@ -229,19 +229,19 @@ if(keyboard.isKeyDown(keyboard.KEY_SPACE))
 {
   if(this.velX > 0)
   {
-      orbs.push(new ORB(this.x, this.y, this.velX + 100));
+      orbs.push(new ORB(this.x, this.y, this.velX + 1000));
   } else if (this.velY < 0)
   {
-      orbs.push(new ORB(this.x, this.y, this.velX - 100));
+      orbs.push(new ORB(this.x, this.y, this.velX - 1000));
   } else
   {
     if(Math.random() > 0.5)
     {
-      orbs.push(new ORB(this.x, this.y, 100));
+      orbs.push(new ORB(this.x, this.y, 1000));
     }
     else
     {
-      orbs.push(new ORB(this.x, this.y, -100));
+      orbs.push(new ORB(this.x, this.y, -1000));
     }
   }
 }

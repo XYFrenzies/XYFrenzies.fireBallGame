@@ -11,14 +11,14 @@ function ORB(inX, inY, inDir){
 
 ORB.prototype.Update = function()
 {
-  this.x += this.dir;
+  this.x += this.dir * dt;
 
 }
 
 ORB.prototype.Draw = function()
 {
     //this.sprite.draw(context, this.x, this.y);
-    context.drawImage(this.image, this.x - player.x, this.y - player.y);
+    context.drawImage(this.image, this.x - player.x + 300, this.y - player.y + 300);
     //context.fillStyle("black");
     //context.fillStyle = "black";
     //context.fillRect(this.x - player.x, this.x - player.y, 150, 150);
