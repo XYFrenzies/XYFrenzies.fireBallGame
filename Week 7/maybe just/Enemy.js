@@ -19,7 +19,7 @@ var Enemy = function()
     {
         this.x = 3000;
     }
-    if( this.x > -496)
+    if( this.x < -496)
     {
         this.x = 3000;
     }
@@ -35,9 +35,9 @@ var Enemy = function()
 
     this.sprite.buildAnimation(8,2,131,93,0.2,[7,6,5]);
 
-    this.sprite.buildAnimation(8,2,131,93,0.1, [8,8,8,9,10,11])
+    this.sprite.buildAnimation(8,2,131,93,0.05, [8,8,8,9,10,11])
 
-    this.sprite.buildAnimation(8,2,131,93,0.1, [15,15,15,14,13,12])
+    this.sprite.buildAnimation(8,2,131,93,0.05, [15,15,15,14,13,12])
 
     this.isFalling = true;
 
