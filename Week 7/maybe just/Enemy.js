@@ -21,7 +21,7 @@ var Enemy = function()
 
     this.isFalling = true;
 
-    
+
 }
 
 Enemy.prototype.Attack = function()
@@ -45,9 +45,9 @@ Enemy.prototype.Attack = function()
 
 Enemy.prototype.Update = function()
 {
-       
-    
-  
+
+
+
     if(this.isFalling == true)
     {
         this.y += 2;
@@ -87,5 +87,3 @@ Enemy.prototype.Draw = function()
 
 
 }
-
-
