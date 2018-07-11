@@ -4,8 +4,8 @@ var Player = function(){
     this.x = level1SpawnX;
     this.y = level1SpawnY;
 
-    this.width = 54;
-    this.height = 93;
+    this.width = 54 ;
+    this.height = 93 ;
 
 
     this.falling = true;
@@ -251,6 +251,7 @@ if(keyboard.isKeyUp(keyboard.KEY_SPACE)  && this.fireLock == true)
 
 Player.prototype.Draw = function()
 {
+
 
 
     this.sprite.draw(context, canvas.width / 2 + this.width, canvas.height / 2);
