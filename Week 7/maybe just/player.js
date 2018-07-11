@@ -9,8 +9,8 @@ var Player = function(){
         this.x = level1SpawnX;
         this.y = level1SpawnY;
     }
-    this.width = 54;
-    this.height = 93;
+    this.width = 54/2;
+    this.height = 93/2;
 
 
     this.falling = true;
