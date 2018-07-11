@@ -34,3 +34,7 @@ var enemies = [];
 var deaths = 0;
 
 var superTime = 0;
+var spawnRate = .1;
+
+var score = 0;
+var lives = 3;

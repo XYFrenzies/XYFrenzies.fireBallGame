@@ -4,8 +4,7 @@ var context = canvas.getContext("2d");
 var player = new Player();
 
 
-var score = 0;
-var lives = 3;
+
 
 var tileset = document.createElement("img");
 tileset.src = "Images/Tileset.png";
@@ -86,7 +85,7 @@ function Update(){
   timable += dt;
   superTime -= dt;
     player.Update();
-    if(timable > .1)
+    if(timable > spawnRate)
     {
       timable = 0;
       enemies.push(new Enemy());
