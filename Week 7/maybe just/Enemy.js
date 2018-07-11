@@ -3,6 +3,17 @@ var Enemy = function()
 
 
     this.x = Math.random() * 6179 - 496;
+    //right
+    if( this.x <= player.x + 500 && this.x >= player.x ) 
+    {
+        this.x -= 800;
+    }
+    //left
+    if(this.x  >= player.x - 500 && this.x <=player.x ) //Fix
+    {
+        this.x += 800;
+     
+    }
     this.y = player.y -25;
 
     this.width = 188/4;
