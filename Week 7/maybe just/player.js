@@ -1,8 +1,8 @@
 var Player = function(){
 
-    //Default position  
-    this.x = Level1SpawnX;
-    this.y = Level1SpawnY;
+    //Default position
+    this.x = level1SpawnX;
+    this.y = level1SpawnY;
 
     this.width = 54;
     this.height = 93;
@@ -209,16 +209,16 @@ if (this.y > floorHeight)
     this.y = floorHeight;
   }
 }
-if(this.x < -552)
+if(this.x < -496)
 {
   this.velX = 0;
-  this.x = -552;
+  this.x = -496;
   this.accelX = 0;
 }
-if(this.x > 5623)
+if(this.x > 5683)
 {
   this.velX = 0;
-  this.x = 5623;
+  this.x = 5683;
   this.accelX = 0;
 }
 if(keyboard.isKeyDown(keyboard.KEY_SPACE)  && this.fireLock == false)
