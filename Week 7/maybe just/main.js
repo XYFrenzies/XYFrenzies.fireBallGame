@@ -115,7 +115,7 @@ function Draw(){
     context.fillText("Score: "+ score, 10, 50);
 
     context.fillStyle = "#ff0000"
-    context.fillText("Lives: ", 1000, 50)
+    context.fillText("Lives: "+ lives, 1000, 50)
     //draw the player
     player.Draw();
 
