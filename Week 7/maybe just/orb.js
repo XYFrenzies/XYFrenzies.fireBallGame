@@ -6,13 +6,14 @@ function ORB(inX, inY, inDir){
   //this.image = document.createElement("img");
   //this.image.src = ("Images/player orb.png");
 
-  this.sprite.buildAnimation(2, 1, 45, 45, 0.2, [0, 1]);
+  this.sprite.buildAnimation(2, 1, 45, 45, 0.1, [0, 1]);
 }
 
 ORB.prototype.Update = function()
 {
   this.x += this.dir * dt;
-
+  this.sprite.update(dt);
+  
 }
 
 ORB.prototype.Draw = function()
