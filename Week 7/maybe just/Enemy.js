@@ -11,13 +11,11 @@ var Enemy = function()
     this.sprite = new Sprite("Images/Enemy sprite sheet.png");
 
 
-    this.sprite.buildAnimation(8,2,131,93,0.2,[0,1,2]);
+    this.sprite.buildAnimation(8,2,131,93,0.5,[0,1,2]);
 
-    this.sprite.buildAnimation(8,2,131,93,0.2,[7,6,5]);
+    this.sprite.buildAnimation(8,2,131,93,1,[7,6,5]);
 
     this.sprite.buildAnimation(8,2,131,93,0.1, [8,8,8,9,10,11])
-
-    this.sprite.buildAnimation(8,2,131,93,0.1, [15,15,15,14,13,12])
 
     this.isFalling = true;
 
@@ -26,19 +24,9 @@ var Enemy = function()
 
 Enemy.prototype.Attack = function()
 {
-    if(this.sprite.currentAnimation == 0)
+    if(this.sprite.currentAnimation != 2)
     {
-        if(this.sprite.currentAnimation != 2)
-        {
-            this.sprite.setAnimation(2);
-        }
-    }
-    if(this.sprite.currentAnimation == 1)
-    {
-        if(this.sprite.currentAnimation != 3)
-        {
-            this.sprite.setAnimation(3);
-        }
+        this.sprite.setAnimation(2);
     }
 }
 
