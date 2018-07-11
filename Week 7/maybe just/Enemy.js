@@ -11,18 +11,20 @@ var Enemy = function()
     this.sprite = new Sprite("Images/Enemy sprite sheet.png");
 
 
-    this.sprite.buildAnimation (8,2,131,93,0.5, [0,1,2,3,4,5,6,7]);
+    this.sprite.buildAnimation(8,2,131,93,0.5,[0,1,2]);
 
+    this.sprite.buildAnimation(8,2,131,93,1,[7,6,5]);
 
     this.isFalling = true;
+
+    
 }
 
 Enemy.prototype.Update = function()
 {
-    var dt = GetDeltaTime();
+       
     
-    this.sprite.update(dt);
-
+  
     if(this.isFalling == true)
     {
         this.y += 2;
@@ -44,6 +46,7 @@ Enemy.prototype.Update = function()
             this.x += 2;
         }
     }
+    this.sprite.update(dt);
 }
 
 Enemy.prototype.Draw = function()
