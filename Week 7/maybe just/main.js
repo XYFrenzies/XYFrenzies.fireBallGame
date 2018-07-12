@@ -1,7 +1,7 @@
 var canvas = document.getElementById("gameCanvas");
 var context = canvas.getContext("2d");
 
-var player = new Player();
+
 
 //The following Howl is a function that are using the howler srcipt to produce the sound
 var sndMain = new Howl(
