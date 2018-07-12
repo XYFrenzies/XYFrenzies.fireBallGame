@@ -60,7 +60,7 @@ Wizard.prototype.Attack = function()
             this.sprite.setAnimation(3);
         }
     }
-    
+    fireBalls.push(new FireBall(this.x, this.y, (this.x - player.x), (this.y - player.y)))
 }
 
 Wizard.prototype.Update = function()
