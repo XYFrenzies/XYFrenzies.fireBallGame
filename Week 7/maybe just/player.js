@@ -147,22 +147,28 @@ Player.prototype.Update = function(){
     var wasRight = this.velX > 0;
     var accelX = 0;
     var accelY = gravity;
-    //If the player is moving to the left and continues to move the left, accelerationw ill increase.
+    //If the player is moving to the left and continues to move the left, acceleration will increase.
     if(left)
     {
         accelX -= this.acceleration;
     }
+    //If the player is facing left but does not continue to press the left
+    //arrow, it will continusly add friction and slide accross the floor.
     else if(wasLeft)
     {
         accelX += this.friction;
     }
 
+    //If the player is moving to the right and continues to move the right, acceleration will increase.
     if(right)
         accelX += this.acceleration;
     else if(wasRight)
     {
+      //If the player is facing right but does not continue to press the right
+      //arrow, it will continusly add friction and slide accross the floor.
         accelX -= this.friction;
     }
+    //This is to have the animation of when the player is jumping, the player decreases its jumpforce and that jumping is true.
     if(jump && !this.jumping && !this.falling)
     {
         accelY -= this.jumpFroce;
@@ -179,23 +185,24 @@ Player.prototype.Update = function(){
 
 
 
-
+    //This is the affect of the players x and y coordinates in terms of acceleration and maxspeed from its velocity.
     this.x += this.velX * dt;
     this.y += this.velY * dt;
     this.velX += accelX * dt;
     this.velY += accelY * dt;
 
 
-    //max speeds
+    //This is to determine the max speed of the player.
     if(this.velX > this.maxSpeed)
         this.velX = this.maxSpeed;
     else if (this.velX < -this.maxSpeed)
         this.velX = -this.maxSpeed;
 
-    //no jitter
+    //It prevents the player from having a weird animation of being jiggery.
     if((wasLeft && (this.velX > 0)) || (wasRight && (this.velX < 0))){
         this.velX = 0;
     }
+    //This is the physics of the tiles in terms of the player. Requires extra assistence
     var tx = coordToTile(this.x);
     var ty = coordToTile(this.y);
     var nx = this.x % mapTileSize;
@@ -207,6 +214,7 @@ Player.prototype.Update = function(){
     var cellDiag = cellAtTile(0, tx + 1 , ty + 1);
 
 
+//This is the limitation of where the player is allowed to fall to.
     floorHeight = 1400;
   if (this.y > floorHeight)
   {
@@ -216,25 +224,32 @@ Player.prototype.Update = function(){
     JumpSndPlay = false;
     if(this.y > floorHeight)
     {
+      //If the player is about to go beyond the floor, they stay above the floor.
       this.y = floorHeight;
     }
   }
+  //This is to prevent the player from moving beyond the specific frames of the walls on either end.
+  //For this, this is the left wall.
   if(this.x < -496 - this.width)
   {
     this.velX = 0;
     this.x = -496 - this.width;
     this.accelX = 0;
   }
+  //For this, this is the right wall.
   if(this.x > 5683 - this.width)
   {
     this.velX = 0;
     this.x = 5683 - this.width;
     this.accelX = 0;
   }
+  //This is to prevent the player from having the player from holding the keyboard so that they dont rapidely fire fireballs.
   if(keyboard.isKeyDown(keyboard.KEY_SPACE)  && this.fireLock == false)
   {
     fireSndPlay = false;
     this.fireLock = true;
+    //This is the orb physics so that when the player shoots the orb,
+    //it will go a specific direction, and that it follows that direction.
     if(this.velX > 0)
     {
         orbs.push(new ORB(this.x, this.y, this.velX + 1000));
@@ -253,6 +268,7 @@ Player.prototype.Update = function(){
         }
       }
     }
+    //When the player has stopped pressing the spacebar, the fireballs will stop.
     if(keyboard.isKeyUp(keyboard.KEY_SPACE)  && this.fireLock == true)
     {
       this.fireLock = false;
@@ -265,8 +281,9 @@ Player.prototype.Draw = function()
 {
 
 
-
+    //This is to draw the player in the centre of the canvas so that the player has a large scope of the map.
     this.sprite.draw(context, canvas.width / 2 + this.width, canvas.height / 2);
+    //This is where the orbs are draw.
     for(var i = 0; i < orbs.length; i++)
     {
       if(orbs[i] != undefined)
