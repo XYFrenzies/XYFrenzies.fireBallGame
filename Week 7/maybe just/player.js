@@ -128,16 +128,12 @@ Player.prototype.Update = function(){
             JumpSndPlay = true;
         }
     }
-<<<<<<< HEAD
     //If the player's gliding and that they are off the ground,
     //gravity will occur to eventually bring it to the ground.
     if(this.gliding == true && this.velY >= 0)
     {
         gravity = 9.8 *5;
     }
-=======
-   
->>>>>>> 21692fcc47fe1577cb4c6cd864c5fe57e04df5ff
     if(this.falling == true )
     {
         //As there is no specific different animation for the jumping,
@@ -151,11 +147,12 @@ Player.prototype.Update = function(){
             this.sprite.setAnimation(animationJumpRight);
         }
     }
-    //This is to introduce the idea of acceleration to the game.
+    //This is to introduce the idea of acceleration and friction to the game.
     var wasLeft = this.velX < 0;
     var wasRight = this.velX > 0;
     var accelX = 0;
     var accelY = gravity;
+    //If the player is moving to the left and continues to move the left, accelerationw ill increase.
     if(left)
     {
         accelX -= this.acceleration;
