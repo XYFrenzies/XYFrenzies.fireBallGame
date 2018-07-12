@@ -36,7 +36,7 @@ var wizards = [];
 var deaths = 0;
 
 var superTime = 0;
-var spawnRate = .5;
+var spawnRate = .15;
 
 var score = 0;
 var lives = 3;
