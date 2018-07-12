@@ -6,7 +6,7 @@ var player = new Player();
 
 var sndMain = new Howl(
   {
-    src: ['Sounds/1 Hour of Magical & Fantasy & Epic Music Full HD 1080p 150 Pictures Slideshow.mp3'],
+    src: ['Sounds/menu.wav'],
     loop:true,
     buffer:true,
     volume:0.4
@@ -30,7 +30,7 @@ var sndEndGame = new Howl(
     buffer:true,
     volume:0.4
   });
-
+  
 var tileset = document.createElement("img");
 tileset.src = "Images/Tileset.png";
 
@@ -169,14 +169,15 @@ function Draw(){
 
 function GameLoop()
 {
-    sndMain.stop();
-    sndGame.play();
+   
     Update();
     Draw();
     if(lives <= 0)
     {
       Level = GameOver;
       gameOver();
+      sndGame.stop();
+      sndEndGame.play();
     } else {
         requestAnimationFrame(GameLoop);
     }
@@ -193,8 +194,7 @@ function instructions()
 }
 function startMenu()
 {
-  sndEndGame.stop();
-  sndMain.play();
+    
   UpdateMenu();
   DrawMenu();
   if(Level == MainMenu)
@@ -206,11 +206,16 @@ function gameOver()
 {
   if(Level == GameOver)
   {
-    sndGame.stop();
-    sndEndGame.play();
+    
     UpdateGameOver();
     DrawGameOver();
   requestAnimationFrame(gameOver);
   }
 }
+function musicStart()
+{
+    sndMain.play();
+}
+
+musicStart();
 startMenu();
