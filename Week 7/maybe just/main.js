@@ -3,6 +3,7 @@ var context = canvas.getContext("2d");
 
 var player = new Player();
 
+
 //The following Howl is a function that are using the howler srcipt to produce the sound
 var sndMain = new Howl(
   {
@@ -198,6 +199,7 @@ function Draw(){
     context.fillText("Lives: "+ lives, 1000, 50)
     //draw the player
     player.Draw();
+
 
     for(i = 0; i < enemies.length; i++)
     {

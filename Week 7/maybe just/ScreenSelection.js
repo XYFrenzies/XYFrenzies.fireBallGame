@@ -47,6 +47,15 @@ function UpdateSS()
   if(keyboard.isKeyDown(keyboard.KEY_RIGHT))
   {
 
+    if(ArrowXPos >= 1260)
+    {
+      ArrowXPos = 1260;
+    }
+    if(ArrowXPos <= 260)
+    {
+      ArrowXPos = 260;
+    }
+
     if(ArrowXPos == 1000)
     {
       ArrowXPos = 1260;
@@ -54,22 +63,15 @@ function UpdateSS()
 
     if(ArrowXPos == 760)
     {
-      ArrowPos == 1000
+      ArrowXPos == 1000
     }
 
     if(ArrowXPos == 260)
     {
-      ArrowPos == 760
+      ArrowXPos == 760
     }
   }
-  if(ArrowXPos >= 1260)
-  {
-    ArrowXPos = 1260;
-  }
-  if(ArrowXPos <= 400)
-  {
-    ArrowXPos = 400;
-  }
+
 
 
 
