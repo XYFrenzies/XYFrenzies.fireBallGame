@@ -265,11 +265,8 @@ Player.prototype.Update = function(){
 Player.prototype.Draw = function()
 {
 
-<<<<<<< HEAD
 
 
-    this.sprite.draw(context, canvas.width / 2 + this.width, canvas.height / 2);
-=======
     if(this.redval > 0)
     {
       this.redval -= dt;
@@ -284,7 +281,7 @@ Player.prototype.Draw = function()
     this.sprite.draw(context, canvas.width / 2 + this.width, canvas.height / 2);
     }
     //This is where the orbs are draw.
->>>>>>> ef06ce3290918b5b64817b203251007427fde830
+
     for(var i = 0; i < orbs.length; i++)
     {
       if(orbs[i] != undefined)
