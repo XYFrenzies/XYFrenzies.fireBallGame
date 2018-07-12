@@ -13,7 +13,7 @@ ORB.prototype.Update = function()
 {
   this.x += this.dir * dt;
   this.sprite.update(dt);
-  
+
 }
 
 ORB.prototype.Draw = function()

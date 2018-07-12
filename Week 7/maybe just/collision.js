@@ -33,7 +33,7 @@ function collides()
       {
         if(orbs[l] != undefined)
         {
-          if(Math.sqrt( (orbs[l].x - (enemies[i].x + 25)) * (orbs[l].x - (enemies[i].x + 25)) + (orbs[l].y - (enemies[i].y + 25)) * (orbs[l].y - (enemies[i].y + 25)) ) < (r3 + r4))
+          if(Math.sqrt( (orbs[l].x - (enemies[i].x + 25 )) * (orbs[l].x - (enemies[i].x + 25)) + (orbs[l].y - (enemies[i].y + 25)) * (orbs[l].y - (enemies[i].y + 25)) ) < (r3 + r4))
           {
             delete enemies[i];
             delete orbs[l];
@@ -53,15 +53,16 @@ function collides()
   //Dont play with fire, (Dont touch my fireball code)
   for(i = 0; i < fireBalls.length; i++)
   {
-    var r5 = 10;
-    var r6 = 10;
+    var r5 = 50;
+    var r6 = 50;
     if(player != undefined)
     {
       if(fireBalls[i] != undefined)
       {
-        if(Math.sqrt( (fireBalls[i].x - (player.x + 25)) * (fireBalls[i].x - (player.x + 25)) + (fireBalls[i].y - (player.y + 25)) * (fireBalls[i].y - (player.y + 25)) ) < (r5 + r6))
+        if(Math.sqrt(  (fireBalls[i].x + player.width + 600 - (player.x + 25)) * (fireBalls[i].x + player.width + 600 - (player.x + 25)) + (fireBalls[i].y + 340 - (player.y + 25)) * (fireBalls[i].y + 340 - (player.y + 25)) ) < (r5 + r6))
         {
-          player.Lives -= 1;
+          alert("You just got burned m9!");
+          lives -= 1;
           delete fireBalls[i];
           //enemies.length--;
           //i--;

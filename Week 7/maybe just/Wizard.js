@@ -1,6 +1,6 @@
 var Wizard = function()
 {
-    
+
     this.x = Math.random() * 6179 - 496;
     //right
     if( this.x <= player.x + 500 && this.x >= player.x )
@@ -46,7 +46,7 @@ Wizard.prototype.Attack = function()
   {
     DirX = -200;
   }
-    fireBalls.push(new FireBall(this.x, this.y, DirX));
+    fireBalls.push(new FireBall(this.x, player.y + 340, DirX));
 }
 
 Wizard.prototype.Update = function()
@@ -84,7 +84,7 @@ Wizard.prototype.Update = function()
     }
     this.cooldown -= dt;
 
-    
+
 }
 
 Wizard.prototype.Draw = function()
