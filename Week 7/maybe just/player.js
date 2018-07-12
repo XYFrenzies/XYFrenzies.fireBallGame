@@ -3,7 +3,8 @@ var Player = function(){
     //Default position
     this.x = level1SpawnX;
     this.y = level1SpawnY;
-
+    //Value that is red
+    this.redval = 0;
     //Width and height of the player
     this.width = 54 ;
     this.height = 93 ;
@@ -280,9 +281,19 @@ Player.prototype.Update = function(){
 Player.prototype.Draw = function()
 {
 
+    if(this.redval > 0)
+    {
+      this.redval -= dt;
+      this.sprite.draw(context, canvas.width / 2 + this.width, canvas.height / 2);
+      context.globalAlpha=0.62;
+      context.fillStyle="red";
+      context.fillRect(canvas.width / 2 + 15, canvas.height / 2 - 30, this.width, this.height - 20);
+      context.globalAlpha=1;
 
+    } else if (!false){
     //This is to draw the player in the centre of the canvas so that the player has a large scope of the map.
     this.sprite.draw(context, canvas.width / 2 + this.width, canvas.height / 2);
+    }
     //This is where the orbs are draw.
     for(var i = 0; i < orbs.length; i++)
     {

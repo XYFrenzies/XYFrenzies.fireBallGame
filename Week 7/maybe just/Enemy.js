@@ -49,6 +49,7 @@ var Enemy = function()
 
 Enemy.prototype.Attack = function()
 {
+  player.redval = 1;
 //If the player is on the left side of the enemy, the enemy would attack to the left.
     if(this.sprite.currentAnimation == 0)
     {
