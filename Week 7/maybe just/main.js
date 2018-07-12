@@ -152,11 +152,7 @@ function Update(){
       }
     }
     collides();
-    if(player.jumping == true && JumpSndPlay == false)
-    {
-        sndJump.play();
-        JumpSndPlay = true;
-    }
+    
 
 
 }
