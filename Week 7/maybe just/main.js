@@ -14,7 +14,8 @@ var sndMain = new Howl(
 
 var sndGame = new Howl(
   {
-    urls: ['Sounds/'],
+    urls: ['Sounds/Game.mp3'],
+
     loop:false,
     buffer:true,
     volume:0.4
@@ -22,7 +23,9 @@ var sndGame = new Howl(
 
 var sndEndGame = new Howl(
   {
-    urls: ['Sounds/'],
+
+    urls: ['Sounds/EndGame.wav'],
+
     loop:false,
     buffer:true,
     volume:0.4
@@ -166,6 +169,8 @@ function Draw(){
 
 function GameLoop()
 {
+    sndMain.stop();
+    sndGame.play();
     Update();
     Draw();
     if(lives <= 0)
@@ -188,6 +193,8 @@ function instructions()
 }
 function startMenu()
 {
+  sndEndGame.stop();
+  sndMain.play();
   UpdateMenu();
   DrawMenu();
   if(Level == MainMenu)
@@ -199,6 +206,8 @@ function gameOver()
 {
   if(Level == GameOver)
   {
+    sndGame.stop();
+    sndEndGame.play();
     UpdateGameOver();
     DrawGameOver();
   requestAnimationFrame(gameOver);
