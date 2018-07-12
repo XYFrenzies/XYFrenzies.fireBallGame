@@ -1,7 +1,6 @@
 var Wizard = function()
 {
-    this.img = document.createElement("img");
-    this.img.src = "Images/Summoner.png";
+    
     this.x = Math.random() * 6179 - 496;
     //right
     if( this.x <= player.x + 500 && this.x >= player.x )
@@ -23,11 +22,18 @@ var Wizard = function()
     {
         this.x = 3000;
     }
-    this.y = player.y + 311;
+    this.y = player.y + 245;
 
     this.width = 188/4;
     this.height = 241/4;
     this.cooldown = 8;
+
+    this.sprite = new Sprite("Images/Summoner.png");
+
+
+    this.sprite.buildAnimation(2,1, 125, 160,99999999,[1]);
+
+    this.sprite.buildAnimation(2,1,131, 160,99999999,[0]);
 }
 
 Wizard.prototype.Attack = function()
@@ -45,12 +51,21 @@ Wizard.prototype.Attack = function()
 
 Wizard.prototype.Update = function()
 {
+  this.sprite.update(dt);
   if(this.x - 600 < player.x)
   {
     this.x++;
+    if(this.sprite.currentAnimation != 0)
+            {
+                this.sprite.setAnimation(0);
+            }
   } else if (!false)
   {
     this.x--;
+    if(this.sprite.currentAnimation != 1)
+            {
+                this.sprite.setAnimation(1);
+            }
   }
     // if(this.isFalling == true)
     // {
@@ -68,9 +83,11 @@ Wizard.prototype.Update = function()
       this.cooldown = 8;
     }
     this.cooldown -= dt;
+
+    
 }
 
 Wizard.prototype.Draw = function()
 {
-    context.drawImage(this.img, this.x - player.x, this.y - player.y);
+  this.sprite.draw(context, this.x - player.x, this.y - player.y);
 }

@@ -25,7 +25,7 @@ FireBall.prototype.Draw = function()
 
     //context.drawImage(this.image, this.x - player.x, this.y - player.y);
 
-    this.sprite.draw(context, this.x - player.x, this.y - player.y);
+    this.sprite.draw(context, this.x - player.x, this.y - player.y + 100);
 
     //context.fillStyle("black");
     //context.fillStyle = "black";
