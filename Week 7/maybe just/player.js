@@ -128,10 +128,7 @@ Player.prototype.Update = function(){
             JumpSndPlay = true;
         }
     }
-    if(this.gliding == true && this.velY >= 0)
-    {
-        gravity = 9.8 *5;
-    }
+   
     if(this.falling == true )
     {
         if(left == true && this.sprite.currentAnimation != animationJumpLeft)
