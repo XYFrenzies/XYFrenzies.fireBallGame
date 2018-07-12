@@ -39,6 +39,14 @@ var sndJump = new Howl(
     volume:0.05,
   })
 
+var fireBall = new Howl(
+  {
+    urls:['Sounds/Fire Ball.wav'],
+    loop:false,
+    buffer:true,
+    volume:0.05,
+  })
+
 var tileset = document.createElement("img");
 tileset.src = "Images/Tileset.png";
 
@@ -154,6 +162,11 @@ function Update(){
     collides();
 
 
+    if(player.firelock = true && fireSndPlay == false)
+    {
+      fireBall.play();
+      fireSndPlay = true;
+    }
 
 }
 

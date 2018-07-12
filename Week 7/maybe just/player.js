@@ -4,15 +4,18 @@ var Player = function(){
     this.x = level1SpawnX;
     this.y = level1SpawnY;
 
+    //Width and height of the player
     this.width = 54 ;
     this.height = 93 ;
 
-
+    //Checking if the player is falling, jumping, its
+    //jumpforce and it floating across the screen whilst jumping/falling
     this.falling = true;
     this.jumping = false;
     this.jumpFroce = 15000;
     this.gliding = false;
 
+    //Increased speed of the player
     this.acceleration = 800;
 
     this.velX = 0;
@@ -171,7 +174,7 @@ Player.prototype.Update = function(){
         {
             this.sprite.setAnimation(animationJumpRight)
         }
-}
+      }
 
 
 
@@ -203,55 +206,57 @@ Player.prototype.Update = function(){
     var cellDiag = cellAtTile(0, tx + 1 , ty + 1);
 
 
-floorHeight = 1400;
-if (this.y > floorHeight)
-{
-  this.velY = 0;
-  this.falling = 0;
-  this.jumping = 0;
-  JumpSndPlay = false;
-  if(this.y > floorHeight)
+    floorHeight = 1400;
+  if (this.y > floorHeight)
   {
-    this.y = floorHeight;
-  }
-}
-if(this.x < -496 - this.width)
-{
-  this.velX = 0;
-  this.x = -496 - this.width;
-  this.accelX = 0;
-}
-if(this.x > 5683 - this.width)
-{
-  this.velX = 0;
-  this.x = 5683 - this.width;
-  this.accelX = 0;
-}
-if(keyboard.isKeyDown(keyboard.KEY_SPACE)  && this.fireLock == false)
-{
-  this.fireLock = true;
-  if(this.velX > 0)
-  {
-      orbs.push(new ORB(this.x, this.y, this.velX + 1000));
-  } else if (this.velX < 0)
-  {
-      orbs.push(new ORB(this.x, this.y, this.velX - 1000));
-  } else
-  {
-    if(this.sprite.currentAnimation == animationIdleRight)
+    this.velY = 0;
+    this.falling = 0;
+    this.jumping = 0;
+    JumpSndPlay = false;
+    if(this.y > floorHeight)
     {
-      orbs.push(new ORB(this.x, this.y, 500));
-    }
-    else
-    {
-      orbs.push(new ORB(this.x, this.y, -500));
+      this.y = floorHeight;
     }
   }
-}
-if(keyboard.isKeyUp(keyboard.KEY_SPACE)  && this.fireLock == true)
-{
-  this.fireLock = false;
-}
+  if(this.x < -496 - this.width)
+  {
+    this.velX = 0;
+    this.x = -496 - this.width;
+    this.accelX = 0;
+  }
+  if(this.x > 5683 - this.width)
+  {
+    this.velX = 0;
+    this.x = 5683 - this.width;
+    this.accelX = 0;
+  }
+  if(keyboard.isKeyDown(keyboard.KEY_SPACE)  && this.fireLock == false)
+  {
+    fireSndPlay = false;
+    this.fireLock = true;
+    if(this.velX > 0)
+    {
+        orbs.push(new ORB(this.x, this.y, this.velX + 1000));
+    } else if (this.velX < 0)
+    {
+        orbs.push(new ORB(this.x, this.y, this.velX - 1000));
+      } else
+      {
+        if(this.sprite.currentAnimation == animationIdleRight)
+        {
+          orbs.push(new ORB(this.x, this.y, 500));
+        }
+        else
+        {
+          orbs.push(new ORB(this.x, this.y, -500));
+        }
+      }
+    }
+    if(keyboard.isKeyUp(keyboard.KEY_SPACE)  && this.fireLock == true)
+    {
+      this.fireLock = false;
+
+    }
 }
 
 

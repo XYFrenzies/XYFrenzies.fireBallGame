@@ -42,3 +42,5 @@ var score = 0;
 var lives = 3;
 
 var JumpSndPlay = false;
+
+var fireSndPlay = false;
