@@ -30,7 +30,15 @@ var sndEndGame = new Howl(
     buffer:true,
     volume:0.4
   });
-  
+
+var sndJump = new How(
+  {
+    urls:['Sounds/Jump.mp3'],
+    loop:false,
+    buffer:true,
+    volume:0.2,
+  })
+
 var tileset = document.createElement("img");
 tileset.src = "Images/Tileset.png";
 
@@ -197,7 +205,7 @@ function Draw(){
 wizards.push(new Wizard());
 function GameLoop()
 {
-   
+
     Update();
     Draw();
     if(lives <= 0)
@@ -222,7 +230,7 @@ function instructions()
 }
 function startMenu()
 {
-    
+
   UpdateMenu();
   DrawMenu();
   if(Level == MainMenu)
@@ -234,7 +242,7 @@ function gameOver()
 {
   if(Level == GameOver)
   {
-    
+
     UpdateGameOver();
     DrawGameOver();
   requestAnimationFrame(gameOver);
@@ -252,4 +260,3 @@ window.onload = function()
     startMenu();
     
 };
-
