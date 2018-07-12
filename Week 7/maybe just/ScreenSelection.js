@@ -1,6 +1,3 @@
-var ArrowXPos = 200;
-
-
 function DrawScreenSelection()
 {
   var ScreenBG = document.createElement("img");
@@ -15,10 +12,11 @@ function DrawScreenSelection()
   context.drawImage(ScreenBG,0, 0, canvas.width, canvas.height);
 
   //This is going to be the arrow for the first player
-  context.drawImage(Arrow, ArrowXPos, 100, canvas.width, canvas.height);
+  context.drawImage(Arrow, ArrowXPos - 240, 150, 70, 100);
 
   //This is going to be the arrow for the Second player
   //context.drawImage(asd, 0, 0, canvas.width, canvas.height);
+  console.log(ArrowXPos);
 }
 
 
@@ -31,19 +29,46 @@ function UpdateSS()
   //The amount that the arrow will move depends on the distance between each character.
   if(keyboard.isKeyDown(keyboard.KEY_LEFT))
   {
-    ArrowXPos += !!!;
+    if(ArrowXPos == 1260)
+    {
+      ArrowXPos = 1000;
+    }
+
+    if(ArrowXPos == 1000)
+    {
+      ArrowXPos = 760;
+    }
+
+    if(ArrowXPos == 760)
+    {
+      ArrowXPos = 260;
+    }
   }
   if(keyboard.isKeyDown(keyboard.KEY_RIGHT))
   {
-    ArrowXPos -= !!!;
+
+    if(ArrowXPos == 1000)
+    {
+      ArrowXPos = 1260;
+    }
+
+    if(ArrowXPos == 760)
+    {
+      ArrowPos == 1000
+    }
+
+    if(ArrowXPos == 260)
+    {
+      ArrowPos == 760
+    }
   }
-  if(ArrowXPos >= ???)
+  if(ArrowXPos >= 1260)
   {
-    ArrowXPos = ???;
+    ArrowXPos = 1260;
   }
-  if(ArrowXPos <= ???)
+  if(ArrowXPos <= 400)
   {
-    ArrowXPos = ???;
+    ArrowXPos = 400;
   }
 
 

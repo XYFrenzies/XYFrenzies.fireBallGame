@@ -15,7 +15,8 @@ function UpdateInstruct()
 {
   if(keyboard.isKeyDown(keyboard.KEY_ENTER))
   {
-    Level = Level1;
+    Level = SelectionScreen;
+    SelectionScreenMenu();
     //sndMain.stop();
     //sndGame.play();
     //CreateCollisionData();

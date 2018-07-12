@@ -65,3 +65,5 @@ var JumpSndPlay = false;
 var fireSndPlay = false;
 
 var SpriteSheet = "images/Sprite Sheet.png";
+
+var ArrowXPos = 1000;

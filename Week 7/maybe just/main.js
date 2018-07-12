@@ -275,14 +275,15 @@ function startMenu()
 }
 
 //This is the SelectionScreen for the player.
-//function SelectionScreenMenu()
-//{
-  //if(level == SelectionScreen)
-  //{
-//    UpdateSS();
-//    DrawScreenSelection();
-//  }
-//}
+function SelectionScreenMenu()
+{
+  if(Level == SelectionScreen)
+  {
+    UpdateSS();
+    DrawScreenSelection();
+    requestAnimationFrame(SelectionScreenMenu);
+  }
+}
 
 //This is the gameOver state
 function gameOver()
@@ -291,7 +292,7 @@ function gameOver()
   {
     UpdateGameOver();
     DrawGameOver();
-  requestAnimationFrame(gameOver);
+    requestAnimationFrame(gameOver);
   }
 }
 //This is to ensure that the music works in the main menu
