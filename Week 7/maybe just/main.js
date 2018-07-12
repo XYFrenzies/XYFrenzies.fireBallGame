@@ -15,7 +15,6 @@ var sndMain = new Howl(
 var sndGame = new Howl(
   {
     urls: ['Sounds/Game.mp3'],
-
     loop:false,
     buffer:true,
     volume:0.4
@@ -23,9 +22,7 @@ var sndGame = new Howl(
 
 var sndEndGame = new Howl(
   {
-
     urls: ['Sounds/EndGame.wav'],
-
     loop:false,
     buffer:true,
     volume:0.4
