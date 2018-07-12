@@ -1,6 +1,7 @@
 var Wizard = function()
 {
-
+this.myFunnyBone = document.createElement("img");
+this.myFunnyBone.src = "Images/Fun.png";
     this.x = Math.random() * 6179 - 496;
     //This is for the wizard to move to the right to follow the player.
     if( this.x <= player.x + 500 && this.x >= player.x )
@@ -33,7 +34,6 @@ var Wizard = function()
     this.cooldown = 8;
     //This is the sprite definition of the wizard.
     this.sprite = new Sprite("Images/Summoner.png");
-
     this.sprite.buildAnimation(2,1, 125, 160,99999999,[1]); // Moves to the left.
 
     this.sprite.buildAnimation(2,1,131, 160,99999999,[0]); // Moves to the right.
@@ -67,7 +67,7 @@ Wizard.prototype.Update = function()
             {
                 this.sprite.setAnimation(0);
             }
-  } 
+  }
   if (this.x - 700 >= player.x)
   {
     this.x -= 2;
@@ -91,6 +91,7 @@ Wizard.prototype.Update = function()
 //This is to draw the wizard and that it comes towards the centre of the player.
 Wizard.prototype.Draw = function()
 {
+ 
   context.fillStyle = "Red";
   context.fillText("Merlin the unkillable!", this.x - player.x - this.width / 2 - 50, this.y - player.y - this.height / 2 - 1);
   this.sprite.draw(context, this.x - player.x, this.y - player.y);
