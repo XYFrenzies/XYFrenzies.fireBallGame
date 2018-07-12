@@ -273,6 +273,17 @@ function startMenu()
   requestAnimationFrame(startMenu);
   }
 }
+
+//This is the SelectionScreen for the player.
+//function SelectionScreenMenu()
+//{
+  //if(level == SelectionScreen)
+  //{
+//    UpdateSS();
+//    DrawScreenSelection();
+//  }
+//}
+
 //This is the gameOver state
 function gameOver()
 {
