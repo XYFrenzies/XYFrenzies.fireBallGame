@@ -62,3 +62,5 @@ var lives = 3;
 //can be played in the array of orbs and the jumping mechanic.
 var JumpSndPlay = false;
 var fireSndPlay = false;
+
+var SpriteSheet = "images/Sprite Sheet.png";
