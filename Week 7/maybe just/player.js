@@ -119,6 +119,7 @@ Player.prototype.Update = function(){
     {
         jump = true;
         this.gliding = true;
+        jump.play();
     }
     if(this.gliding == true && this.velY >= 0)
     {
