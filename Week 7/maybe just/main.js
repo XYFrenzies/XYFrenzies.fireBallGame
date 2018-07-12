@@ -47,6 +47,14 @@ var fireBall = new Howl(
     volume:0.05,
   })
 
+var swordsClashing = new Howl(
+  {
+    urls:['Sounds/Swords.wav'],
+    loop:false,
+    buffer:true,
+    volume:0.05,
+  })
+
 var tileset = document.createElement("img");
 tileset.src = "Images/Tileset.png";
 
@@ -160,7 +168,7 @@ function Update(){
       }
     }
     collides();
-    
+
 
     if(player.firelock = true && fireSndPlay == false)
     {

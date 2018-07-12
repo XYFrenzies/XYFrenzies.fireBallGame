@@ -47,18 +47,24 @@ var Enemy = function()
 
 Enemy.prototype.Attack = function()
 {
+
     if(this.sprite.currentAnimation == 0)
     {
+        swordsClashing.play();
         this.sprite.setAnimation(2);
+
         if(this.sprite.currentAnimation != 2)
         {
+
             this.sprite.setAnimation(2);
         }
     }
     if(this.sprite.currentAnimation == 1)
     {
+        swordsClashing.play();
         if(this.sprite.currentAnimation != 3)
         {
+
             this.sprite.setAnimation(3);
         }
     }
