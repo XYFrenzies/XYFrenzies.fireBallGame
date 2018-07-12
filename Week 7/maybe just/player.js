@@ -119,7 +119,7 @@ Player.prototype.Update = function(){
     {
         jump = true;
         this.gliding = true;
-        jump.play();
+
     }
     if(this.gliding == true && this.velY >= 0)
     {
@@ -205,6 +205,7 @@ if (this.y > floorHeight)
   this.velY = 0;
   this.falling = 0;
   this.jumping = 0;
+  JumpSndPlay = false;
   if(this.y > floorHeight)
   {
     this.y = floorHeight;

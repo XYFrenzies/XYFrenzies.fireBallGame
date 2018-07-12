@@ -41,3 +41,4 @@ var spawnRate = .1;
 var score = 0;
 var lives = 3;
 
+var JumpSndPlay = false;
