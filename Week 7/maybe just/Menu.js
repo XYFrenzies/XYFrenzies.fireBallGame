@@ -12,6 +12,7 @@ function UpdateMenu()
 {
   if(keyboard.isKeyDown(keyboard.KEY_SPACE))
   {
+    musicStart();
     Level = InstructMenu;
     instructions();
   }

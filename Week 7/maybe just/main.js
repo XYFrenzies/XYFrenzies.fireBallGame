@@ -6,7 +6,7 @@ var player = new Player();
 
 var sndMain = new Howl(
   {
-    src: ['Sounds/menu.wav'],
+    urls : ['Sounds/menu.wav'],
     loop:true,
     buffer:true,
     volume:0.4
@@ -14,7 +14,7 @@ var sndMain = new Howl(
 
 var sndGame = new Howl(
   {
-    src: ['Sounds/Game.mp3'],
+    urls: ['Sounds/Game.mp3'],
 
     loop:false,
     buffer:true,
@@ -24,7 +24,7 @@ var sndGame = new Howl(
 var sndEndGame = new Howl(
   {
 
-    src: ['Sounds/EndGame.wav'],
+    urls: ['Sounds/EndGame.wav'],
 
     loop:false,
     buffer:true,
@@ -248,7 +248,8 @@ function musicStart()
 
 window.onload = function()
 {
-    musicStart();
+    
     startMenu();
+    
 };
 
