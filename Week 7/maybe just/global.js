@@ -8,9 +8,9 @@ const GameOver = 2;
 const MainMenu = 1;
 const InstructMenu = 3;
 var dt = GetDeltaTime();
-
 //Giving the force downwards of the player and any other characters
 var gravity = 9.8 * 20 ;
+var HighScore = 0;
 
 //These are used for the player so that javascript knows which
 //animation should be occuring at a specific time.
