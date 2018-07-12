@@ -9,6 +9,7 @@ const GameOver = 2;
 const MainMenu = 1;
 const InstructMenu = 3;
 var dt = GetDeltaTime();
+var player;
 //Giving the force downwards of the player and any other characters
 var gravity = 9.8 * 20 ;
 var HighScore = 0;
@@ -67,6 +68,20 @@ var lives = 3;
 var JumpSndPlay = false;
 var fireSndPlay = false;
 
+var SpriteSheetGreen = "images/Sprite Sheet green.png";
+var SpriteSheetRed = "images/Sprite Sheet red.png";
+var SpriteSheetYellow = "images/Sprite Sheet yellow.png";
+var SpriteSheetBlue = "images/Sprite Sheet.png";
 var SpriteSheet = "images/Sprite Sheet.png";
 
-var ArrowXPos = 1000;
+var green = 185;
+var red = 475;
+var yellow = 755;
+var blue = 1045;
+
+var ArrowXPos =  green;
+var arrowPressed = false;
+var singleMove = true;
+
+var arrowTime = 0.18;
+var timerArrow = arrowTime;
