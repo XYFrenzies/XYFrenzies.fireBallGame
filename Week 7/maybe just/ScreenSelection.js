@@ -29,8 +29,8 @@ function UpdateSS()
   //The amount that the arrow will move depends on the distance between each character.
   if(keyboard.isKeyDown(keyboard.KEY_LEFT))
   {
-   
-   
+
+
       if(ArrowXPos == blue && arrowPressed == false)
       {
         arrowPressed = true;
@@ -46,13 +46,13 @@ function UpdateSS()
         arrowPressed = true;
         ArrowXPos = green;
       }
-   
 
-  
+
+
   }
   if(keyboard.isKeyDown(keyboard.KEY_RIGHT))
   {
-<<<<<<< HEAD
+
 
     if(ArrowXPos >= 1260)
     {
@@ -80,8 +80,8 @@ function UpdateSS()
   }
 
 
-=======
-  
+
+
       if(ArrowXPos == green  && arrowPressed == false)
       {
         arrowPressed = true;
@@ -97,8 +97,8 @@ function UpdateSS()
         arrowPressed = true;
         ArrowXPos = blue;
       }
-  
-   
+
+
   }
 
   if(keyboard.isKeyUp(keyboard.KEY_RIGHT) && singleMove == true)
@@ -110,10 +110,9 @@ function UpdateSS()
   {
     arrowPressed = false;
     singleMove = false;
->>>>>>> 2e5f0016007c8311ee6b9a189f55a3b49ce573f6
 
   }
-    
+
   timerArrow -= dt;
 
   if(timerArrow <=0)
@@ -134,7 +133,7 @@ function UpdateSS()
     } else if (ArrowXPos == yellow)
     {
       SpriteSheet = SpriteSheetYellow;
-    } else 
+    } else
     {
       SpriteSheet = SpriteSheetBlue;
     }
@@ -147,4 +146,3 @@ function UpdateSS()
     CreateCollisionData();
     GameLoop();
   }
-}
