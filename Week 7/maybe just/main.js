@@ -6,7 +6,7 @@ var player = new Player();
 
 var sndMain = new Howl(
   {
-    urls: ['Sounds/1 Hour of Magical & Fantasy & Epic Music Full HD 1080p 150 Pictures Slideshow'],
+    urls: ['Sounds/1 Hour of Magical & Fantasy & Epic Music Full HD 1080p 150 Pictures Slideshow.mp3'],
     loop:true,
     buffer:true,
     volume:0.4
@@ -14,7 +14,7 @@ var sndMain = new Howl(
 
 var sndGame = new Howl(
   {
-    urls: ['Sounds/Duel(Boss)'],
+    urls: ['Sounds/Duel(Boss).mp3'],
     loop:false,
     buffer:true,
     volume:0.4
@@ -22,7 +22,7 @@ var sndGame = new Howl(
 
 var sndEndGame = new Howl(
   {
-    urls: ['Sounds/Wizards Wail (Launch Trailer)'],
+    urls: ['Sounds/Wizards Wail (Launch Trailer)2.wav'],
     loop:false,
     buffer:true,
     volume:0.4
