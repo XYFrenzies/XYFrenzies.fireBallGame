@@ -47,16 +47,19 @@ function collides()
       }
     }
   }
+}
+}
+}
   //Dont play with fire, (Dont touch my fireball code)
   for(i = 0; i < fireBalls.length; i++)
   {
-    var r3 = 5;
-    var r4 = 5;
+    var r5 = 10;
+    var r6 = 10;
     if(player != undefined)
     {
       if(fireBalls[i] != undefined)
       {
-        if(Math.sqrt( (fireBalls[i].x - (player.x + 25)) * (fireBalls[i].x - (player.x + 25)) + (fireBalls[i].y - (player.y + 25)) * (fireBalls[i].y - (player.y + 25)) ) < (r3 + r4))
+        if(Math.sqrt( (fireBalls[i].x - (player.x + 25)) * (fireBalls[i].x - (player.x + 25)) + (fireBalls[i].y - (player.y + 25)) * (fireBalls[i].y - (player.y + 25)) ) < (r5 + r6))
         {
           player.Lives -= 1;
           delete fireBalls[i];
@@ -69,7 +72,6 @@ function collides()
 
     }
   }
-    }
-  }
-}
+
+
 }
