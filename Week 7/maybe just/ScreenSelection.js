@@ -12,18 +12,18 @@ function DrawScreenSelection()
   context.drawImage(ScreenBG,0, 0, canvas.width, canvas.height);
 
   //This is going to be the arrow for the first player
-  context.drawImage(Arrow, ArrowXPos, 150, 70, 100);
+  context.drawImage(Arrow, ArrowXPos - 240, 150, 70, 100);
 
   //This is going to be the arrow for the Second player
   //context.drawImage(asd, 0, 0, canvas.width, canvas.height);
-
+  console.log(ArrowXPos);
 }
 
 
 
 function UpdateSS()
 {
-  dt = GetDeltaTime();
+
   //If the player presses the left key, the arrow will move to the left,
   //if the player presses the right key, the arrow will move to the right.
   //The amount that the arrow will move depends on the distance between each character.
@@ -142,7 +142,6 @@ function UpdateSS()
     Level = Level1;
     sndMain.stop();
     sndGame.play();
-    player = new Player();
     CreateCollisionData();
     GameLoop();
   }
