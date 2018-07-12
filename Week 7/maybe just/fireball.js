@@ -1,8 +1,7 @@
-function FireBall(inX, inY, inDirX, inDirY){
+function FireBall(inX, inY, inDirX){
   this.x = inX;
   this.y = inY;
   this.dirX = inDirX;
-  this.dirY = inDirY
   this.sprite = new Sprite("Images/Fireball Sprite sheet.png");
   //this.image = document.createElement("img");
   //this.image.src = ("Images/player orb.png");
@@ -13,9 +12,7 @@ function FireBall(inX, inY, inDirX, inDirY){
 FireBall.prototype.Update = function()
 {
   this.x += this.dirX * dt;
-  this.y += this.dirY * dt;
   this.sprite.update(dt);
-
 }
 
 FireBall.prototype.Draw = function()
@@ -26,7 +23,7 @@ FireBall.prototype.Draw = function()
 
     //context.drawImage(this.image, this.x - player.x, this.y - player.y);
 
-    this.sprite.draw(context, this.x - player.x + player.width + 600, this.y - player.y + 340);
+    this.sprite.draw(context, this.x - player.x, this.y - player.y);
 
     //context.fillStyle("black");
     //context.fillStyle = "black";

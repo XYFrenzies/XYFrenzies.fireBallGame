@@ -216,14 +216,6 @@ function Draw(){
         fireBalls[i].Draw();
       }
     }
-
-
-    //for(i = 0; i < orbs.length; i++)
-    //{
-      //orbs[i].Draw();
-    //}
-
-
 }
 wizards.push(new Wizard());
 function GameLoop()

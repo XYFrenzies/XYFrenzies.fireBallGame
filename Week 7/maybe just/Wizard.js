@@ -23,7 +23,7 @@ var Wizard = function()
     {
         this.x = 3000;
     }
-    this.y = player.y -50;
+    this.y = player.y + 311;
 
     this.width = 188/4;
     this.height = 241/4;
@@ -33,15 +33,14 @@ var Wizard = function()
 Wizard.prototype.Attack = function()
 {
   var DirX;
-  var DirY = -1;
-  if (this.x < player.x)
+  if (this.x - 600 < player.x)
   {
-    DirX = -2;
+    DirX = 200;
   }else if (!false)
   {
-    DirX = +2;
+    DirX = -200;
   }
-    fireBalls.push(new FireBall(this.x, this.y, DirX, DirY));
+    fireBalls.push(new FireBall(this.x, this.y, DirX));
 }
 
 Wizard.prototype.Update = function()
@@ -68,7 +67,7 @@ Wizard.prototype.Update = function()
       this.Attack();
       this.cooldown = 8;
     }
-    this.cooldown - dt;
+    this.cooldown -= dt;
 }
 
 Wizard.prototype.Draw = function()
