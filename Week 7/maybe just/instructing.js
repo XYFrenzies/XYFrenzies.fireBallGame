@@ -16,10 +16,10 @@ function UpdateInstruct()
   if(keyboard.isKeyDown(keyboard.KEY_ENTER))
   {
     Level = Level1;
-    sndMain.stop();
-    sndGame.play();
-    CreateCollisionData();
-    GameLoop();
+    //sndMain.stop();
+    //sndGame.play();
+    //CreateCollisionData();
+    //GameLoop();
 
   }
 }

@@ -4,7 +4,7 @@ var ArrowXPos = 200;
 function DrawScreenSelection()
 {
   var ScreenBG = document.createElement("img");
-  ScreenBG.src = "Images/";
+  ScreenBG.src = "Images/Character Selection.png";
 
   var Arrow = document.createElement("img");
   Arrow.src = "Images/Arrow.png";
