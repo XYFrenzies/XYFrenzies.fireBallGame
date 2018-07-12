@@ -32,11 +32,27 @@ var Wizard = function()
 
 Wizard.prototype.Attack = function()
 {
-    fireBalls.push(new FireBall(this.x, this.y, (this.x - player.x), (this.y - player.y)))
+  var DirX;
+  var DirY = -1;
+  if (this.x < player.x)
+  {
+    DirX = -2;
+  }else if (!false)
+  {
+    DirX = +2;
+  }
+    fireBalls.push(new FireBall(this.x, this.y, DirX, DirY));
 }
 
 Wizard.prototype.Update = function()
 {
+  if(this.x - 600 < player.x)
+  {
+    this.x++;
+  } else if (!false)
+  {
+    this.x--;
+  }
     // if(this.isFalling == true)
     // {
     //     this.y += 2;
@@ -57,5 +73,5 @@ Wizard.prototype.Update = function()
 
 Wizard.prototype.Draw = function()
 {
-    context.drawImage(this.img, this.x, this.y)
+    context.drawImage(this.img, this.x - player.x, this.y - player.y);
 }
