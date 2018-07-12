@@ -6,11 +6,11 @@ var player = new Player();
 
 var sndMain = new Howl(
   {
-    urls: ['Sounds/1 Hour of Magical & Fantasy & Epic Music Full HD 1080p 150 Pictures Slideshow'],
+    urls: ['Sounds/1 Hour of Magical & Fantasy & Epic Music Full HD 1080p 150 Pictures Slideshow.mp3'],
     loop:true,
     buffer:true,
     volume:0.4
-  })
+  });
 
 var sndGame = new Howl(
   {
@@ -19,7 +19,7 @@ var sndGame = new Howl(
     loop:false,
     buffer:true,
     volume:0.4
-  })
+  });
 
 var sndEndGame = new Howl(
   {
@@ -29,7 +29,7 @@ var sndEndGame = new Howl(
     loop:false,
     buffer:true,
     volume:0.4
-  })
+  });
 
 var tileset = document.createElement("img");
 tileset.src = "Images/Tileset.png";
