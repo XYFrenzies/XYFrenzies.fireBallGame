@@ -31,7 +31,7 @@ var sndEndGame = new Howl(
     volume:0.4
   });
 
-var sndJump = new How(
+var sndJump = new Howl(
   {
     urls:['Sounds/Jump.mp3'],
     loop:false,
