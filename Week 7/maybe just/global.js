@@ -30,7 +30,9 @@ const level1SpawnX = 300;
 const level1SpawnY = 1400;
 
 var orbs = [];
+var fireBalls = [];
 var enemies = [];
+var wizards = [];
 var deaths = 0;
 
 var superTime = 0;
