@@ -8,7 +8,7 @@ function DrawGameOver()
   context.drawImage(MainMenuBG, 0,0,canvas.width, canvas.height);
   context.fillStyle = "#ffffff";
   context.fillText("You got a score of: "+ score, canvas.width / 2 - 165, canvas.height / 2 - 60);
-
+  context.fillText("This browsers Highscore is: "+ HighScore, canvas.width / 2 - 165, canvas.height / 2 - 30);
 }
 //On button press with the enter key,
 //the individual is sent to the main menu.
