@@ -89,5 +89,7 @@ Wizard.prototype.Update = function()
 
 Wizard.prototype.Draw = function()
 {
+  context.fillStyle = "Red";
+  context.fillText("Merlin the unkillable!", this.x - player.x - this.width / 2 - 50, this.y - player.y - this.height / 2 - 1);
   this.sprite.draw(context, this.x - player.x, this.y - player.y);
 }
