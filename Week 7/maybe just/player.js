@@ -26,12 +26,14 @@ var Player = function(){
     //This is to limit the player from having to hold the spacebar when they shoot the fireball.
     this.fireLock = false;
 
-    //
+    //This is the fastest that the player can travel.
     this.maxSpeed = 800;
 
 
+    //This is the animation change of the player as it moves to the left and the right as well as its idle animation.
     this.sprite = new Sprite("images/Sprite Sheet.png");
-    // Rows of frames in the X, columns of frames in the Y, width, height, time between frames, what frames
+    // Rows of frames in the X, columns of frames in the Y, width, height, time between frames, what frames.
+
 
     this.sprite.buildAnimation( 6, 1, 54, 73 , 0.2, [11] ); //IDLE LEFT
 
@@ -47,53 +49,51 @@ var Player = function(){
     this.sprite.buildAnimation(  6, 1, 54, 73 , 0.05, [ 10, 10, 9, 9, 8, 8, 7, 7, 6, 6]); //WALK RIGHT
 
 
-
+    //This is the offset of the player and the change of animation.
     for(var i = 0; i < animationMax; i++){
         this.sprite.setAnimationOffset(i,-29, -33);
     }
-
-
-
 }
 
 
-
-
-
-
 Player.prototype.Update = function(){
+
+    //This is to update delta time in terms of the player movement.
     dt = GetDeltaTime();
 
     this.sprite.update(dt);
-
+    //Introduce gravity so that the player can junp and act normal.
     gravity = 9.8 * 20;
     timer -= dt;
 
-
+    //Gliding is used for when the player is moving whilst in the air.
     this.gliding = false;
 
 
-
+    //This is to check if the player is left, right or jumping.
     var left = false;
     var right = false;
     var jump = false;
 
-    				// check for left key press
+    //check for left key press
     if(keyboard.isKeyDown(keyboard.KEY_LEFT))
     {
         left = true;
         this.direction = animationLeft;
         if(this.sprite.currentAnimation != animationWalkLeft && this.falling == false)
         {
+            //When the player moves to the left, the animation of it moving to the left occurs.
             this.sprite.setAnimation(animationWalkLeft);
         }
-    }              // check for right key press
+    }
+    // check for right key press
     else if(keyboard.isKeyDown(keyboard.KEY_RIGHT))
     {
         right = true;
         this.direction = animationRight;
         if(this.sprite.currentAnimation != animationWalkRight && this.falling ==false)
         {
+            //When the player moves to the right, the animation of it moving to the right occurs.
             this.sprite.setAnimation(animationWalkRight);
         }
     }else {
@@ -101,28 +101,25 @@ Player.prototype.Update = function(){
             {
                 if(this.sprite.currentAnimation !=animationIdleLeft && this.jumping == false)
                 {
+                    //This is to check that if the player has moved to the left
+                    //but not moving top the left anymore, the left idle animation will occur.
                     this.sprite.setAnimation(animationIdleLeft);
                 }
             }
             else{
                 if(this.sprite.currentAnimation != animationIdleRight && this.jumping == false)
                 {
+                  //This is to check that if the player has moved to the right
+                  //but not moving top the right anymore, the right idle animation will occur.
                     this.sprite.setAnimation(animationIdleRight);
                 }
 
             }
     }
-    //check for up key press
-    /*if(keyboard.isKeyDown(keyboard.KEY_UP)) {
-        if(timer <= 0){
-            var bullet = new Bullet(this.x, this.y)
-            bullets.push(bullet);
-            timer = fireRate;
-        }
-    }
-    */
+    //This is the jumping mechanic
     if(keyboard.isKeyDown(keyboard.KEY_UP))
     {
+      //When the player jumps, they are able to glide and therefore the jumping sound will occur.
         jump = true;
         this.gliding = true;
         if(this.jumping == true && JumpSndPlay == false)
@@ -131,12 +128,16 @@ Player.prototype.Update = function(){
             JumpSndPlay = true;
         }
     }
+    //If the player's gliding and that they are off the ground,
+    //gravity will occur to eventually bring it to the ground.
     if(this.gliding == true && this.velY >= 0)
     {
         gravity = 9.8 *5;
     }
     if(this.falling == true )
     {
+        //As there is no specific different animation for the jumping,
+        //this doesnt do much but animate the same animation as the normal animation of walking either direction.
         if(left == true && this.sprite.currentAnimation != animationJumpLeft)
         {
             this.sprite.setAnimation(animationJumpLeft);
@@ -146,6 +147,7 @@ Player.prototype.Update = function(){
             this.sprite.setAnimation(animationJumpRight);
         }
     }
+    //This is to introduce the idea of acceleration to the game.
     var wasLeft = this.velX < 0;
     var wasRight = this.velX > 0;
     var accelX = 0;
