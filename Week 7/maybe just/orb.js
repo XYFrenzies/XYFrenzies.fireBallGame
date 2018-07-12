@@ -13,21 +13,13 @@ ORB.prototype.Update = function()
 {
   this.x += this.dir * dt;
   this.sprite.update(dt);
-  
+
 }
 
 ORB.prototype.Draw = function()
 {
-    //this.sprite.draw(context, this.x, this.y);
-
-    //context.drawImage(this.image, this.x - player.x + 300, this.y - player.y + 300);
-
-    //context.drawImage(this.image, this.x - player.x, this.y - player.y);
-
+ 
     this.sprite.draw(context, this.x - player.x + player.width + 600, this.y - player.y + 340);
 
-    //context.fillStyle("black");
-    //context.fillStyle = "black";
-    //context.fillRect(this.x - player.x, this.x - player.y, 150, 150);
   //Draw code
 }
