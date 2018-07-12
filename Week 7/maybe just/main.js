@@ -131,7 +131,7 @@ function DrawMap(){
         }
     }
 }
-//This allows for the spawning of the Enemy
+//This allows for the spawning of the Enemy, wizard, orbs and fireball
 var timable = 9;
 function Update(){
   timable += dt;
