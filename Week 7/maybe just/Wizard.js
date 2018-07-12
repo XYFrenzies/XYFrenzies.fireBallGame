@@ -91,7 +91,7 @@ Wizard.prototype.Update = function()
 //This is to draw the wizard and that it comes towards the centre of the player.
 Wizard.prototype.Draw = function()
 {
-  context.drawImage(this.myFunnyBone, this.x - player.x - this.width / 2 - 50, this.y - player.y - this.height / 2 - 20);
+ 
   context.fillStyle = "Red";
   context.fillText("Merlin the unkillable!", this.x - player.x - this.width / 2 - 50, this.y - player.y - this.height / 2 - 1);
   this.sprite.draw(context, this.x - player.x, this.y - player.y);
