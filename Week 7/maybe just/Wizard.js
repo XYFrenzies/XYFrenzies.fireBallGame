@@ -59,17 +59,18 @@ Wizard.prototype.Attack = function()
 Wizard.prototype.Update = function()
 {
   this.sprite.update(dt);
-  if(this.x - 600 < player.x)
+  if(this.x - 520 <= player.x)
   {
-    this.x++;
+    this.x += 2;
     if(this.sprite.currentAnimation != 0)
     //This is the animation for when the wizard moves to the right.
             {
                 this.sprite.setAnimation(0);
             }
-  } else if (!false)
+  } 
+  if (this.x - 700 >= player.x)
   {
-    this.x--;
+    this.x -= 2;
     if(this.sprite.currentAnimation != 1)
             {
     //This is the animation for when the wizard moves to the left.

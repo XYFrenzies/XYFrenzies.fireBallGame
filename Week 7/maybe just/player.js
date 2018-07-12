@@ -128,12 +128,16 @@ Player.prototype.Update = function(){
             JumpSndPlay = true;
         }
     }
+<<<<<<< HEAD
     //If the player's gliding and that they are off the ground,
     //gravity will occur to eventually bring it to the ground.
     if(this.gliding == true && this.velY >= 0)
     {
         gravity = 9.8 *5;
     }
+=======
+   
+>>>>>>> 21692fcc47fe1577cb4c6cd864c5fe57e04df5ff
     if(this.falling == true )
     {
         //As there is no specific different animation for the jumping,
