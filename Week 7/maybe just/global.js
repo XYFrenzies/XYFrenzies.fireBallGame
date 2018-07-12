@@ -4,6 +4,7 @@
 //This is used for the changing of transitions of game states
 var Level = 1;
 const Level1 = 0;
+const SelectionScreen = 4;
 const GameOver = 2;
 const MainMenu = 1;
 const InstructMenu = 3;

@@ -20,5 +20,6 @@ function UpdateInstruct()
     sndGame.play();
     CreateCollisionData();
     GameLoop();
+
   }
 }
