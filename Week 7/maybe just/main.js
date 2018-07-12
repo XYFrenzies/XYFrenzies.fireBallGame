@@ -9,7 +9,7 @@ var sndMain = new Howl(
     urls : ['Sounds/menu.wav'],
     loop:true,
     buffer:true,
-    volume:0.4
+    volume:0.1
   });
 
 var sndGame = new Howl(
@@ -18,7 +18,7 @@ var sndGame = new Howl(
 
     loop:false,
     buffer:true,
-    volume:0.4
+    volume:0.1
   });
 
 var sndEndGame = new Howl(
@@ -28,15 +28,15 @@ var sndEndGame = new Howl(
 
     loop:false,
     buffer:true,
-    volume:0.4
+    volume:0.1
   });
 
-var sndJump = new How(
+var sndJump = new Howl(
   {
     urls:['Sounds/Jump.mp3'],
     loop:false,
     buffer:true,
-    volume:0.2,
+    volume:0.05,
   })
 
 var tileset = document.createElement("img");
@@ -152,6 +152,12 @@ function Update(){
       }
     }
     collides();
+    if(player.jumping == true && JumpSndPlay == false)
+    {
+        sndJump.play();
+        JumpSndPlay = true;
+    }
+
 
 }
 
@@ -256,7 +262,7 @@ function musicStart()
 
 window.onload = function()
 {
-    
+
     startMenu();
-    
+
 };
