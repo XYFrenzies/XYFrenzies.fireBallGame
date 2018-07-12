@@ -11,10 +11,8 @@ function FireBall(inX, inY, inDirX){
 
 FireBall.prototype.Update = function()
 {
-      this.x += this.dirX * dt;
-
+  this.x += this.dirX * dt;
   this.sprite.update(dt);
-
 }
 
 FireBall.prototype.Draw = function()
