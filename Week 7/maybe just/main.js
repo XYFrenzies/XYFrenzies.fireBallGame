@@ -3,7 +3,7 @@ var context = canvas.getContext("2d");
 
 var player = new Player();
 
-
+//The following Howl is a function that are using the howler srcipt to produce the sound
 var sndMain = new Howl(
   {
     urls : ['Sounds/menu.wav'],
@@ -55,6 +55,7 @@ var swordsClashing = new Howl(
     volume:0.05,
   })
 
+//Creates the tileset of the game
 var tileset = document.createElement("img");
 tileset.src = "Images/Tileset.png";
 
@@ -62,6 +63,7 @@ tileset.src = "Images/Tileset.png";
 
 var collisionCells = new Array();
 
+//This is the background image which is representing a black brick wall
 var BackgroundImage = document.createElement("img");
 BackgroundImage.src = ("Images/Background.png");
 
@@ -129,6 +131,7 @@ function DrawMap(){
         }
     }
 }
+//This allows for the spawning of the Enemy, wizard, orbs and fireball
 var timable = 9;
 function Update(){
   timable += dt;
@@ -169,6 +172,7 @@ function Update(){
     }
     collides();
 
+//Allows for the sound effect of the fire ball to occur on trigger with the spacebar
 
     if(player.firelock = true && fireSndPlay == false)
     {
@@ -218,6 +222,8 @@ function Draw(){
     }
 }
 wizards.push(new Wizard());
+
+//This is updating each variable in the game
 function GameLoop()
 {
 
@@ -234,6 +240,7 @@ function GameLoop()
     }
 
 }
+//This is the tutorial state
 function instructions()
 {
   if(Level == InstructMenu)
@@ -243,6 +250,7 @@ function instructions()
     requestAnimationFrame(instructions);
   }
 }
+//This is the main Menu state
 function startMenu()
 {
 
@@ -253,6 +261,7 @@ function startMenu()
   requestAnimationFrame(startMenu);
   }
 }
+//This is the gameOver state
 function gameOver()
 {
   if(Level == GameOver)
@@ -263,6 +272,7 @@ function gameOver()
   requestAnimationFrame(gameOver);
   }
 }
+//This is to ensure that the music works in the main menu
 function musicStart()
 {
     sndMain.play();

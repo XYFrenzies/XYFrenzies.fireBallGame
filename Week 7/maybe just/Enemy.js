@@ -27,7 +27,8 @@ var Enemy = function()
 
     this.width = 188/4;
     this.height = 241/4;
-
+//This is the calling of the sprites that are used
+//as a frame by frame change of the character within the game.
     this.sprite = new Sprite("Images/Enemy sprite sheet.png");
 
 
@@ -44,10 +45,11 @@ var Enemy = function()
     this.randomSpawn; //????????? What does this do?
 
 }
+//This is for the attacking animation.
 
 Enemy.prototype.Attack = function()
 {
-
+//If the player is on the left side of the enemy, the enemy would attack to the left.
     if(this.sprite.currentAnimation == 0)
     {
         swordsClashing.play();
@@ -59,6 +61,7 @@ Enemy.prototype.Attack = function()
             this.sprite.setAnimation(2);
         }
     }
+//If the player is on the right side of the enemy, the enemy would attack to the right.
     if(this.sprite.currentAnimation == 1)
     {
         swordsClashing.play();
@@ -70,6 +73,8 @@ Enemy.prototype.Attack = function()
     }
 }
 
+//This allows for the physics of the enemy.
+//It stops them from falling through the floor.
 Enemy.prototype.Update = function()
 {
 
@@ -90,6 +95,7 @@ Enemy.prototype.Update = function()
         if(this.x - 70 >= player.x)
         {
             this.x -= 2;
+            //This is the activation of the moving to the left
             if(this.sprite.currentAnimation != 0)
             {
                 this.sprite.setAnimation(0);
@@ -98,6 +104,7 @@ Enemy.prototype.Update = function()
         if(this.x + 50 < player.x)
         {
             this.x += 2;
+            //This is the activation of the moving to the right
             if(this.sprite.currentAnimation != 1)
             {
                 this.sprite.setAnimation(1);
@@ -109,7 +116,8 @@ Enemy.prototype.Update = function()
 
 Enemy.prototype.Draw = function()
 {
-
+  //This is setting the location of which the enemy
+  //should attack the player as well as follow the player.
     this.sprite.draw(context,this.x - player.x + 600, this.y - player.y + 340);
 
 
