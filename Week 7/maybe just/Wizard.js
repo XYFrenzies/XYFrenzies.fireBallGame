@@ -5,12 +5,12 @@ var Wizard = function()
     //This is for the wizard to move to the right to follow the player.
     if( this.x <= player.x + 500 && this.x >= player.x )
     {
-        this.x -= 800;
+        this.x -= 8000;
     }
     //This is for the wizard to move to the left to follow the player.
     if(this.x  >= player.x - 500 && this.x <=player.x ) //Fix
     {
-        this.x += 800;
+        this.x += 8000;
 
 
     }
