@@ -122,6 +122,13 @@ function Update(){
       enemies[i].Update();
     }
     }
+    for(i = 0; i < wizards.length; i++)
+    {
+      if(wizards[i] != undefined)
+      {
+      wizards[i].Update();
+      }
+    }
     for(i = 0; i < orbs.length; i++)
     {
       if(orbs[i] != undefined)
@@ -157,6 +164,13 @@ function Draw(){
       enemies[i].Draw();
       }
     }
+    for(i = 0; i < wizards.length; i++)
+    {
+      if(wizards[i] != undefined)
+      {
+      wizards[i].Draw();
+      }
+    }
 
 
     //for(i = 0; i < orbs.length; i++)
@@ -166,7 +180,7 @@ function Draw(){
 
 
 }
-
+wizards.push(new Wizard());
 function GameLoop()
 {
     sndMain.stop();
