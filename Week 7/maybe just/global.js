@@ -50,7 +50,7 @@ var wizards = [];
 var superTime = 0;
 
 //The spawn rate is how fast the enemy is spawning at a specific time.
-var spawnRate = .15;
+var spawnRate = .3;
 
 //Scoring is how much the player starts with.
 var score = 0;
