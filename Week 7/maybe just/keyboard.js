@@ -58,7 +58,8 @@ var Keyboard = function()
 	this.KEY_TAB = 9;
 
 };
-
+//Commands for which allows for the event of a individual
+//to act upon the keyboard
 Keyboard.prototype.onKeyDown = function(evt) {
 	this.keys[evt.keyCode] = true;
 }

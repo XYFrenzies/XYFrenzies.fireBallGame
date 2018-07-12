@@ -15,20 +15,23 @@ var Player = function(){
     this.jumpFroce = 15000;
     this.gliding = false;
 
-    //Increased speed of the player
+    //Continuously Increased speed of the player
     this.acceleration = 800;
 
+    //This is the change in continues movement of the player.
     this.velX = 0;
     this.velY = 0;
     this.friction = 2000;
 
+    //This is to limit the player from having to hold the spacebar when they shoot the fireball.
     this.fireLock = false;
 
+    //
     this.maxSpeed = 800;
 
 
     this.sprite = new Sprite("images/Sprite Sheet.png");
-    // number of frames, , width, height, time between frames, what frames
+    // Rows of frames in the X, columns of frames in the Y, width, height, time between frames, what frames
 
     this.sprite.buildAnimation( 6, 1, 54, 73 , 0.2, [11] ); //IDLE LEFT
 
