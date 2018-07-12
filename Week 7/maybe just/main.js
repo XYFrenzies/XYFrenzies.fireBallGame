@@ -136,6 +136,13 @@ function Update(){
         orbs[i].Update();
       }
     }
+    for(i = 0; i < fireBalls.length; i++)
+    {
+      if(fireBalls[i] != undefined)
+      {
+        fireBalls[i].Update();
+      }
+    }
     collides();
 
 }
@@ -169,6 +176,13 @@ function Draw(){
       if(wizards[i] != undefined)
       {
       wizards[i].Draw();
+      }
+    }
+    for(i = 0; i < fireBalls.length; i++)
+    {
+      if(fireBalls[i] != undefined)
+      {
+        fireBalls[i].Draw();
       }
     }
 
@@ -227,4 +241,7 @@ function gameOver()
   requestAnimationFrame(gameOver);
   }
 }
-startMenu();
+window.onload = function()
+{
+  startMenu();
+};
