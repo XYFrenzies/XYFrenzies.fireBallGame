@@ -64,7 +64,7 @@ function collides()
     {
       if(fireBalls[i] != undefined)
       {
-        if(Math.sqrt(  (fireBalls[i].x - player.width - 600 - (player.x + 25)) * (fireBalls[i].x - player.width - 600 - (player.x + 25)) + (fireBalls[i].y - 340 - (player.y + 25)) * (fireBalls[i].y - 340 - (player.y + 25)) ) < (r5 + r6))
+        if(Math.sqrt(  (fireBalls[i].x - player.width - 580 - (player.x + 25)) * (fireBalls[i].x - player.width - 580 - (player.x + 25)) + (fireBalls[i].y - 340 - (player.y + 25)) * (fireBalls[i].y - 340 - (player.y + 25)) ) < (r5 + r6))
         {
         //This is the check if the player is interacting with the wizards fireball.
         //The lives will decrease by 1 and that the fireball will delete from the game.
