@@ -33,12 +33,12 @@ var Wizard = function()
 Wizard.prototype.Attack = function()
 {
   var DirX;
-  if (this.x < player.x)
+  if (this.x - 600 < player.x)
   {
-    DirX = -200;
+    DirX = 200;
   }else if (!false)
   {
-    DirX = +200;
+    DirX = -200;
   }
     fireBalls.push(new FireBall(this.x, this.y, DirX));
 }
