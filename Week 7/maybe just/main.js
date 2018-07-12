@@ -14,12 +14,7 @@ var sndMain = new Howl(
 
 var sndGame = new Howl(
   {
-<<<<<<< HEAD
-    urls: ['Sounds/Duel(Boss).mp3'],
-=======
     urls: ['Sounds/Game.mp3'],
-
->>>>>>> bf7c854e5d8cc02e894ae0fd9069d3eb999a4815
     loop:false,
     buffer:true,
     volume:0.4
@@ -27,13 +22,7 @@ var sndGame = new Howl(
 
 var sndEndGame = new Howl(
   {
-<<<<<<< HEAD
-    urls: ['Sounds/Wizards Wail (Launch Trailer)2.wav'],
-=======
-
     urls: ['Sounds/EndGame.wav'],
-
->>>>>>> bf7c854e5d8cc02e894ae0fd9069d3eb999a4815
     loop:false,
     buffer:true,
     volume:0.4
