@@ -68,7 +68,6 @@ function collides()
         {
         //This is the check if the player is interacting with the wizards fireball.
         //The lives will decrease by 1 and that the fireball will delete from the game.
-          alert("NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO!");
           lives -= 1;
           delete fireBalls[i];
         }
