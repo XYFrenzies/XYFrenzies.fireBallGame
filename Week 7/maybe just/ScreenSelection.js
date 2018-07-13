@@ -52,36 +52,6 @@ function UpdateSS()
   }
   if(keyboard.isKeyDown(keyboard.KEY_RIGHT))
   {
-
-
-    if(ArrowXPos >= 1260)
-    {
-      ArrowXPos = 1260;
-    }
-    if(ArrowXPos <= 260)
-    {
-      ArrowXPos = 260;
-    }
-
-    if(ArrowXPos == 1000)
-    {
-      ArrowXPos = 1260;
-    }
-
-    if(ArrowXPos == 760)
-    {
-      ArrowXPos == 1000
-    }
-
-    if(ArrowXPos == 260)
-    {
-      ArrowXPos == 760
-    }
-  }
-
-
-
-
       if(ArrowXPos == green  && arrowPressed == false)
       {
         arrowPressed = true;
@@ -146,3 +116,4 @@ function UpdateSS()
     CreateCollisionData();
     GameLoop();
   }
+}
