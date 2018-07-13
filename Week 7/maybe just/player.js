@@ -4,7 +4,7 @@ var Player = function(){
     this.x = level1SpawnX;
     this.y = level1SpawnY;
     this.guey = document.createElement("img");
-    this.guey.src = "Images/sticky.jpg";
+    this.guey.src = "Images/sticky.png";
     //Value that is red
     this.redval = 0;
     //Width and height of the player
