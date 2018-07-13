@@ -237,18 +237,6 @@ function GameLoop()
     Draw();
     if(lives <= 0)
     {
-      if(Cookies.get('HighScore') == undefined)
-      {
-        Cookies.set('HighScore', score);
-      } else {
-      if(score > Cookies.get)
-      {
-        Cookies.set('HighScore', score);
-        HighScore = score;
-      } else {
-        HighScore = Cookies.get('HighScore');
-      }
-      }
       Level = GameOver;
       gameOver();
       sndGame.stop();
