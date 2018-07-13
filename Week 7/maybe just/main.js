@@ -226,6 +226,7 @@ function Draw(){
 
 function playerHitDraw()
 {
+  player.redval = 1;
   player.HitDraw();
 }
 //This is updating each variable in the game
