@@ -53,8 +53,8 @@ var Player = function(){
 
     this.sprite.buildAnimation( 6, 1, 54, 73 , 0.05, [17,17,17,17,17,17,17,17,17,17] );//HIT IDLE LEFT
 
-    this.sprite.buildAnimation( 6, 1, 54, 73, 0.05, [18,18,19,19,20,20,21,21,22,22]); //HIT RIGHT
-    
+    this.sprite.buildAnimation( 6, 1, 54, 73, 0.05, [22,22,21,21,20,20,19,19,18,18]); //HIT RIGHT
+
     this.sprite.buildAnimation( 6, 1, 54, 73 , 0.05, [23,23,23,23,23,23,23,23,23,23] );//HIT IDLE RIGHT
     //This is the offset of the player and the change of animation.
     for(var i = 0; i < animationMax; i++){
@@ -319,7 +319,7 @@ Player.prototype.Draw = function()
     }
 
         this.sprite.draw(context, canvas.width / 2 + this.width, canvas.height / 2);
-      
+
 
     } else if (!false){
     //This is to draw the player in the centre of the canvas so that the player has a large scope of the map.
