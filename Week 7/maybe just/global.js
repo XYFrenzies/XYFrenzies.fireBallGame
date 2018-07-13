@@ -70,20 +70,27 @@ var lives = 3;
 var JumpSndPlay = false;
 var fireSndPlay = false;
 
+//These are the sprites that are needed for the game of which at the scene selection
+//menu, whenever the individual hovers over a specific colour, that colour is selected in the game.
 var SpriteSheetGreen = "images/Sprite Sheet green.png";
 var SpriteSheetRed = "images/Sprite Sheet red.png";
 var SpriteSheetYellow = "images/Sprite Sheet yellow.png";
 var SpriteSheetBlue = "images/Sprite Sheet.png";
 var SpriteSheet = "images/Sprite Sheet.png";
 
+//These are just confirmations for which allows for the sprites to occur.
 var green = 185;
 var red = 475;
 var yellow = 755;
 var blue = 1045;
 
+//This are the values of the arrow. Within the scene selection screen, the individual
+//would be moving the arrow left and right of the screen by using the arrow keys.
 var ArrowXPos =  green;
 var arrowPressed = false;
 var singleMove = true;
-
 var arrowTime = 0.18;
 var timerArrow = arrowTime;
+
+//Allows for a health pack to drop after a specific amount of time.
+var healthpackTime = 5;

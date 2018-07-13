@@ -60,7 +60,8 @@ var swordsClashing = new Howl(
 var tileset = document.createElement("img");
 tileset.src = "Images/Tileset.png";
 
-
+var healthPack = document.createElement('img');
+healthPack.src = "Images/Mission_healthpack.png";
 
 var collisionCells = new Array();
 
