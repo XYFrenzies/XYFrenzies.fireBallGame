@@ -224,7 +224,10 @@ function Draw(){
     }
 }
 
-
+function playerHitDraw()
+{
+  player.HitDraw();
+}
 //This is updating each variable in the game
 function GameLoop()
 {

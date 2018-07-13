@@ -280,8 +280,25 @@ Player.prototype.Update = function(){
 Player.prototype.Draw = function()
 {
 
+    player.HitDraw();
+
+    this.sprite.draw(context, canvas.width / 2 + this.width, canvas.height / 2);
+
+    //This is where the orbs are draw.
+
+    for(var i = 0; i < orbs.length; i++)
+    {
+      if(orbs[i] != undefined)
+      {
+        orbs[i].Draw();
+      }
+    }
+
+}
 
 
+Player.prototype.HitDraw = function()
+{
     if(this.redval > 0)
     {
         this.redval -= dt;
@@ -293,46 +310,29 @@ Player.prototype.Draw = function()
                 this.sprite.setAnimation(9);
             }
         }
-    if(this.sprite.currentAnimation == 3)
-    {
-        if(this.sprite.currentAnimation != 7)
+        if(this.sprite.currentAnimation == 3)
         {
-            this.notHit = false;
-            this.sprite.setAnimation(7);
-        }
-    }
-    if(this.sprite.currentAnimation == 2)
-        {
-            if(this.sprite.currentAnimation != 6)
+            if(this.sprite.currentAnimation != 7)
             {
                 this.notHit = false;
-                this.sprite.setAnimation(6);
+                this.sprite.setAnimation(7);
             }
         }
-    if(this.sprite.currentAnimation == 5)
-    {
-        if(this.sprite.currentAnimation != 8)
+        if(this.sprite.currentAnimation == 2)
+            {
+                if(this.sprite.currentAnimation != 6)
+                {
+                    this.notHit = false;
+                    this.sprite.setAnimation(6);
+                }
+            }
+        if(this.sprite.currentAnimation == 5)
         {
-            this.notHit = false;
-            this.sprite.setAnimation(8);
+            if(this.sprite.currentAnimation != 8)
+            {
+                this.notHit = false;
+                this.sprite.setAnimation(8);
+            }
         }
     }
-
-        this.sprite.draw(context, canvas.width / 2 + this.width, canvas.height / 2);
-
-
-    } else if (!false){
-    //This is to draw the player in the centre of the canvas so that the player has a large scope of the map.
-    this.sprite.draw(context, canvas.width / 2 + this.width, canvas.height / 2);
-    }
-    //This is where the orbs are draw.
-
-    for(var i = 0; i < orbs.length; i++)
-    {
-      if(orbs[i] != undefined)
-      {
-        orbs[i].Draw();
-      }
-    }
-
 }
