@@ -30,7 +30,8 @@ var Enemy = function()
 //This is the calling of the sprites that are used
 //as a frame by frame change of the character within the game.
     this.sprite = new Sprite("Images/Enemy sprite sheet.png");
-
+    this.seedling = document.createElement("img");
+    this.seedling.src = "Images/seedy.jpg";
 
     this.sprite.buildAnimation(8,2,131,93,0.2,[0,1,2]);
 
@@ -119,7 +120,7 @@ Enemy.prototype.Draw = function()
 {
   //This is setting the location of which the enemy
   //should attack the player as well as follow the player.
-    this.sprite.draw(context,this.x - player.x + 600, this.y - player.y + 340);
-
+    // this.sprite.draw(context,this.x - player.x + 600, this.y - player.y + 340);
+    context.drawImage(this.seedling, this.x - player.x + 600, this.y - player.y + 340, 50, 100);
 
 }
