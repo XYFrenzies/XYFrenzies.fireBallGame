@@ -18,8 +18,9 @@ ORB.prototype.Update = function()
 
 ORB.prototype.Draw = function()
 {
- 
-    this.sprite.draw(context, this.x - player.x + player.width + 600, this.y - player.y + 340);
 
+    //this.sprite.draw(context, this.x - player.x + player.width + 600, this.y - player.y + 340);
+    context.fillStyle = "red";
+    context.fillText("E", this.x - player.x + player.width + 600, this.y - player.y + 340);
   //Draw code
 }
