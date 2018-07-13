@@ -42,6 +42,9 @@ const tileSetY = 64;
 //This is to spawn the player at a specific point
 const level1SpawnX = 300;
 const level1SpawnY = 1400;
+//This is the spawn position of the second player
+const level1Player2SpawnX = 400;
+const level1Player2SpawnY = 1400;
 
 //These are arrays of different abilities or characters so that they
 //can be used across multiple different files.

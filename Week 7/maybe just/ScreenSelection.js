@@ -29,8 +29,8 @@ function UpdateSS()
   //The amount that the arrow will move depends on the distance between each character.
   if(keyboard.isKeyDown(keyboard.KEY_LEFT))
   {
-   
-   
+
+
       if(ArrowXPos == blue && arrowPressed == false)
       {
         arrowPressed = true;
@@ -46,13 +46,12 @@ function UpdateSS()
         arrowPressed = true;
         ArrowXPos = green;
       }
-   
 
-  
+
+
   }
   if(keyboard.isKeyDown(keyboard.KEY_RIGHT))
   {
-  
       if(ArrowXPos == green  && arrowPressed == false)
       {
         arrowPressed = true;
@@ -68,8 +67,8 @@ function UpdateSS()
         arrowPressed = true;
         ArrowXPos = blue;
       }
-  
-   
+
+
   }
 
   if(keyboard.isKeyUp(keyboard.KEY_RIGHT) && singleMove == true)
@@ -83,7 +82,7 @@ function UpdateSS()
     singleMove = false;
 
   }
-    
+
   timerArrow -= dt;
 
   if(timerArrow <=0)
@@ -104,7 +103,7 @@ function UpdateSS()
     } else if (ArrowXPos == yellow)
     {
       SpriteSheet = SpriteSheetYellow;
-    } else 
+    } else
     {
       SpriteSheet = SpriteSheetBlue;
     }
