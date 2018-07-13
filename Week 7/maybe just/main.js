@@ -221,7 +221,7 @@ function Draw(){
       }
     }
 }
-wizards.push(new Wizard());
+
 
 //This is updating each variable in the game
 function GameLoop()

@@ -25,11 +25,13 @@ const animationWalkLeft = 2;
 const animationIdleRight = 3;
 const animationJumpRight = 4;
 const animationWalkRight = 5;
-const animationMax = 6;
+const animationMax = 10;
 
 const fireRate = 0.25;
 var timer = fireRate;
 
+var hitTime = 0.5;
+var hitTimer = hitTime;
 //This is the values that the tiles of the game are using,
 //the tile along the X is 58 and 64 on the Y.
 const tileSize = 64;

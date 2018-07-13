@@ -114,6 +114,7 @@ function UpdateSS()
     sndMain.stop();
     sndGame.play();
     player = new Player();
+    wizards.push(new Wizard());
     CreateCollisionData();
     GameLoop();
   }

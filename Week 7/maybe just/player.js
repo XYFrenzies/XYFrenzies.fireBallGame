@@ -31,6 +31,7 @@ var Player = function(){
     this.maxSpeed = 800;
 
 
+    this.notHit = true;
     //This is the animation change of the player as it moves to the left and the right as well as its idle animation.
     this.sprite = new Sprite(SpriteSheet);
     // Rows of frames in the X, columns of frames in the Y, width, height, time between frames, what frames.
@@ -44,12 +45,17 @@ var Player = function(){
 
     this.sprite.buildAnimation(  6, 1, 54, 73 , 0.2, [5] ); //IDLE RIGHT
 
-
     this.sprite.buildAnimation(  6, 1, 54, 73 , 0.05, [10, 10, 9, 9, 8, 8, 7, 7, 6, 6]); //JUMP RIGHT
 
     this.sprite.buildAnimation(  6, 1, 54, 73 , 0.05, [ 10, 10, 9, 9, 8, 8, 7, 7, 6, 6]); //WALK RIGHT
 
+    this.sprite.buildAnimation( 6, 1, 54, 73, 0.05, [12,12,13,13,14,14,15,15,16,16]); //HIT LEFT
 
+    this.sprite.buildAnimation( 6, 1, 54, 73 , 0.05, [17,17,17,17,17,17,17,17,17,17] );//HIT IDLE LEFT
+
+    this.sprite.buildAnimation( 6, 1, 54, 73, 0.05, [18,18,19,19,20,20,21,21,22,22]); //HIT RIGHT
+    
+    this.sprite.buildAnimation( 6, 1, 54, 73 , 0.05, [23,23,23,23,23,23,23,23,23,23] );//HIT IDLE RIGHT
     //This is the offset of the player and the change of animation.
     for(var i = 0; i < animationMax; i++){
         this.sprite.setAnimationOffset(i,-29, -33);
@@ -62,6 +68,15 @@ Player.prototype.Update = function(){
     //This is to update delta time in terms of the player movement.
     dt = GetDeltaTime();
 
+    if( this.notHit == false)
+    {
+        hitTimer -= dt;
+        if(hitTimer <= 0)
+        {
+            this.notHit = true;
+            hitTimer = hitTime;
+        }
+    }
     this.sprite.update(dt);
     //Introduce gravity so that the player can junp and act normal.
     gravity = 9.8 * 20;
@@ -81,7 +96,7 @@ Player.prototype.Update = function(){
     {
         left = true;
         this.direction = animationLeft;
-        if(this.sprite.currentAnimation != animationWalkLeft && this.falling == false)
+        if(this.sprite.currentAnimation != animationWalkLeft && this.falling == false && this.notHit == true)
         {
             //When the player moves to the left, the animation of it moving to the left occurs.
             this.sprite.setAnimation(animationWalkLeft);
@@ -92,7 +107,7 @@ Player.prototype.Update = function(){
     {
         right = true;
         this.direction = animationRight;
-        if(this.sprite.currentAnimation != animationWalkRight && this.falling ==false)
+        if(this.sprite.currentAnimation != animationWalkRight && this.falling ==false && this.notHit == true)
         {
             //When the player moves to the right, the animation of it moving to the right occurs.
             this.sprite.setAnimation(animationWalkRight);
@@ -269,12 +284,42 @@ Player.prototype.Draw = function()
 
     if(this.redval > 0)
     {
-      this.redval -= dt;
-      this.sprite.draw(context, canvas.width / 2 + this.width, canvas.height / 2);
-      context.globalAlpha=0.62;
-      context.fillStyle="red";
-      context.fillRect(canvas.width / 2 + 15, canvas.height / 2 - 30, this.width, this.height - 20);
-      context.globalAlpha=1;
+        this.redval -= dt;
+        if(this.sprite.currentAnimation == 0)
+        {
+            if(this.sprite.currentAnimation != 9)
+            {
+                this.notHit = false;
+                this.sprite.setAnimation(9);
+            }
+        }
+    if(this.sprite.currentAnimation == 3)
+    {
+        if(this.sprite.currentAnimation != 7)
+        {
+            this.notHit = false;
+            this.sprite.setAnimation(7);
+        }
+    }
+    if(this.sprite.currentAnimation == 2)
+        {
+            if(this.sprite.currentAnimation != 6)
+            {
+                this.notHit = false;
+                this.sprite.setAnimation(6);
+            }
+        }
+    if(this.sprite.currentAnimation == 5)
+    {
+        if(this.sprite.currentAnimation != 8)
+        {
+            this.notHit = false;
+            this.sprite.setAnimation(8);
+        }
+    }
+
+        this.sprite.draw(context, canvas.width / 2 + this.width, canvas.height / 2);
+      
 
     } else if (!false){
     //This is to draw the player in the centre of the canvas so that the player has a large scope of the map.
