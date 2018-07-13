@@ -3,6 +3,8 @@ var Player = function(){
     //Default position
     this.x = level1SpawnX;
     this.y = level1SpawnY;
+    this.guey = document.createElement("img");
+    this.guey.src = "Images/sticky.jpg";
     //Value that is red
     this.redval = 0;
     //Width and height of the player
@@ -34,9 +36,9 @@ var Player = function(){
     this.notHit = true;
     //This is the animation change of the player as it moves to the left and the right as well as its idle animation.
     this.sprite = new Sprite(SpriteSheet);
-    // Rows of frames in the X, columns of frames in the Y, width, height, time between frames, what frames.
-
-
+    // // Rows of frames in the X, columns of frames in the Y, width, height, time between frames, what frames.
+    //
+    //
     this.sprite.buildAnimation( 6, 1, 54, 73 , 0.2, [11] ); //IDLE LEFT
 
     this.sprite.buildAnimation(  6, 1, 54, 73, 0.05, [0, 0, 1, 1, 2, 2, 3, 3, 4, 4] ); //JUMP LEFT
@@ -280,10 +282,10 @@ Player.prototype.Update = function(){
 Player.prototype.Draw = function()
 {
 
-    player.HitDraw();
+    //player.HitDraw();
 
-    this.sprite.draw(context, canvas.width / 2 + this.width, canvas.height / 2);
-
+    //this.sprite.draw(context, canvas.width / 2 + this.width, canvas.height / 2);
+    context.drawImage(this.guey, canvas.width / 2 + this.width, canvas.height / 2);
     //This is where the orbs are draw.
 
     for(var i = 0; i < orbs.length; i++)
@@ -299,40 +301,40 @@ Player.prototype.Draw = function()
 
 Player.prototype.HitDraw = function()
 {
-    if(this.redval > 0)
-    {
-        this.redval -= dt;
-        if(this.sprite.currentAnimation == 0)
-        {
-            if(this.sprite.currentAnimation != 9)
-            {
-                this.notHit = false;
-                this.sprite.setAnimation(9);
-            }
-        }
-        if(this.sprite.currentAnimation == 3)
-        {
-            if(this.sprite.currentAnimation != 7)
-            {
-                this.notHit = false;
-                this.sprite.setAnimation(7);
-            }
-        }
-        if(this.sprite.currentAnimation == 2)
-            {
-                if(this.sprite.currentAnimation != 6)
-                {
-                    this.notHit = false;
-                    this.sprite.setAnimation(6);
-                }
-            }
-        if(this.sprite.currentAnimation == 5)
-        {
-            if(this.sprite.currentAnimation != 8)
-            {
-                this.notHit = false;
-                this.sprite.setAnimation(8);
-            }
-        }
-    }
+    // if(this.redval > 0)
+    // {
+    //     this.redval -= dt;
+    //     if(this.sprite.currentAnimation == 0)
+    //     {
+    //         if(this.sprite.currentAnimation != 9)
+    //         {
+    //             this.notHit = false;
+    //             this.sprite.setAnimation(9);
+    //         }
+    //     }
+    //     if(this.sprite.currentAnimation == 3)
+    //     {
+    //         if(this.sprite.currentAnimation != 7)
+    //         {
+    //             this.notHit = false;
+    //             this.sprite.setAnimation(7);
+    //         }
+    //     }
+    //     if(this.sprite.currentAnimation == 2)
+    //         {
+    //             if(this.sprite.currentAnimation != 6)
+    //             {
+    //                 this.notHit = false;
+    //                 this.sprite.setAnimation(6);
+    //             }
+    //         }
+    //     if(this.sprite.currentAnimation == 5)
+    //     {
+    //         if(this.sprite.currentAnimation != 8)
+    //         {
+    //             this.notHit = false;
+    //             this.sprite.setAnimation(8);
+    //         }
+    //     }
+    // }
 }
